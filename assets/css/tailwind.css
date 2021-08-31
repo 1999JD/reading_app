@@ -1,0 +1,8 @@
+:root {
+  --color-primary: #f5efdf;
+  --color-highlight: #FFC651;
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
