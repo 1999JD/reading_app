@@ -54,5 +54,15 @@ export default {
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
-  }
+  },
+
+
+  video: ['src', 'poster'],
+  source: 'src',
+  img: 'src',
+  image: ['xlink:href', 'href'],
+  use: ['xlink:href', 'href']
+
+
+
 }

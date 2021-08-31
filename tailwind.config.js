@@ -12,12 +12,18 @@ module.exports = {
       colors: {
         primary: {
           DEFAULT: 'var(--color-primary)'
+        },
+        gray: {
+          divide: 'var(--color-gray-divide)',
+          mainentries: 'var(--color-gray-mainentries)'
         }
-      }
+      },
     },
   },
   variants: {
-    extend: {},
+    extend: {
+      borderWidth: ['hover', 'focus'],
+    },
   },
   plugins: [],
 }
