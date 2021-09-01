@@ -3,7 +3,7 @@
     <h2>{{ books.week.cate }}</h2>
     <ul class="flex overflow-x-scroll">
       <li v-for="book in books.week.items" :key="book.id">
-        <div class="card__img mr-4 overflow-hidden rounded-t">
+        <div class="card__img mr-4 overflow-hidden rounded">
           <img
             :src="require(`~/assets/img/${book.src}.svg`)"
             class="w-full h-auto"
@@ -16,7 +16,7 @@
     <h2>{{ books.recent.cate }}</h2>
     <ul class="flex overflow-x-scroll">
       <li v-for="book in books.recent.items" :key="book.id">
-        <div class="card__img mr-4 overflow-hidden rounded-t">
+        <div class="card__img mr-4 overflow-hidden rounded">
           <img
             :src="require(`~/assets/img/${book.src}.svg`)"
             class="w-full h-auto"
