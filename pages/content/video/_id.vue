@@ -1,9 +1,10 @@
 <template>
-  <div>video {{ $route.params.id }} </div>
+  <div>video {{ $route.params.id }}</div>
 </template>
 
 <script>
 export default {
   name: 'Video',
+  layout: 'content',
 }
 </script>
