@@ -11,7 +11,7 @@
         class="absolute top-0 bottom-0 my-auto left-6"
         @click.prevent="open = !open"
       >
-        <img src="" alt="漢堡選單" />
+        <img src="~/assets/icon/ham.svg" alt="漢堡選單" />
       </button>
       <label for="" class="relative p-2.5">
         <input
@@ -21,11 +21,11 @@
           class="w-full pl-8 py-1.5 rounded-lg leading-none"
         />
         <button type="button" class="absolute top-0 bottom-0 left-3">
-          <img src="" alt="送出按鈕" />
+          <img src="~/assets/icon/search.svg" alt="送出按鈕" />
         </button>
       </label>
       <button type="button" class="absolute top-0 bottom-0 my-auto right-6">
-        <img src="" alt="訊息中心" />
+        <img src="~/assets/icon/message.svg" alt="訊息中心" />
       </button>
     </header>
 
@@ -43,15 +43,20 @@
         z-10
         w-full
         px-10
+        py-2
         bg-white
         shadow-sm
         filter
         drop-shadow-md
       "
     >
-      <CommonIconWithText class="py-2">書城</CommonIconWithText>
-      <CommonIconWithText class="py-2">首頁</CommonIconWithText>
-      <CommonIconWithText class="py-2">我的</CommonIconWithText>
+      <LayoutIconWithText
+        v-for="button in footerButtons"
+        :key="button.title"
+        :src="button.src"
+        :alt="button.alt"
+        >{{ button.title }}</LayoutIconWithText
+      >
     </footer>
   </div>
 </template>
@@ -61,6 +66,11 @@ export default {
   data() {
     return {
       open: false,
+      footerButtons: [
+        { title: '書城', src: 'books', alt: '書城' },
+        { title: '首頁', src: 'home', alt: '首頁' },
+        { title: '我的', src: 'man', alt: '我的' },
+      ],
     }
   },
 }

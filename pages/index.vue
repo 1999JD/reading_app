@@ -16,34 +16,48 @@
         </IndexIconWithText>
       </li>
     </ul>
-    <div class="flex justify-around py-3 bg-gray-mainentries shadow-md">
+    <div class="flex justify-around bg-gray-mainentries shadow-md">
       <a
         v-for="entry in mainEntries"
         :key="entry.title"
         href="#"
-        class="pb-1"
+        class="py-3"
+        @click.prevent="show = `Index${entry.name}`"
       >
         {{ entry.title }}
       </a>
     </div>
+
     <section class="pl-6 whitespace-nowrap overflow-x-scroll shadow-md">
-      <div v-if="subEntries[0]" class="flex py-4">
-        <h3 class="mr-6 font-medium">{{ subEntries[0].cate }}</h3>
+      <div v-if="subEntries.grade" class="flex items-center py-3">
+        <h3 class="mr-6 font-medium">{{ subEntries.grade.cate }}</h3>
         <div class="flex">
-          <a v-for="entry in subEntries[0].items" :key="entry.title" href="#" class="block mr-4 py-1 px-2">
+          <a
+            v-for="entry in subEntries.grade.items"
+            :key="entry.title"
+            href="#"
+            class="block mr-4 py-1 px-2"
+          >
             {{ entry.title }}
           </a>
         </div>
       </div>
-      <div v-if="subEntries[1]" class="flex py-4">
-        <h3 class="mr-6 font-medium">{{ subEntries[1].cate }}</h3>
+      <div v-if="subEntries.field" class="flex items-center py-3">
+        <h3 class="mr-6 font-medium">{{ subEntries.field.cate }}</h3>
         <div class="flex">
-          <a v-for="entry in subEntries[1].items" :key="entry.title" href="#" class="block mr-4 py-1 px-2">
+          <a
+            v-for="entry in subEntries.field.items"
+            :key="entry.title"
+            href="#"
+            class="block mr-4 py-1 px-2"
+          >
             {{ entry.title }}
           </a>
         </div>
       </div>
     </section>
+
+    <component :is="show" />
   </main>
 </template>
 <script>
@@ -58,13 +72,13 @@ export default {
         { title: '每日簽到', to: './', src: '~', alt: '' },
       ],
       mainEntries: [
-        { title: '最新', to: './' },
-        { title: '熱門', to: './' },
-        { title: '推薦', to: './' },
-        { title: '精選', to: './' },
+        { title: '最新', name: 'Latest' },
+        { title: '熱門', name: 'Hit' },
+        { title: '推薦', name: 'Recommend' },
+        { title: '精選', name: 'Featured' },
       ],
-      subEntries: [
-        {
+      subEntries: {
+        grade: {
           cate: '年級',
           items: [
             { title: '國小', to: './' },
@@ -72,7 +86,7 @@ export default {
             { title: '高中', to: './' },
           ],
         },
-        {
+        field: {
           cate: '領域',
           items: [
             { title: '全部', to: './' },
@@ -83,7 +97,8 @@ export default {
             { title: '自然科學', to: './' },
           ],
         },
-      ],
+      },
+      show: 'IndexLatest',
     }
   },
 }

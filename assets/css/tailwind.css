@@ -12,5 +12,5 @@
 
 body {
   font-family: 'Noto Sans TC';
-  @apply text-sm;
+  @apply text-sm leading-4;
 }
