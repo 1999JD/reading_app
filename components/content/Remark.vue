@@ -1,14 +1,13 @@
 <template>
-  <li class="bg-white">
-  記得要用 line clamp
-    <p>
+  <li class="mb-6 p-3 bg-white rounded-md shadow-sm ">
+    <p class="mb-4">
       {{ remark.name }}
-      <span>{{ remark.date }}</span>
+      <span class="inline-block ml-3">{{ remark.date }}</span>
     </p>
-    <p>
+    <p class="mb-4 text-xs">
       {{ remark.content }}
     </p>
-    <button>瀏覽完整內容</button>
+    <button class="block ml-auto">瀏覽完整內容 ></button>
   </li>
 </template>
 

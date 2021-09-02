@@ -16,6 +16,9 @@ module.exports = {
         gray: {
           divide: 'var(--color-gray-divide)',
           mainentries: 'var(--color-gray-mainentries)'
+        },
+        highlight: {
+          DEFAULT: 'var(--color-highlight)',
         }
       },
     },

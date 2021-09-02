@@ -1,12 +1,15 @@
 <template>
-  <ul class="flex">
-    <li v-for="nav in navs" :key="nav.text">
-      <button>
-        <img :src="nav.icon" />
-        <span>{{ nav.text }}</span>
-      </button>
-    </li>
-  </ul>
+  <nav class="flex">
+    <button
+      v-for="nav in navs"
+      :key="nav.text"
+      class="flex-grow py-2"
+      :style="{ backgroundColor: nav.bgColor }"
+    >
+      <img :src="require(`~/assets/icon/${nav.icon}.svg`)" class="m-auto" />
+      <span>{{ nav.text }}</span>
+    </button>
+  </nav>
 </template>
 
 <script>
@@ -16,15 +19,18 @@ export default {
     return {
       navs: [
         {
-          icon: '',
+          bgColor: '#A9E2E3',
+          icon: 'ebook',
           text: '電子書',
         },
         {
-          icon: '',
+          bgColor: '#F8F8FB',
+          icon: 'realbook',
           text: '實體書',
         },
         {
-          icon: '',
+          bgColor: '#FFD784',
+          icon: 'test',
           text: '我要測驗',
         },
       ],

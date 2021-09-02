@@ -54,15 +54,31 @@ export default {
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
+    extend(config, ctx) {
+      config.module.rules.push({
+        test: /\.(ogg|mp3|wav|mpe?g)$/i,
+        loader: 'file-loader',
+        options: {
+          name: '[path][name].[ext]'
+        }
+      })
+    },
+    loaders: {
+      file: { esModule: false },
+      imgUrl: { esModule: false },
+      vue: {
+        transformAssetUrls: {
+          audio: 'src'
+        }
+      }
+    },
   },
-
 
   video: ['src', 'poster'],
   source: 'src',
+  audio: 'src',
   img: 'src',
   image: ['xlink:href', 'href'],
-  use: ['xlink:href', 'href']
-
-
+  use: ['xlink:href', 'href'],
 
 }

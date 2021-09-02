@@ -1,6 +1,8 @@
 <template>
-  <div>
-    <button>留言</button>
+  <div class="mx-6">
+    <button class="block ml-auto mb-3">
+      <img :src="require('~/assets/icon/pen.svg')" class="inline-block" /> 留言
+    </button>
     <ul>
       <ContentRemark v-for="remark in remarks" :key="remark.id" />
     </ul>
