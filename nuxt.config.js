@@ -13,6 +13,7 @@ export default {
     ]
   },
 
+
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [
   ],
@@ -41,6 +42,17 @@ export default {
     // https://go.nuxtjs.dev/pwa
     '@nuxtjs/pwa',
   ],
+
+  env: {
+    baseUrl:
+      process.env.NODE_ENV === 'development'
+        ? 'http://127.0.0.1:3000/'
+        : 'http://127.0.0.1:3000/',
+    apiURL:
+      process.env.NODE_ENV === 'development'
+        ? 'localhost:5500/'
+        : 'localhost:5500/',
+  },
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
   axios: {},
