@@ -29,7 +29,7 @@
         class="w-full h-0.5"
         @input="handleAudioProgress"
       />
-      <span class="absolute right-0 -bottom-6" 
+      <span class="absolute right-0 -bottom-6"
         >-{{ Math.round(duration - rangeValue) }}</span
       >
     </div>
@@ -68,6 +68,7 @@ export default {
   },
   methods: {
     handleAudioTime(behavior) {
+      this.$refs.audioPlayer.play()
       behavior === 'forward' ? (this.rangeValue += 10) : (this.rangeValue -= 10)
       this.$refs.audioPlayer.currentTime = this.rangeValue
     },
@@ -81,6 +82,7 @@ export default {
       this.rangeValue = this.$refs.audioPlayer.currentTime
     },
     handleAudioProgress(e) {
+      this.$refs.audioPlayer.play()
       this.$refs.audioPlayer.currentTime = this.rangeValue
     },
   },
