@@ -31,7 +31,7 @@
 
 <script>
 export default {
-  name: 'Latest',
+  name: 'CateLatest',
   data() {
     return {
       books: {

@@ -16,7 +16,7 @@
 
 <script>
 export default {
-  name: 'Featured',
+  name: 'CateFeatured',
   data() {
     return {
       books: [

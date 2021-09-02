@@ -48,7 +48,7 @@
 
 <script>
 export default {
-  name: 'Hit',
+  name: 'CateHit',
   data() {
     return {
       innerWH: {

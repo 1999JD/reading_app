@@ -12,7 +12,7 @@
       </ul>
       <span>下載量 {{ book.download }}</span>
     </div>
-    <button type="button">audio</button>
+    <NuxtLink :to="`content/media/${book.id}`">audio</NuxtLink>
   </li>
 </template>
 
