@@ -1,14 +1,15 @@
 <template>
-  <button class="leading-4">
+  <NuxtLink :to="to" class="leading-4">
     <img :src="require(`~/assets/icon/${src}.svg`)" class="mb-2" />
     <slot />
-  </button>
+  </NuxtLink>
 </template>
 
 <script>
 export default {
-  name: 'IconWithText',
+  name: 'FooterIcons',
   props: {
+    to: { type: String, default: '' },
     src: { type: String, default: '' },
     alt: { type: String, default: 'icon' },
   },

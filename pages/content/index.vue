@@ -1,7 +1,7 @@
 <template>
   <div>
     <CommonSubEntries class="bg-primary" />
-    <ul>
+    <ul class="p-6">
       <ContentBooksListItem v-for="book in books" :key="book.id" :book="book" />
     </ul>
   </div>

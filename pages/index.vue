@@ -36,7 +36,7 @@ export default {
   data() {
     return {
       navs: [
-        { title: '素養說書', to: './', src: '~', alt: '' },
+        { title: '素養說書', to: '/content/', src: '~', alt: '' },
         { title: '線下活動', to: './', src: '~', alt: '' },
         { title: 'TKB書城', to: './', src: '~', alt: '' },
         { title: '我要測驗', to: './', src: '~', alt: '' },

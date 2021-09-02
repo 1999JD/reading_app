@@ -1,5 +1,5 @@
 <template>
-  <li class="bg-primary">
+  <li class="bg-primary mb-6">
     <div class="card__img">
       <img :src="book.src" :alt="book.alt" />
     </div>

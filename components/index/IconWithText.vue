@@ -1,8 +1,6 @@
 <template>
   <NuxtLink :to="nav.to">
-    <div>
-      <img :src="nav.src" :alt="nav.alt" class="max-w-full h-auto" />
-    </div>
+    <img :src="nav.src" :alt="nav.alt" class="max-w-full h-auto" />
     <slot />
   </NuxtLink>
 </template>
