@@ -16,25 +16,25 @@
         </div>
       </div>
     </div>
-    <div class="relative my-9">
+    <div class="progress-controller relative my-9">
       <span class="absolute left-0 -bottom-6">{{
         Math.round(rangeValue)
       }}</span>
       <input
+        ref="rangeInput"
         v-model="rangeValue"
         type="range"
         min="0"
         :max="duration"
         step="1"
-        class="w-full h-0.5"
-        @input="handleAudioProgress"
+        @input="handleRangeInput"
       />
       <span class="absolute right-0 -bottom-6"
         >-{{ Math.round(duration - rangeValue) }}</span
       >
     </div>
     <div class="flex items-center justify-center mb-5">
-      <button @click.prevent="handleAudioTime('back')">
+      <button @click.prevent="handleSkipTenSeconds('back')">
         <span class="sr-only"> 倒退十秒 </span>
         <img :src="require(`~/assets/icon/backTen.svg`)" />
       </button>
@@ -42,7 +42,7 @@
         <span class="sr-only"> 播放 </span>
         <img :src="require(`~/assets/icon/play.svg`)" />
       </button>
-      <button @click.prevent="handleAudioTime('forward')">
+      <button @click.prevent="handleSkipTenSeconds('forward')">
         <span class="sr-only"> 前進十秒 </span>
         <img :src="require(`~/assets/icon/forwardTen.svg`)" />
       </button>
@@ -67,7 +67,7 @@ export default {
     }
   },
   methods: {
-    handleAudioTime(behavior) {
+    handleSkipTenSeconds(behavior) {
       this.$refs.audioPlayer.play()
       behavior === 'forward' ? (this.rangeValue += 10) : (this.rangeValue -= 10)
       this.$refs.audioPlayer.currentTime = this.rangeValue
@@ -80,8 +80,13 @@ export default {
     },
     detectTimeUpdate(e) {
       this.rangeValue = this.$refs.audioPlayer.currentTime
+      // const root = document.documentElement
+      // root.style.setProperty(
+      //   '--progressbar-width',
+      //   `${ this.rangeValue}%`
+      // )
     },
-    handleAudioProgress(e) {
+    handleRangeInput(e) {
       this.$refs.audioPlayer.play()
       this.$refs.audioPlayer.currentTime = this.rangeValue
     },
@@ -89,14 +94,28 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
+:root {
+  --progressbar-width: 0;
+}
+input[type='range'] {
+  -webkit-appearance: none;
+  @apply absolute w-full h-0.5 transform translate-y-2/4;
+}
+.progress-controller::after {
+  content: '';
+  background: #363636;
+  width: calc(var(--progressbar-width));
+  @apply block absolute top-0 bottom-0 z-10
+    m-auto h-1 transform translate-y-2/4;
+}
 input[type='range']::-webkit-slider-thumb {
   -webkit-appearance: none;
-  position: relative; /* 設為相對位置，為了前後區塊的絕對位置而設定 */
-  width: 10px;
-  height: 10px;
-  background-color: '#220000' !important;
-  border-radius: 50%;
-  transition: 0.2s; /* 點選放大時候的漸變時間 */
+  @apply w-2.5 h-2.5 -mt-1 rounded-full bg-gray-800;
+}
+input[type='range']::-webkit-slider-runnable-track {
+  -webkit-appearance: none;
+  background-color: #999;
+  @apply h-0.5;
 }
 </style>
