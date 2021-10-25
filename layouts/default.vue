@@ -1,37 +1,5 @@
 <template>
-  <div>
-    <header
-      :class="[
-        open ? 'shadow-md' : '',
-        'flex justify-center relative z-10 bg-primary transition delay-100',
-      ]"
-    >
-      <button
-        type="button"
-        class="absolute top-0 bottom-0 my-auto left-6"
-        @click.prevent="open = !open"
-      >
-        <img src="~/assets/icon/ham.svg" alt="漢堡選單" />
-      </button>
-      <label for="" class="relative p-2.5">
-        <input
-          type="text"
-          name=""
-          value=""
-          class="w-full pl-8 py-1.5 rounded-lg leading-none"
-        />
-        <button type="button" class="absolute top-0 bottom-0 left-3">
-          <img src="~/assets/icon/search.svg" alt="送出按鈕" />
-        </button>
-      </label>
-      <button type="button" class="absolute top-0 bottom-0 my-auto right-6">
-        <img src="~/assets/icon/message.svg" alt="訊息中心" />
-      </button>
-    </header>
-
-    <transition :name="open ? 'open' : 'close'">
-      <LayoutSideMenu v-show="open" />
-    </transition>
+  <div class="wrap">
     <nuxt />
     <LayoutFooter />
   </div>
@@ -79,5 +47,9 @@ label {
 .close-enter-to,
 .close-leave {
   left: 0;
+}
+
+.wrap {
+  padding-bottom: 72px;
 }
 </style>

@@ -1,6 +1,6 @@
 :root {
-  --color-primary: #F5EFDF;
-  --color-highlight: #FFC651;
+  --color-primary: #f5efdf;
+  --color-highlight: #ffc651;
   --color-gray-divide: #e8e8e8;
   --color-gray-mainentries: #f0f0f0;
   /* --header-shadow: '1px 1px 4px rgba(0, 0, 0, 0.25)'; */
@@ -13,4 +13,8 @@
 body {
   font-family: 'Noto Sans TC';
   @apply text-sm leading-4;
+}
+
+img {
+  @apply block w-full h-auto;
 }
