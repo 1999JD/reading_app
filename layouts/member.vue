@@ -7,7 +7,7 @@
       <p>訂購專區</p>
       <div class="flex absolute right-0">
         <img src="~/assets/icon/search.svg" alt="搜尋" />
-        <img src="~/assets/icon/catalog.svg" alt="訊息" />
+        <img src="~/assets/icon/message.svg" alt="訊息" />
       </div>
     </header>
     <nuxt />

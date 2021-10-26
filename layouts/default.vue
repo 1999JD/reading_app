@@ -16,7 +16,7 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 label {
   box-sizing: border-box;
   width: 17.875rem;
