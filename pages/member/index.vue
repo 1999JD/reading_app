@@ -22,9 +22,9 @@
       <MemberIcon
         v-for="link in contentPageLinks"
         :key="link.title"
-        :src="link.src"
         :alt="link.alt"
         :to="link.to"
+        :src="link.src"
         >{{ link.title }}
       </MemberIcon>
     </nav>
@@ -34,9 +34,9 @@
         <MemberIcon
           v-for="link in recordsLinks"
           :key="link.title"
-          :src="link.src"
           :alt="link.alt"
           :to="link.to"
+          :src="link.src"
           >{{ link.title }}
         </MemberIcon>
       </nav>
@@ -47,9 +47,9 @@
         <MemberIcon
           v-for="link in orderLinks"
           :key="link.title"
-          :src="link.src"
           :alt="link.alt"
           :to="link.to"
+          :src="link.src"
           >{{ link.title }}
         </MemberIcon>
       </nav>
@@ -60,29 +60,55 @@
 <script>
 export default {
   name: 'MemberCenter',
+  layout: 'member',
   data() {
     return {
       contentPageLinks: [
-        { title: '購買紀錄', src: 'man', alt: '購買紀錄', to: '/content' },
-        { title: '我的收藏', src: 'man', alt: '我的收藏', to: '/content' },
+        { title: '購買紀錄', src: 'record', alt: '購買紀錄', to: 'member/records' },
+        { title: '我的收藏', src: 'store', alt: '我的收藏', to: 'member/favorites' },
         {
           title: '我的優惠券',
-          src: 'man',
+          src: 'coupon',
           alt: '我的優惠券',
-          to: '/content',
+          to: 'member/coupon',
         },
       ],
       recordsLinks: [
-        { title: '每日簽到', src: 'man', alt: '每日簽到', to: '/content' },
-        { title: '學習紀錄', src: 'man', alt: '學習紀錄', to: '/content' },
-        { title: '任務挑戰', src: 'man', alt: '任務挑戰', to: '/content' },
-        { title: '積分', src: 'man', alt: '積分', to: '/content' },
+        { title: '每日簽到', src: 'sign', alt: '每日簽到', to: 'sign' },
+        {
+          title: '學習紀錄',
+          src: 'my_record',
+          alt: '學習紀錄',
+          to: 'my_record',
+        }, 
+        { title: '任務挑戰', src: 'mission', alt: '任務挑戰', to: 'content' },
+        { title: '積分', src: 'score', alt: '積分', to: 'content' },
       ],
       orderLinks: [
-        { title: '熱門商品', src: 'man', alt: '熱門商品', to: '/content' },
-        { title: '訂閱方案', src: 'man', alt: '訂閱方案', to: '/content' },
-        { title: '團購方案', src: 'man', alt: '團購方案', to: '/content' },
-        { title: '周邊商品', src: 'man', alt: '周邊商品', to: '/content' },
+        {
+          title: '熱門商品',
+          src: 'bestseller',
+          alt: '熱門商品',
+          to: 'content',
+        },
+        {
+          title: '訂閱方案',
+          src: 'subscribe',
+          alt: '訂閱方案',
+          to: 'content',
+        },
+        {
+          title: '團購方案',
+          src: 'group_buying',
+          alt: '團購方案',
+          to: 'content',
+        },
+        {
+          title: '周邊商品',
+          src: 'merchandising',
+          alt: '周邊商品',
+          to: 'content',
+        },
       ],
     }
   },

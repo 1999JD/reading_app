@@ -1,7 +1,7 @@
 <template>
   <li class="flex relative">
     <div class="w-20 h-24 mr-6 bg-gray-300">
-      <img :src="require(`~/assets/icon/home.svg`)" :alt="faveItem.name" />
+      <img :src="require(`~/assets/img/sampleBook.jpg`)" :alt="faveItem.name" />
     </div>
     <div>
       <h3>{{ faveItem.name }}</h3>

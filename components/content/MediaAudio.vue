@@ -1,17 +1,17 @@
 <template>
   <div class="bg-primary px-6">
     <div class="flex bg-white rounded-md py-2 pl-3">
-      <img src="~/assets/img/book.svg" alt="書籍圖片" class="" />
+      <img src="~/assets/img/sampleBook.jpg" alt="書籍圖片" class="" />
       <div class="flex-grow flex flex-col justify-between mr-4">
         <h2 class="text-center">教育情緣-回首七十人生教育路</h2>
         <div class="self-end">
           <button class="mr-6">
             <span class="sr-only"> 收藏 </span>
-            <img src="~/assets/icon/store.svg" />
+            <img src="~/assets/icon/common/store.svg" />
           </button>
           <button>
             <span class="sr-only"> 下載 </span>
-            <img src="~/assets/icon/download.svg" />
+            <img src="~/assets/icon/content/download.svg" />
           </button>
         </div>
       </div>
@@ -36,15 +36,15 @@
     <div class="flex items-center justify-center mb-5">
       <button @click.prevent="handleAudioTime('back')">
         <span class="sr-only"> 倒退十秒 </span>
-        <img :src="require(`~/assets/icon/backTen.svg`)" />
+        <img :src="require(`~/assets/icon/content/backTen.svg`)" />
       </button>
       <button class="mx-5" @click.prevent="handleAudioPlay">
         <span class="sr-only"> 播放 </span>
-        <img :src="require(`~/assets/icon/play.svg`)" />
+        <img :src="require(`~/assets/icon/content/play.svg`)" />
       </button>
       <button @click.prevent="handleAudioTime('forward')">
         <span class="sr-only"> 前進十秒 </span>
-        <img :src="require(`~/assets/icon/forwardTen.svg`)" />
+        <img :src="require(`~/assets/icon/content/forwardTen.svg`)" />
       </button>
     </div>
     <audio

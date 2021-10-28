@@ -1,5 +1,7 @@
 <template>
-  <section class="pl-6 whitespace-nowrap overflow-x-scroll shadow-md">
+  <section
+    class="pl-6 whitespace-nowrap overflow-x-scroll no-scrollbar shadow-entries"
+  >
     <div v-if="subEntries.grade" class="flex items-center py-3">
       <h3 class="mr-6 font-medium">{{ subEntries.grade.cate }}</h3>
       <div class="flex">

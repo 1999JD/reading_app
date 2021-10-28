@@ -23,7 +23,7 @@ export default {
         {
           id: 0,
           title: '素養人才',
-          src: '',
+          src: 'sampleBook',
           alt: 'book',
           intro:
             '書本小標內容書本小標內容書本小標內容書本小標內容書本小標內容書本小標內容書本小標內容書本小標內容書本小標內容',
@@ -33,7 +33,7 @@ export default {
         {
           id: 1,
           title: '素養人才',
-          src: '',
+          src: 'sampleBook',
           alt: 'book',
           intro:
             '書本小標內容書本小標內容書本小標內容書本小標內容書本小標內容書本小標內容書本小標內容書本小標內容書本小標內容',
@@ -43,7 +43,7 @@ export default {
         {
           id: 2,
           title: '素養人才',
-          src: '',
+          src: 'sampleBook',
           alt: 'book',
           intro:
             '書本小標內容書本小標內容書本小標內容書本小標內容書本小標內容書本小標內容書本小標內容書本小標內容書本小標內容',
@@ -53,7 +53,7 @@ export default {
         {
           id: 3,
           title: '素養人才',
-          src: '',
+          src: 'sampleBook',
           alt: 'book',
           intro:
             '書本小標內容書本小標內容書本小標內容書本小標內容書本小標內容書本小標內容書本小標內容書本小標內容書本小標內容',
@@ -63,7 +63,7 @@ export default {
         {
           id: 4,
           title: '素養人才',
-          src: '',
+          src: 'sampleBook',
           alt: 'book',
           intro:
             '書本小標內容書本小標內容書本小標內容書本小標內容書本小標內容書本小標內容書本小標內容書本小標內容書本小標內容',
@@ -73,7 +73,7 @@ export default {
         {
           id: 5,
           title: '素養人才',
-          src: '',
+          src: 'sampleBook',
           alt: 'book',
           intro:
             '書本小標內容書本小標內容書本小標內容書本小標內容書本小標內容書本小標內容書本小標內容書本小標內容書本小標內容',
@@ -83,7 +83,7 @@ export default {
         {
           id: 6,
           title: '素養人才',
-          src: '',
+          src: 'sampleBook',
           alt: 'book',
           intro:
             '書本小標內容書本小標內容書本小標內容書本小標內容書本小標內容書本小標內容書本小標內容書本小標內容書本小標內容',
@@ -93,7 +93,7 @@ export default {
         {
           id: 7,
           title: '素養人才',
-          src: '',
+          src: 'sampleBook',
           alt: 'book',
           intro:
             '書本小標內容書本小標內容書本小標內容書本小標內容書本小標內容書本小標內容書本小標內容書本小標內容書本小標內容',

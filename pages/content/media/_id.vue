@@ -26,8 +26,9 @@
       <h3 class="title mb-4 text-base font-semibold">簡介</h3>
       <p class="mb-6 pb-6 border-b-2 border-gray-300">{{ intro }}</p>
       <h3 class="title mb-2 text-base font-semibold">評論</h3>
-      <ContentRemarks />
+      <ContentMediaRemarks />
     </div>
+  
   </main>
 </template>
 

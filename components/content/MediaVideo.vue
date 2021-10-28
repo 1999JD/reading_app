@@ -7,11 +7,11 @@
     </div>
     <div class="flex justify-end">
       <button class="mr-6">
-        <img src="~/assets/icon/store.svg" class="m-auto" />
+        <img src="~/assets/icon/common/store.svg" class="m-auto" />
         <span class=""> 收藏 </span>
       </button>
       <button>
-        <img src="~/assets/icon/download.svg" class="m-auto" />
+        <img src="~/assets/icon/content/download.svg" class="m-auto" />
         <span class=""> 下載 </span>
       </button>
     </div>

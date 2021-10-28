@@ -4,7 +4,7 @@
   >
     <button class="absolute top-3 right-3">
       <span class="sr-only">收合</span>
-      <img :src="require('~/assets/icon/downArrow.svg')" alt="收合" />
+      <img :src="require('~/assets/icon/common/downArrow.svg')" alt="收合" />
     </button>
     <div class="bg-white mb-2 p-2.5 w-full rounded-2xl">字型大小</div>
     <div class="bg-white mb-2 p-2.5 w-full rounded-2xl">護眼模式</div>

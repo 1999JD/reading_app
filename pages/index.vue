@@ -2,7 +2,7 @@
   <main>
     <div class="px-6 py-3 bg-primary">
       <img
-        src=""
+        src="~/assets/img/banner.jpg"
         alt="banner"
         class="max-w-full h-auto border"
         width="366"
@@ -10,7 +10,7 @@
       />
     </div>
     <IndexNav />
-    <div class="flex justify-around bg-gray-mainentries shadow-md">
+    <div class="flex justify-around bg-gray-mainentries shadow-entries">
       <a
         v-for="entry in mainEntries"
         :key="entry.title"
@@ -21,12 +21,14 @@
         {{ entry.title }}
       </a>
     </div>
-    <CommonSubEntries />
+    <ContentBookSubEntry />
     <component :is="show" />
   </main>
 </template>
 <script>
 export default {
+  name: 'Index',
+  layout: 'index',
   data() {
     return {
       mainEntries: [

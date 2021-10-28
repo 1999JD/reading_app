@@ -20,7 +20,7 @@
           ]"
         >
           <img
-            :src="require(`~/assets/img/${book.src}.svg`)"
+            :src="require(`~/assets/img/${book.src}.jpg`)"
             :alt="book.alt"
             :width="innerWH.width"
             :height="innerWH.height"
@@ -63,7 +63,7 @@ export default {
           intro:
             '我是內容我是內容我是內容我是內容我是內容我是內容我是內容我是......',
           view: 888,
-          src: 'book',
+          src: 'sampleBook',
           alt: '素養人才',
         },
         {
@@ -72,7 +72,7 @@ export default {
           intro:
             '我是內容我是內容我是內容我是內容我是內容我是內容我是內容我是......',
           view: 888,
-          src: 'book',
+          src: 'sampleBook',
           alt: '素養人才',
         },
         {
@@ -81,7 +81,7 @@ export default {
           intro:
             '我是內容我是內容我是內容我是內容我是內容我是內容我是內容我是......',
           view: 888,
-          src: 'book',
+          src: 'sampleBook',
           alt: '素養人才',
         },
         {
@@ -90,7 +90,7 @@ export default {
           intro:
             '我是內容我是內容我是內容我是內容我是內容我是內容我是內容我是......',
           view: 888,
-          src: 'book',
+          src: 'sampleBook',
           alt: '素養人才',
         },
         {
@@ -99,7 +99,7 @@ export default {
           intro:
             '我是內容我是內容我是內容我是內容我是內容我是內容我是內容我是......',
           view: 888,
-          src: 'book',
+          src: 'sampleBook',
           alt: '素養人才',
         },
       ],

@@ -1,8 +1,8 @@
 <template>
   <div>
-    <CommonSubEntries class="bg-primary" />
+    <ContentBookSubEntry class="bg-primary" />
     <ul class="p-6">
-      <ContentBooksListItem v-for="book in books" :key="book.id" :book="book" />
+      <ContentBookListItem v-for="book in books" :key="book.id" :book="book" />
     </ul>
   </div>
 </template>
@@ -10,6 +10,7 @@
 <script>
 export default {
   name: 'Content',
+  layout: 'index',
   data() {
     return {
       books: [

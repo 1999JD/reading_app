@@ -1,10 +1,10 @@
 <template>
   <div class="mx-6">
     <button class="block ml-auto mb-3">
-      <img :src="require('~/assets/icon/pen.svg')" class="inline-block" /> 留言
+      <img :src="require('~/assets/icon/content/pen.svg')" class="inline-block" /> 留言
     </button>
     <ul>
-      <ContentRemark v-for="remark in remarks" :key="remark.id" />
+      <ContentMediaRemark v-for="remark in remarks" :key="remark.id" />
     </ul>
   </div>
 </template>

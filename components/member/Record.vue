@@ -2,7 +2,7 @@
   <li class="record mb-6 p-4 bg-primary">
     <div class="flex mb-1.5 py-1.5 px-3 bg-white">
       <div class="w-20 h-24 mr-6 bg-gray-300">
-        <img :src="require(`~/assets/icon/home.svg`)" :alt="orderData.name" />
+        <img :src="require(`~/assets/icon/layout/home.svg`)" :alt="orderData.name" />
       </div>
       <ul>
         <li class="flex">

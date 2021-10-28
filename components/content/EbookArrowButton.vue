@@ -7,7 +7,7 @@
   >
     <img
       :src="
-        require(`~/assets/icon/${arrowLeft ? 'leftArrow' : 'rightArrow'}.svg`)
+        require(`~/assets/icon/common/${arrowLeft ? 'leftArrow' : 'rightArrow'}.svg`)
       "
       :alt="arrowLeft ? '上一頁' : '下一頁'"
     />

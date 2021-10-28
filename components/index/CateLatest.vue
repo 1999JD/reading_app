@@ -1,32 +1,21 @@
 <template>
-  <div class="card-group">
-    <h2>{{ books.week.cate }}</h2>
-    <ul class="flex overflow-x-scroll">
-      <li v-for="book in books.week.items" :key="book.id">
-        <div class="card__img mr-4 overflow-hidden rounded">
-          <img
-            :src="require(`~/assets/img/${book.src}.svg`)"
-            class="w-full h-auto"
-          />
-        </div>
-        <h3>{{ book.title }}</h3>
-        <p>{{ book.intro }}</p>
-      </li>
-    </ul>
-    <h2>{{ books.recent.cate }}</h2>
-    <ul class="flex overflow-x-scroll">
-      <li v-for="book in books.recent.items" :key="book.id">
-        <div class="card__img mr-4 overflow-hidden rounded">
-          <img
-            :src="require(`~/assets/img/${book.src}.svg`)"
-            class="w-full h-auto"
-          />
-        </div>
-        <h3>{{ book.title }}</h3>
-        <p>{{ book.intro }}</p>
-      </li>
-    </ul>
-  </div>
+  <main class="mt-9 mb-13">
+    <section v-for="subCate in books" :key="subCate">
+      <h2 class="title">{{ subCate.cate }}</h2>
+      <ul class="flex mb-10 overflow-x-auto overflow-y-hidden no-scrollbar">
+        <li v-for="book in subCate.books" :key="book.id" class="mr-4">
+          <div class="card__img mb-2 rounded">
+            <img
+              :src="require(`~/assets/img/${book.src}`)"
+              class="w-full h-auto"
+            />
+          </div>
+          <h3 class="mb-2 text-center text-base">{{ book.title }}</h3>
+          <p>{{ book.intro }}</p>
+        </li>
+      </ul>
+    </section>
+  </main>
 </template>
 
 <script>
@@ -34,85 +23,88 @@ export default {
   name: 'CateLatest',
   data() {
     return {
-      books: {
-        week: {
+      books: [
+        {
+          title: 'week',
           cate: '本周',
-          items: [
+          books: [
             {
               id: 1,
               title: '素養人才',
-              src: 'book',
+              src: 'sampleBook.jpg',
               alt: '素養人才',
-              intro: '我是內容我是內容我是內容我是......',
+              intro: '我是內容我是內容我是內容我是內容我是內容我是內容',
             },
             {
               id: 2,
               title: '素養人才',
-              src: 'book',
+              src: 'sampleBook.jpg',
               alt: '素養人才',
-              intro: '我是內容我是內容我是內容我是......',
+              intro: '我是內容我是內容我是內容我是內容我是內容我是內容',
             },
             {
               id: 3,
               title: '素養人才',
-              src: 'book',
+              src: 'sampleBook.jpg',
               alt: '素養人才',
-              intro: '我是內容我是內容我是內容我是......',
+              intro: '我是內容我是內容我是內容我是內容我是內容我是內容',
             },
             {
               id: 4,
               title: '素養人才',
-              src: 'book',
+              src: 'sampleBook.jpg',
               alt: '素養人才',
-              intro: '我是內容我是內容我是內容我是......',
+              intro: '我是內容我是內容我是內容我是內容我是內容我是內容',
             },
           ],
         },
-        recent: {
+        {
+          title: 'latest',
           cate: '近期',
-          items: [
+          books: [
             {
               id: 5,
               title: '素養人才',
-              src: 'book',
+              src: 'sampleBook.jpg',
               alt: '素養人才',
-              intro: '我是內容我是內容我是內容我是......',
+              intro: '我是內容我是內容我是內容我是內容我是內容我是內容',
             },
             {
               id: 6,
               title: '素養人才',
-              src: 'book',
+              src: 'sampleBook.jpg',
               alt: '素養人才',
-              intro: '我是內容我是內容我是內容我是......',
+              intro: '我是內容我是內容我是內容我是內容我是內容我是內容',
             },
             {
               id: 7,
               title: '素養人才',
-              src: 'book',
+              src: 'sampleBook.jpg',
               alt: '素養人才',
-              intro: '我是內容我是內容我是內容我是......',
+              intro: '我是內容我是內容我是內容我是內容我是內容我是內容',
             },
             {
               id: 8,
               title: '素養人才',
-              src: 'book',
+              src: 'sampleBook.jpg',
               alt: '素養人才',
-              intro: '我是內容我是內容我是內容我是......',
+              intro: '我是內容我是內容我是內容我是內容我是內容我是內容',
             },
           ],
         },
-      },
+      ],
     }
   },
 }
 </script>
 
 <style scoped>
-.card-group {
-  margin-bottom: 4.5rem;
+.title {
+  background-image: url('~/assets/img/tag-title.png');
+  @apply w-20 mb-4 font-medium leading-8 text-center;
 }
+
 .card__img {
-  width: 7rem;
-  height: 7.875rem;
+  width: 112px;
 }
 </style>

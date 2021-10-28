@@ -6,7 +6,7 @@
       class="flex-grow py-2"
       :style="{ backgroundColor: nav.bgColor }"
     >
-      <img :src="require(`~/assets/icon/${nav.icon}.svg`)" class="m-auto" />
+      <img :src="require(`~/assets/icon/content/${nav.icon}.svg`)" class="m-auto" />
       <span>{{ nav.text }}</span>
     </button>
   </nav>
