@@ -1,6 +1,6 @@
 <template>
   <main class="mt-9 mb-13">
-    <section v-for="subCate in books" :key="subCate">
+    <section v-for="subCate in books" :key="subCate.id">
       <h2 class="title">{{ subCate.cate }}</h2>
       <ul class="flex mb-10 overflow-x-auto overflow-y-hidden no-scrollbar">
         <li v-for="book in subCate.books" :key="book.id" class="mr-4">

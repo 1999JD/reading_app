@@ -1,36 +1,56 @@
 <template>
   <div class="hit pt-6 pb-2.5">
-    <h2>熱門排行</h2>
+    <h2
+      class="
+        w-fit
+        m-auto
+        mb-4
+        pb-1
+        text-base
+        font-medium
+        border-b-4 border-solid border-third
+      "
+    >
+      熱門排行
+    </h2>
     <ul
       ref="scrollContainer"
-      class="flex overflow-x-scroll"
+      class="flex justify-center gap-x-14 px-6 overflow-x-scroll"
       @scroll="scrollEvent"
     >
       <li
         v-for="book in books"
+        v-show="
+          book.id === centerItem ||
+          book.id === centerItem - 1 ||
+          book.id === centerItem + 1
+        "
         :key="book.id"
-        class="self-center mx-7 pb-3 bg-primary filter drop-shadow-sm"
+        class="
+          box-border
+          self-center
+          flex-shrink-0
+          relative
+          w-44
+          p-2.5
+          pt-4
+          bg-primary
+          rounded
+          shadow-img
+        "
       >
-        <div
-          :class="[
-            centerItem === book.id
-              ? 'card__img--center mx-8'
-              : 'card__img mx-7',
-            ' mt-4 overflow-hidden',
-          ]"
-        >
+        <div class="w-28 m-auto">
           <img
             :src="require(`~/assets/img/${book.src}.jpg`)"
             :alt="book.alt"
-            :width="innerWH.width"
-            :height="innerWH.height"
-            class="w-full h-auto"
+            class="shadow-img"
           />
         </div>
+
         <h3
           :class="[
-            centerItem !== book.id ? 'text-sm' : 'text-base',
-            'mt-4 mb-2  text-center',
+            centerItem === book.id ? 'text-base' : 'text-sm',
+            'mt-4 mb-4  text-center',
           ]"
         >
           {{ book.title }}
@@ -38,9 +58,7 @@
         <p :class="[centerItem !== book.id ? 'text-xs' : 'text-sm', 'mb-4']">
           {{ book.intro }}
         </p>
-        <span class="text-gray-400">
-          {{ book.view }}
-        </span>
+        <span class="text-gray-400"> 觀看人數：{{ book.view }} </span>
       </li>
     </ul>
   </div>
@@ -51,15 +69,12 @@ export default {
   name: 'CateHit',
   data() {
     return {
-      innerWH: {
-        width: 112,
-        height: 126,
-      },
       centerItem: 3,
+      scrollLeftNum: 0,
       books: [
         {
           id: 0,
-          title: '素養人才',
+          title: '素養人才玲',
           intro:
             '我是內容我是內容我是內容我是內容我是內容我是內容我是內容我是......',
           view: 888,
@@ -68,7 +83,7 @@ export default {
         },
         {
           id: 1,
-          title: '素養人才',
+          title: '素養人才一',
           intro:
             '我是內容我是內容我是內容我是內容我是內容我是內容我是內容我是......',
           view: 888,
@@ -77,7 +92,7 @@ export default {
         },
         {
           id: 2,
-          title: '素養人才',
+          title: '素養人才二',
           intro:
             '我是內容我是內容我是內容我是內容我是內容我是內容我是內容我是......',
           view: 888,
@@ -86,7 +101,7 @@ export default {
         },
         {
           id: 3,
-          title: '素養人才',
+          title: '素養人才三',
           intro:
             '我是內容我是內容我是內容我是內容我是內容我是內容我是內容我是......',
           view: 888,
@@ -95,7 +110,7 @@ export default {
         },
         {
           id: 4,
-          title: '素養人才',
+          title: '素養人才四',
           intro:
             '我是內容我是內容我是內容我是內容我是內容我是內容我是內容我是......',
           view: 888,
@@ -106,14 +121,16 @@ export default {
       width: 0,
     }
   },
-  created() {
-    this.centerItem = Math.ceil(this.books.length / 2) - 1
-  },
+  created() {},
   mounted() {
-    this.width = this.$refs.scrollContainer.scrollWidth
+    this.scrollLeftNum = this.$refs.scrollContainer.scrollLeft
   },
   methods: {
-    scrollEvent() {},
+    scrollEvent() {
+      this.scrollLeftNum < this.$refs.scrollContainer.scrollLeft
+        ? this.centerItem--
+        : this.centerItem++
+    },
   },
 }
 </script>
