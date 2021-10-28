@@ -40,8 +40,10 @@ module.exports = {
           DEFAULT: '#FFB9AA'
         },
         gray: {
-          divide: '#e8e8e8',
-          mainentries: '#f0f0f0'
+          divide: '#ECECEC',
+          mainentries: '#f0f0f0',
+          subInfo: '#C8C2AC',
+
         },
       },
       lineHeight: {
