@@ -3,7 +3,7 @@
     <header
       :class="[
         open ? 'shadow-md' : '',
-        'flex justify-center relative z-10 bg-primary transition delay-100',
+        'flex justify-center fixed z-10 w-full bg-primary transition delay-100',
       ]"
     >
       <button
@@ -32,6 +32,7 @@
     <transition :name="open ? 'open' : 'close'">
       <LayoutSideBar v-show="open" />
     </transition>
+    <div class="h-13"></div>
     <nuxt />
     <div class="h-18" />
     <LayoutFooterNav />

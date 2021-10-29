@@ -37,7 +37,7 @@ export default {
         { title: '推薦', name: 'Recommend' },
         { title: '精選', name: 'Featured' },
       ],
-      show: 'IndexCateFeatured',
+      show: 'IndexCateHit',
     }
   },
 }

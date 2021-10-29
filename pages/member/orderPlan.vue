@@ -1,26 +1,48 @@
 <template>
-  <main class="px-4">
-    <div class="title flex items-center mb-7">
-      <h2 class="px-3 text-center text-xl">訂閱方案</h2>
+  <main class="mt-6 mb-28 px-4">
+    <div class="title flex items-center mb-5">
+      <h2 class="px-3 text-center text-xl font-medium">訂閱方案</h2>
     </div>
-    <ul :style="{ 'background-color': '#F5F5F5' }" class="pt-5 pb-10">
+    <ul class="pt-5 pb-4 bg-gray-memberbg">
       <li
         v-for="plan in plans"
         :key="plan"
-        class="w-60 mx-auto mb-6 text-center rounded-lg overflow-hidden"
+        class="
+          w-60
+          mx-auto
+          mb-6
+          text-center
+          rounded-lg
+          overflow-hidden
+          filter
+          drop-shadow-card
+        "
       >
         <div
           class="py-4 text-white"
           :style="{ 'background-color': plan.bgColor }"
         >
-          <h3 class="text-xl">{{ plan.title }}</h3>
-          <p class="">
+          <h3 class="mb-4 text-xl">{{ plan.title }}</h3>
+          <p class="text-3.5xl">
             ${{ plan.price }}/<span class="text-base"> {{ plan.unit }}</span>
           </p>
         </div>
-        <div class="bg-white pb-6">
-          <p class="mb-4 p-4">{{ plan.desc }}</p>
-          <button>訂閱</button>
+        <div class="bg-white p-4 pb-6">
+          <p class="mb-4 leading-normal">{{ plan.desc }}</p>
+          <NuxtLink
+            to="/member/orderReceipt"
+            class="
+              block
+              w-44
+              py-2.5
+              mx-auto
+              bg-primary
+              shadow-btn
+              rounded-2.5xl
+            "
+          >
+            訂閱
+          </NuxtLink>
         </div>
       </li>
     </ul>
@@ -68,11 +90,5 @@ export default {
   flex-grow: 1;
   height: 2px;
   background-color: #e8e8e8;
-}
-button {
-  @apply w-44 py-2.5;
-
-  background-color: #f5efdf;
-  border-radius: 20px;
 }
 </style>

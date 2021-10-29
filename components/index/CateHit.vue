@@ -13,18 +13,9 @@
     >
       熱門排行
     </h2>
-    <ul
-      ref="scrollContainer"
-      class="flex justify-center gap-x-14 px-6 overflow-x-scroll"
-      @scroll="scrollEvent"
-    >
-      <li
+    <carousel class="bg-gray-300" :per-page="3">
+      <slide
         v-for="book in books"
-        v-show="
-          book.id === centerItem ||
-          book.id === centerItem - 1 ||
-          book.id === centerItem + 1
-        "
         :key="book.id"
         class="
           box-border
@@ -59,17 +50,26 @@
           {{ book.intro }}
         </p>
         <span class="text-gray-400"> 觀看人數：{{ book.view }} </span>
-      </li>
-    </ul>
+      </slide>
+      <!-- <slide> Slide 1 Content </slide>
+      <slide> Slide 2 Content </slide>
+      <slide> Slide 3 Content </slide>
+      <slide> Slide 4 Content </slide> -->
+    </carousel>
+    <!-- <ul
+      ref="scrollContainer"
+      class="flex justify-center gap-x-14 px-6 overflow-x-scroll"
+    ></ul> -->
   </div>
 </template>
 
 <script>
 export default {
   name: 'CateHit',
+
   data() {
     return {
-      centerItem: 3,
+      centerItem: 6,
       scrollLeftNum: 0,
       books: [
         {
@@ -122,29 +122,13 @@ export default {
     }
   },
   created() {},
-  mounted() {
-    this.scrollLeftNum = this.$refs.scrollContainer.scrollLeft
-  },
-  methods: {
-    scrollEvent() {
-      this.scrollLeftNum < this.$refs.scrollContainer.scrollLeft
-        ? this.centerItem--
-        : this.centerItem++
-    },
-  },
+  mounted() {},
+  methods: {},
 }
 </script>
 
-<style scoped>
-.hit {
-  margin-bottom: 4.5rem;
-}
-.card__img {
-  width: 104px;
-  height: 117px;
-}
-.card__img--center {
-  width: 7rem;
-  height: 7.875rem;
+<style>
+.VueCarousel-inner {
+  gap: 56px;
 }
 </style>

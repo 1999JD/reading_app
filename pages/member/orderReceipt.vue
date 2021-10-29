@@ -1,28 +1,30 @@
 <template>
-  <div class="mt-8 mx-4 px-4 py-5" :style="{ 'background-color': '#F5F5F5' }">
+  <div class="mt-8 mb-32 mx-6 px-6 py-5 bg-gray-memberbg">
     <form>
       <MemberReceiptTitle> 訂閱方案 </MemberReceiptTitle>
-      <label class="flex mb-4"
-        ><input type="radio" name="plan" />
+      <label class="flex items-center mb-4"
+        ><input type="radio" class="mr-1" name="plan" />
         <span> 月訂閱：150元（每月自動扣款） </span>
       </label>
-      <label class="flex mb-4">
-        <input type="radio" name="plan" />
+      <label class="flex items-center mb-4">
+        <input type="radio" class="mr-1" name="plan" />
         <span> 季訂閱：800元（每3個月自動扣款） </span>
       </label>
       <label class="flex mb-6"
-        ><input type="radio" name="plan" />
+        ><input type="radio" class="mr-1" name="plan" />
         <span> 年訂閱：1,500元（12個月一次付清） </span>
       </label>
-      <h4>用戶類型</h4>
-      <label class="flex mb-4">
-        <input type="radio" name="identity" />
-        <span> 個人 </span>
-      </label>
-      <label class="flex mb-4">
-        <input type="radio" name="identity" />
-        <span> 公司 </span>
-      </label>
+      <h4 class="mb-3">用戶類型</h4>
+      <div class="flex">
+        <label class="flex items-center mb-4 mr-6">
+          <input type="radio" class="mr-1" name="identity" />
+          <span> 個人 </span>
+        </label>
+        <label class="flex items-center mb-4">
+          <input type="radio" class="mr-1" name="identity" />
+          <span> 公司 </span>
+        </label>
+      </div>
       <MemberReceiptTitle>訂購人資訊 </MemberReceiptTitle>
       <label class="block mb-4">
         <span>會員帳號</span>
@@ -42,12 +44,12 @@
       </label>
       <MemberReceiptTitle>發票資訊 </MemberReceiptTitle>
       <div class="grid grid-cols-2 mb-4">
-        <label class="flex">
-          <input type="radio" name="receipt" />
+        <label class="flex items-center">
+          <input type="radio" class="mr-1" name="receipt" />
           <span>個人(兩聯式)</span>
         </label>
-        <label class="flex">
-          <input type="radio" name="receipt" />
+        <label class="flex items-center">
+          <input type="radio" class="mr-1" name="receipt" />
           <span> 公司(三聯式) </span>
         </label>
       </div>
@@ -61,12 +63,12 @@
       </label>
       <h4 class="mb-4">發票寄送地址</h4>
       <div class="grid grid-cols-2">
-        <label class="flex mb-4">
-          <input type="radio" name="address" />
+        <label class="flex items-center mb-4">
+          <input type="radio" class="mr-1" name="address" />
           <span>台灣</span>
         </label>
         <label class="flex">
-          <input type="radio" name="address" />
+          <input type="radio" class="mr-1" name="address" />
           <span>非台灣</span>
         </label>
       </div>
@@ -89,10 +91,21 @@
         </label>
       </div>
       <input type="text" placeholder="輸入詳細地址" class="mb-4" />
-      <p class="mb-12">
+      <p class="mb-12 text-quote text-center leading-normal">
         *依統一發票使用辦法規定：個人發票一經開立，不得任意更改或改開公司戶發票。
       </p>
-      <button class="block w-44 mx-auto py-2.5 bg-gray-500 rounded-2xl">
+      <button
+        class="
+          block
+          w-44
+          mx-auto
+          mb-5
+          py-2.5
+          bg-highlight
+          rounded-2.5xl
+          shadow-btn-pay
+        "
+      >
         立即付款
       </button>
     </form>
