@@ -29,6 +29,11 @@
 export default {
   name: 'Index',
   layout: 'index',
+  async asyncData({ $api }) {
+    await $api.apiFake().then((res) => {
+      console.log(res.data)
+    })
+  },
   data() {
     return {
       mainEntries: [

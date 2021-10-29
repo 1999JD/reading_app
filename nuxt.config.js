@@ -22,7 +22,8 @@ export default {
   plugins: [
     {
       src: '~/plugins/vue-carousel.js', mode: 'client'
-    }
+    },
+    { src: '~/plugins/axios.js', ssr: true },
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
@@ -49,23 +50,39 @@ export default {
   env: {
     baseUrl:
       process.env.NODE_ENV === 'development'
-        ? 'http://127.0.0.1:3000/'
-        : 'http://127.0.0.1:3000/',
+        ? 'http://127.0.0.1:3000'
+        : 'http://127.0.0.1:3000',
     apiURL:
       process.env.NODE_ENV === 'development'
-        ? 'localhost:5500/'
-        : 'localhost:5500/',
+        ? 'http://127.0.0.1:3000'
+        : 'http://127.0.0.1:3000',
   },
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
-  axios: {},
+  axios: {
+    baseUrl:
+      process.env.NODE_ENV === 'development' ? 'http://127.0.0.1:3000' : 'http://127.0.0.1:3000'
+  },
 
+  proxy: {
+    '/api': {
+      target:
+        process.env.NODE_ENV === 'development'
+          ? 'http://127.0.0.1:3000'
+          : 'http://127.0.0.1:3000',
+      pathRewrite: { '^/api/': '' },
+    },
+  },
   // PWA module configuration: https://go.nuxtjs.dev/pwa
   pwa: {
     manifest: {
       lang: 'en'
     }
   },
+
+  serverMiddleware: [
+    { path: '/api', handler: '~/server/app.js' }
+  ],
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
@@ -95,5 +112,7 @@ export default {
   img: 'src',
   image: ['xlink:href', 'href'],
   use: ['xlink:href', 'href'],
+
+
 
 }
