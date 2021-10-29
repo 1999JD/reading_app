@@ -12,7 +12,7 @@
       <h3 class="mb-1 text-base font-medium leading-none">
         {{ faveItem.name }}
       </h3>
-      <p class="mb-2">{{ faveItem.desc }}</p>
+      <p class="mb-2 line-clamp-3">{{ faveItem.desc }}</p>
       <div class="text-gray-subInfo text-xs">
         <p class="mb-2">作者：{{ faveItem.author }}</p>
         <p class="mb-3">{{ faveItem.publishTime }}出版</p>

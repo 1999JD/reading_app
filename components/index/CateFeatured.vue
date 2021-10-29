@@ -16,7 +16,7 @@
         ]"
       >
         <h3 class="mb-1 text- font-medium">{{ book.title }}</h3>
-        <p class="mb-2">{{ book.intro }}</p>
+        <p class="mb-2 line-clamp-3">{{ book.intro }}</p>
         <div class="text-gray-subInfo text-xs">
           <p class="mb-2">{{ book.author }}</p>
           <p class="mb-3">{{ book.publicationDate }}</p>
@@ -38,7 +38,7 @@ export default {
           src: 'sampleBook.jpg',
           alt: 'book',
           intro:
-            '書本小標內容書本小標內容書本小標內容書本小標內容書本小標內容書本小標內容書本小標內容書本小標內容書本小標內容',
+            '書本小標內容本小標內容書本小標內容書本小標內容書本小標內容書本小標內容書本小標內容書本小標內容書本小標內容書本小標內容',
           author: '一路',
           publicationDate: '2021-06-30',
         },
@@ -48,7 +48,7 @@ export default {
           src: 'sampleBook.jpg',
           alt: 'book',
           intro:
-            '書本小標內容書本小標內容書本小標內容書本小標內容書本小標內容書本小標內容書本小標內容書本小標內容書本小標內容',
+            '書本小標內容本小標內容書本小標內容書本小標內容書本小標內容書本小標內容書本小標內容書本小標內容書本小標內容書本小標內容',
           author: '一路',
           publicationDate: '2021-06-30',
         },
@@ -58,7 +58,7 @@ export default {
           src: 'sampleBook.jpg',
           alt: 'book',
           intro:
-            '書本小標內容書本小標內容書本小標內容書本小標內容書本小標內容書本小標內容書本小標內容書本小標內容書本小標內容',
+            '書本小標內容本小標內容書本小標內容書本小標內容書本小標內容書本小標內容書本小標內容書本小標內容書本小標內容書本小標內容',
           author: '一路',
           publicationDate: '2021-06-30',
         },
@@ -68,7 +68,7 @@ export default {
           src: 'sampleBook.jpg',
           alt: 'book',
           intro:
-            '書本小標內容書本小標內容書本小標內容書本小標內容書本小標內容書本小標內容書本小標內容書本小標內容書本小標內容',
+            '書本小標內容本小標內容書本小標內容書本小標內容書本小標內容書本小標內容書本小標內容書本小標內容書本小標內容書本小標內容',
           author: '一路',
           publicationDate: '2021-06-30',
         },
@@ -78,7 +78,7 @@ export default {
           src: 'sampleBook.jpg',
           alt: 'book',
           intro:
-            '書本小標內容書本小標內容書本小標內容書本小標內容書本小標內容書本小標內容書本小標內容書本小標內容書本小標內容',
+            '書本小標內容本小標內容書本小標內容書本小標內容書本小標內容書本小標內容書本小標內容書本小標內容書本小標內容書本小標內容',
           author: '一路',
           publicationDate: '2021-06-30',
         },
@@ -88,7 +88,7 @@ export default {
           src: 'sampleBook.jpg',
           alt: 'book',
           intro:
-            '書本小標內容書本小標內容書本小標內容書本小標內容書本小標內容書本小標內容書本小標內容書本小標內容書本小標內容',
+            '書本小標內容本小標內容書本小標內容書本小標內容書本小標內容書本小標內容書本小標內容書本小標內容書本小標內容書本小標內容',
           author: '一路',
           publicationDate: '2021-06-30',
         },
@@ -98,7 +98,7 @@ export default {
           src: 'sampleBook.jpg',
           alt: 'book',
           intro:
-            '書本小標內容書本小標內容書本小標內容書本小標內容書本小標內容書本小標內容書本小標內容書本小標內容書本小標內容',
+            '書本小標內容本小標內容書本小標內容書本小標內容書本小標內容書本小標內容書本小標內容書本小標內容書本小標內容書本小標內容',
           author: '一路',
           publicationDate: '2021-06-30',
         },
@@ -108,7 +108,7 @@ export default {
           src: 'sampleBook.jpg',
           alt: 'book',
           intro:
-            '書本小標內容書本小標內容書本小標內容書本小標內容書本小標內容書本小標內容書本小標內容書本小標內容書本小標內容',
+            '書本小標內容本小標內容書本小標內容書本小標內容書本小標內容書本小標內容書本小標內容書本小標內容書本小標內容書本小標內容',
           author: '一路',
           publicationDate: '2021-06-30',
         },

@@ -11,7 +11,7 @@
             />
           </div>
           <h3 class="mb-2 text-center text-base">{{ book.title }}</h3>
-          <p>{{ book.intro }}</p>
+          <p class="line-clamp-3">{{ book.intro }}</p>
         </li>
       </ul>
     </section>
@@ -54,7 +54,7 @@ export default {
               title: '素養人才',
               src: 'sampleBook.jpg',
               alt: '素養人才',
-              intro: '我是內容我是內容我是內容我是內容我是內容我是內容',
+              intro: '我是內容我是內容我是內容我是內容我是內容我是內容是內容是內容',
             },
           ],
         },
