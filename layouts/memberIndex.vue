@@ -5,3 +5,10 @@
     <LayoutFooterNav />
   </div>
 </template>
+
+<script>
+export default {
+  name: 'MemberIndex',
+  middleware: 'auth',
+}
+</script>
