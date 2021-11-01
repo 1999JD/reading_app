@@ -31,9 +31,8 @@ export default {
   layout: 'index',
   loading: true,
   async asyncData({ $api }) {
-    await $api.apiFake().then((res) => {
-      // console.log(res.data)
-    })
+    const pathJson = await $api.apiFake().then((res) => res.data)
+    return { pathJson }
   },
   data() {
     return {

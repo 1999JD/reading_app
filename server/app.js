@@ -3,8 +3,17 @@ const app = require('express')()
 // app.use(bodyParser.json())
 
 app.get('/', (req, res) => {
-  console.log(req.url)
-  res.send('enter nuxt server')
+  res.json({
+    path: req.url
+  })
+})
+
+app.get('/auth/login', (req, res) => {
+  if (req.body.userInfo) {
+    res.json({
+      token: 'token'
+    })
+  }
 })
 
 

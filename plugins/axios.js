@@ -2,7 +2,6 @@ import apiFunction from '~/api/index'
 
 export default ({ $axios, redirect }, inject) => {
   $axios.onRequest(config => {
-    console.log('axios plugin')
     return config
   })
 
