@@ -29,9 +29,10 @@
 export default {
   name: 'Index',
   layout: 'index',
+  loading: true,
   async asyncData({ $api }) {
     await $api.apiFake().then((res) => {
-      console.log(res.data)
+      // console.log(res.data)
     })
   },
   data() {
@@ -42,7 +43,7 @@ export default {
         { title: '推薦', name: 'Recommend' },
         { title: '精選', name: 'Featured' },
       ],
-      show: 'IndexCateHit',
+      show: 'IndexCateLatest',
     }
   },
 }

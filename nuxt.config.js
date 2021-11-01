@@ -16,6 +16,7 @@ export default {
 
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [
+    '~/assets/css/animation.css'
   ],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
@@ -110,6 +111,12 @@ export default {
   image: ['xlink:href', 'href'],
   use: ['xlink:href', 'href'],
 
+  loading: {
+    color: 'Black',
+    height: '4px',
+    continuous: true,
+    duration: 3000
+  }
 
 
 }
