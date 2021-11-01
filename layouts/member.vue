@@ -43,6 +43,7 @@
 <script>
 export default {
   name: 'LayoutMember',
+  middleware: 'auth',
   data() {
     return {}
   },

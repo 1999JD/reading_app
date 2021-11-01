@@ -1,6 +1,8 @@
-// const bodyParser = require('body-parser')
-const app = require('express')()
-// app.use(bodyParser.json())
+const express = require('express')
+const app = express()
+
+app.use(express.json())
+app.use(express.urlencoded({ extended: false }))
 
 app.get('/', (req, res) => {
   res.json({
@@ -8,7 +10,8 @@ app.get('/', (req, res) => {
   })
 })
 
-app.get('/auth/login', (req, res) => {
+app.post('/auth/login', (req, res) => {
+  console.log(req.body.userInfo)
   if (req.body.userInfo) {
     res.json({
       token: 'token'

@@ -39,7 +39,7 @@ export default {
       try {
         const response = await this.$auth
           .loginWith('local', {
-            data: this.login,
+            userInfo: this.login,
           })
           .then((res) => res.data)
         return response
