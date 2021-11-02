@@ -59,16 +59,16 @@ export default {
         },
         endpoints: {
           login: {
-            url: '/api/auth/login',
+            url: '/auth/login',
             method: 'post'
           },
           logout: {
-            url: '/api/auth/logout',
+            url: '/auth/logout',
             method: 'post'
           },
           // user: false,
           user: {
-            url: '/api/auth/user',
+            url: '/auth/user',
             method: 'get',
             propertyName: ''
           }
@@ -97,7 +97,7 @@ export default {
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
   axios: {
     baseUrl:
-      process.env.NODE_ENV === 'development' ? 'http://127.0.0.1:3000' : 'http://127.0.0.1:3000',
+      process.env.NODE_ENV === 'development' ? 'http://127.0.0.1:3000/api/' : 'http://127.0.0.1:3000/api/',
     retry: { retires: 3 }
   },
 
