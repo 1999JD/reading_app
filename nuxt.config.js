@@ -66,11 +66,6 @@ export default {
             method: 'get'
           },
           user: false,
-          // user: {
-          //   url: '/api/user/info',
-          //   method: 'get',
-          //   propertyName: false,
-          // }
         },
 
       }

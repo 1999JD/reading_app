@@ -12,7 +12,7 @@
       <div class="block rounded w-16 mr-4">
         <img src="~/assets/icon/layout/account-big.svg" alt="大頭貼" />
       </div>
-      <h2 class="text-base">使用者名稱</h2>
+      <h2 class="text-base">{{ $auth.user.name }}</h2>
     </div>
     <section
       class="

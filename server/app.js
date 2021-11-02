@@ -11,7 +11,6 @@ app.get('/', (req, res) => {
 })
 
 app.post('/auth/login', (req, res) => {
-  console.log(req.body.userInfo)
   if (req.body.userInfo) {
     res.json({
       token: 'token'

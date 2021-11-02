@@ -21,7 +21,6 @@
         {{ entry.title }}
       </a>
     </div>
-    {{ pathJson }}
     <ContentBookSubEntry />
     <component :is="show" />
   </main>

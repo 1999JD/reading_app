@@ -44,9 +44,12 @@ export default {
             },
           })
           .then((res) => {
-            console.log(res.data.token)
-            if (res.data.token === 'token') {
-              this.$toast.success('Logged In!')
+            if (res.data.token) {
+              this.$auth.setUser({
+                name: 'Joyce',
+                age: 22,
+              })
+              this.$router.push({ path: '/member' })
             } else alert('something went wrong')
           })
           .catch((err) => alert(err))
