@@ -65,11 +65,12 @@ export default {
             url: '/api/auth/logout',
             method: 'get'
           },
-          user: {
-            url: '/api/user/info',
-            method: 'get',
-            propertyName: false,
-          }
+          user: false,
+          // user: {
+          //   url: '/api/user/info',
+          //   method: 'get',
+          //   propertyName: false,
+          // }
         },
 
       }
