@@ -50,22 +50,35 @@ export default {
     strategies: {
       local: {
         token: {
-          property: 'token',
-          global: true,
-          // required: true,
-          // type: 'Bearer'
+          property: 'token'
         },
         user: {
-          property: 'user',
-          // autoFetch: true
+          property: 'data',
+          autoFetch: false
         },
         endpoints: {
-          login: { url: '/api/auth/login', method: 'post' },
-          logout: { url: '/api/auth/logout', method: 'post' },
-          user: { url: '/api/auth/user', method: 'get' }
-        }
+          login: {
+            url: '/api/auth/login',
+            method: 'post'
+          },
+          logout: {
+            url: '/api/auth/logout',
+            method: 'get'
+          },
+          user: {
+            url: '/api/user/info',
+            method: 'get',
+            propertyName: false,
+          }
+        },
+
       }
-    }
+    },
+    plugins: [{
+      src: '~/plugins/axios',
+      ssr: true
+    },
+      '~/plugins/axios.js']
   },
 
   env: {
@@ -82,7 +95,8 @@ export default {
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
   axios: {
     baseUrl:
-      process.env.NODE_ENV === 'development' ? 'http://127.0.0.1:3000' : 'http://127.0.0.1:3000'
+      process.env.NODE_ENV === 'development' ? 'http://127.0.0.1:3000' : 'http://127.0.0.1:3000',
+    retry: { retires: 3 }
   },
 
   proxy: {

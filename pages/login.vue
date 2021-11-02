@@ -39,9 +39,17 @@ export default {
       try {
         const response = await this.$auth
           .loginWith('local', {
-            userInfo: this.login,
+            data: {
+              userInfo: this.login,
+            },
           })
-          .then((res) => res.data)
+          .then((res) => {
+            console.log(res.data.token)
+            if (res.data.token === 'token') {
+              this.$toast.success('Logged In!')
+            } else alert('something went wrong')
+          })
+          .catch((err) => alert(err))
         return response
       } catch (err) {
         alert(err)

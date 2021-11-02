@@ -1,5 +1,8 @@
 <template>
   <div>
+    <h2>
+      {{ $auth.user }}
+    </h2>
     <nuxt />
     <div class="h-18"></div>
     <LayoutFooterNav />
