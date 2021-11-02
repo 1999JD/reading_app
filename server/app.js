@@ -18,5 +18,18 @@ app.post('/auth/login', (req, res) => {
   }
 })
 
+app.get('/auth/user', (_req, res) => {
+  res.json({
+    data: {
+      name: 'Joyce',
+      age: 22,
+    }
+  })
+})
+
+app.post('/logout', (_req, res) => {
+  res.json({ status: 'OK' })
+})
+
 
 module.exports = app

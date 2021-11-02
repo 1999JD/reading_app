@@ -54,7 +54,8 @@ export default {
         },
         user: {
           property: 'data',
-          autoFetch: false
+          // autoFetch: false
+          autoFetch: true
         },
         endpoints: {
           login: {
@@ -63,9 +64,14 @@ export default {
           },
           logout: {
             url: '/api/auth/logout',
-            method: 'get'
+            method: 'post'
           },
-          user: false,
+          // user: false,
+          user: {
+            url: '/api/auth/user',
+            method: 'get',
+            propertyName: ''
+          }
         },
 
       }
