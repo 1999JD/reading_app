@@ -32,6 +32,9 @@ module.exports = {
       maxWidth: {
         'account-modal': '204px',
       },
+      minHeight:{
+        'account-main' : '28.875rem',
+      },
       margin: {
         7.5: '1.875rem',
         13: '3.125rem',

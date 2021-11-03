@@ -5,7 +5,16 @@
       <h2 class="mb-3 text-2xl">
         {{ $store.state.authPageHeading }}
       </h2>
-      <main class="rounded-2lg pt-10 px-8 shadow-account-main bg-white">
+      <main
+        class="
+          rounded-2lg
+          min-h-account-main
+          pt-10
+          px-8
+          shadow-account-main
+          bg-white
+        "
+      >
         <nuxt />
       </main>
     </div>
