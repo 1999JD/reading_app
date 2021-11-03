@@ -29,6 +29,9 @@ module.exports = {
         'book': '',
         fit: 'fit-content',
       },
+      maxWidth: {
+        'account-modal': '204px',
+      },
       margin: {
         7.5: '1.875rem',
         13: '3.125rem',
@@ -58,6 +61,7 @@ module.exports = {
           memberbg: '#F5F5F5',
           subInfo: '#C8C2AC',
           order: '#999999',
+          mask: 'rgba(96, 96, 96, 0.7)'
         },
       },
       fontSize: {

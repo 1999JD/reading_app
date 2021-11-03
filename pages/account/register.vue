@@ -32,6 +32,7 @@
       </div>
       <button class="account-btn">確認註冊</button>
     </form>
+    <AccountModal />
   </div>
 </template>
 
