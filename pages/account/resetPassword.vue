@@ -3,7 +3,7 @@
     <form action="">
       <label class="account-label">
         <span class="account-span">修改密碼</span>
-        <div class="relatvie">
+        <div class="relative">
           <input class="account-input" type="password" /><button
             class="absolute"
           >

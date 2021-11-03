@@ -2,7 +2,7 @@
   <div>
     <div class="box-border h-82 bg-primary"></div>
     <div class="relative -top-33 px-6">
-      <h2 class="mb-3 text-2xl">
+      <h2 class="mb-3 text-2xl font-medium">
         {{ $store.state.authPageHeading }}
       </h2>
       <main
@@ -26,7 +26,6 @@
 export default {
   name: 'Auth',
   middleware({ store, route }) {
-    console.log('route' + route.path)
     let heading
     const routeName = route.name
     switch (routeName) {
@@ -39,7 +38,7 @@ export default {
       case 'account-resetPassword':
         heading = '我要修改密碼'
         break
-      case 'account-forgotPassword':
+      case 'account-forgetPassword':
         heading = '忘記密碼'
         break
     }
