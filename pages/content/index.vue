@@ -1,7 +1,13 @@
 <template>
   <div>
-    <ContentBookSubEntry class="bg-primary" />
-    <ul class="p-6">
+    <ContentBookSubEntry class="mb-10 bg-primary" />
+    <div class="flex justify-end items-center mb-2 mr-7.5">
+      <div class="w-3.5">
+        <img src="~/assets/icon/content/two-way-arrow.svg" alt="" />
+      </div>
+      <p>依下載量排序</p>
+    </div>
+    <ul class="px-6">
       <ContentBookListItem v-for="book in books" :key="book.id" :book="book" />
     </ul>
   </div>
@@ -17,22 +23,25 @@ export default {
         {
           id: 0,
           title: '素養人才',
+          src: 'sampleBook.jpg',
           author: '吳清基',
           publisher: '台灣知識庫股份有限公司',
           publicationDate: '2020-10-11',
-          download: 352,
+          download: 1000,
         },
         {
           id: 1,
           title: '素養人才',
+          src: 'sampleBook.jpg',
           author: '吳清基',
           publisher: '台灣知識庫股份有限公司',
           publicationDate: '2020-10-11',
-          download: 352,
+          download: 32,
         },
         {
           id: 2,
           title: '素養人才',
+          src: 'sampleBook.jpg',
           author: '吳清基',
           publisher: '台灣知識庫股份有限公司',
           publicationDate: '2020-10-11',
@@ -41,6 +50,7 @@ export default {
         {
           id: 3,
           title: '素養人才',
+          src: 'sampleBook.jpg',
           author: '吳清基',
           publisher: '台灣知識庫股份有限公司',
           publicationDate: '2020-10-11',
@@ -49,6 +59,7 @@ export default {
         {
           id: 4,
           title: '素養人才',
+          src: 'sampleBook.jpg',
           author: '吳清基',
           publisher: '台灣知識庫股份有限公司',
           publicationDate: '2020-10-11',
@@ -57,6 +68,7 @@ export default {
         {
           id: 5,
           title: '素養人才',
+          src: 'sampleBook.jpg',
           author: '吳清基',
           publisher: '台灣知識庫股份有限公司',
           publicationDate: '2020-10-11',
@@ -65,6 +77,7 @@ export default {
         {
           id: 6,
           title: '素養人才',
+          src: 'sampleBook.jpg',
           author: '吳清基',
           publisher: '台灣知識庫股份有限公司',
           publicationDate: '2020-10-11',
@@ -73,6 +86,7 @@ export default {
         {
           id: 7,
           title: '素養人才',
+          src: 'sampleBook.jpg',
           author: '吳清基',
           publisher: '台灣知識庫股份有限公司',
           publicationDate: '2020-10-11',
