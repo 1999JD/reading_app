@@ -11,6 +11,8 @@ module.exports = {
     extend: {
       inset: {
         13.5: '3.25rem',
+        33: '8.25rem',
+        '-33': '-8.25rem',
       },
       width: {
         15: '3.75rem',
@@ -23,6 +25,7 @@ module.exports = {
       height: {
         13: '3.25rem',
         18: '4.5rem',
+        82: '20.5rem',
         'book': '',
         fit: 'fit-content',
       },
@@ -32,6 +35,7 @@ module.exports = {
       },
       padding: {
         1.25: '0.3125rem',
+        21.5: '5.375rem',
       },
       colors: {
         primary: {
@@ -62,6 +66,7 @@ module.exports = {
         '20': '5rem',
       },
       borderRadius: {
+        '2lg': '0.625rem',
         '2.5xl': '1.25rem',
       },
       boxShadow: {
@@ -69,7 +74,8 @@ module.exports = {
         'header': '0px 2px 2px 0px #B2B2B240',
         'entries': '0px 2px 2px 0px #88888840',
         'btn': '0px 4px 0px 0px #E7D5A7',
-        'btn-pay': '  0px 2px 4px 0px #39393940'
+        'btn-pay': '  0px 2px 4px 0px #39393940',
+        'account-main': ' 0px 2px 6px 0px #00000040',
       },
       dropShadow: {
         'footer': '0px -1px 2px rgba(174, 174, 174, 0.25)',

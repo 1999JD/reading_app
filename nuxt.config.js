@@ -47,6 +47,12 @@ export default {
   ],
 
   auth: {
+    redirect: {
+      login: '/account/login',
+      logout: '/',
+      callback: 'account/login',
+      home: '/',
+    },
     strategies: {
       local: {
         token: {

@@ -25,7 +25,7 @@
 <script>
 export default {
   name: 'Login',
-  layout: 'index',
+  layout: 'account',
   data() {
     return {
       login: {

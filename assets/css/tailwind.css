@@ -3,6 +3,23 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer components {
+  .account-btn {
+    @apply block w-full py-3 bg-highlight rounded-3xl;
+  }
+  .account-label {
+    @apply block mb-6;
+  }
+  .account-span {
+    @apply block mb-2 text-base;
+  }
+  .account-input {
+    @apply w-full py-3 px-3 border text-xs rounded-3xl;
+
+    border-color: #969696;
+  }
+}
+
 body {
   color: #363636;
   font-family: 'Noto Sans TC', sans-serif;
