@@ -5,7 +5,7 @@
 
 @layer components {
   .account-btn {
-    @apply block w-full py-3 bg-highlight border border-highlight rounded-3xl;
+    @apply block w-full py-3 bg-highlight text-base border border-highlight text-center rounded-3xl;
   }
   .account-label {
     @apply block mb-6;
@@ -14,9 +14,25 @@
     @apply block mb-2 text-base;
   }
   .account-input {
-    @apply w-full py-3 px-3 border text-xs rounded-3xl;
+    @apply w-full py-3 pl-3 pr-10 border border-gray-accountInput text-xs rounded-3xl;
+  }
+  .account-eye {
+    @apply absolute top-0 bottom-0 right-5 w-5 h-5 m-auto;
+  }
+  .account-input::placeholder {
+    /* Chrome, Firefox, Opera, Safari 10.1+ */
+    @apply text-gray-accountPlaceholder;
+    opacity: 1; /* Firefox */
+  }
 
-    border-color: #969696;
+  .account-input::-ms-input-placeholder {
+    /* Internet Explorer 10-11 */
+    @apply text-gray-accountPlaceholder;
+  }
+
+  .account-input::-ms-input-placeholder {
+    /* Microsoft Edge */
+    @apply text-gray-accountPlaceholder;
   }
 }
 

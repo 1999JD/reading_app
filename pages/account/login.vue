@@ -1,23 +1,26 @@
 <template>
   <div class="pb-12">
-    <form @submit.prevent="userLogin">
+    <form>
       <label class="account-label">
         <span class="account-span">帳號</span>
-        <input v-model="login.username" type="text" class="account-input" />
+        <input
+          v-model="login.username"
+          class="account-input"
+          type="text"
+          placeholder="example@mail.com"
+        />
       </label>
       <div class="mb-8">
         <label class="account-label mb-3">
           <span class="account-span">密碼</span>
-          <div class="relative">
+          <AccountPwdInputWrap v-slot="{ eyeOpen }">
             <input
               v-model="login.password"
-              type="password"
               class="account-input"
+              :type="eyeOpen ? 'text' : 'password'"
+              placeholder="至少8位字元、英文字母大小寫與數字"
             />
-            <button class="absolute">
-              <img src="" alt="" />
-            </button>
-          </div>
+          </AccountPwdInputWrap>
         </label>
         <NuxtLink
           to="/account/forgetPassword"
@@ -32,9 +35,12 @@
       <div class="or-line flex justify-center items-center mb-7.5">
         <p class="px-2 bg-white text-base">或</p>
       </div>
-      <button class="account-btn bg-white border border-highlight">
+      <NuxtLink
+        to="/account/register"
+        class="account-btn bg-white border border-highlight"
+      >
         立即註冊
-      </button>
+      </NuxtLink>
     </form>
   </div>
 </template>
@@ -46,8 +52,8 @@ export default {
   data() {
     return {
       login: {
-        username: 'Joyce123',
-        password: 'aaaaa ',
+        username: '',
+        password: '',
       },
     }
   },

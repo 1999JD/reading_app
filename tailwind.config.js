@@ -32,8 +32,8 @@ module.exports = {
       maxWidth: {
         'account-modal': '204px',
       },
-      minHeight:{
-        'account-main' : '28.875rem',
+      minHeight: {
+        'account-main': '28.875rem',
       },
       margin: {
         7.5: '1.875rem',
@@ -64,7 +64,11 @@ module.exports = {
           memberbg: '#F5F5F5',
           subInfo: '#C8C2AC',
           order: '#999999',
-          mask: 'rgba(96, 96, 96, 0.7)'
+          mask: 'rgba(96, 96, 96, 0.7)',
+          accountInput: '#B9B9B9',
+          accountInputFocus: '#969696',
+          accountPlaceholder: '#B5B5B5',
+
         },
       },
       fontSize: {
