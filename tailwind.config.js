@@ -30,12 +30,13 @@ module.exports = {
         fit: 'fit-content',
       },
       margin: {
+        7.5: '1.875rem',
         13: '3.125rem',
         18: '4.5rem',
       },
       padding: {
-        1.25: '0.3125rem',
         21.5: '5.375rem',
+        1.25: '0.3125rem',
       },
       colors: {
         primary: {

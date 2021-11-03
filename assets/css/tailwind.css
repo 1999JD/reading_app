@@ -5,7 +5,7 @@
 
 @layer components {
   .account-btn {
-    @apply block w-full py-3 bg-highlight rounded-3xl;
+    @apply block w-full py-3 bg-highlight border border-highlight rounded-3xl;
   }
   .account-label {
     @apply block mb-6;

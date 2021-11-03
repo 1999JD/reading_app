@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="pb-21.5">
     <form action="">
       <label class="account-label">
         <span class="account-span">帳號</span>
