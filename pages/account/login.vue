@@ -1,6 +1,6 @@
 <template>
   <div class="pb-12">
-    <form>
+    <form @submit.prevent="userLogin">
       <label class="account-label">
         <span class="account-span">帳號</span>
         <input
@@ -29,9 +29,7 @@
         >
       </div>
 
-      <button class="account-btn mb-9" type="submit" @click="userLogin">
-        登入
-      </button>
+      <button class="account-btn mb-9" type="submit">登入</button>
       <div class="or-line flex justify-center items-center mb-7.5">
         <p class="px-2 bg-white text-base">或</p>
       </div>

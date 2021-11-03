@@ -1,5 +1,5 @@
 <template>
-  <main class="h-screen pt-2 pb-28 bg-primary">
+  <main class="relative z-0 h-screen pt-2 pb-28 bg-primary">
     <nav class="flex justify-end px-6">
       <a class="w-7 mr-3">
         <img src="~/assets/icon/layout/mailbox.svg" alt="訊息" class="" />
@@ -157,3 +157,12 @@ export default {
   },
 }
 </script>
+
+<style scoped>
+main::before {
+  content: '';
+  background-image: linear-gradient(180deg, #fff 46.35%, #f5efdf 100%);
+  z-index: -1;
+  @apply absolute top-0  w-full h-45;
+}
+</style>

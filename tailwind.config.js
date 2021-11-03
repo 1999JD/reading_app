@@ -24,6 +24,7 @@ module.exports = {
       },
       height: {
         13: '3.25rem',
+        45: '11.25rem',
         18: '4.5rem',
         82: '20.5rem',
         'book': '',

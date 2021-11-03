@@ -6,7 +6,7 @@
     <ul class="pt-5 pb-4 bg-gray-memberbg">
       <li
         v-for="plan in plans"
-        :key="plan"
+        :key="plan.title"
         class="
           w-60
           mx-auto
