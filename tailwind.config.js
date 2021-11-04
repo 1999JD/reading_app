@@ -18,6 +18,7 @@ module.exports = {
         15: '3.75rem',
         18: '4.5rem',
         12.5: '3.125rem',
+        45: '11.25rem',
         fit: 'fit-content',
         'fill-available': '-webkit-fill-available',
         'book': '',

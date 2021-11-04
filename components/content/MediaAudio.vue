@@ -1,9 +1,11 @@
 <template>
   <div class="bg-primary px-6">
     <div class="flex bg-white rounded-md py-2 pl-3">
-      <img src="~/assets/img/sampleBook.jpg" alt="書籍圖片" class="" />
+      <div class="w-24 mr-2 flex-shrink-0">
+        <img :src="require(`~/assets/img/${imgSrc}`)" alt="書籍圖片" class="" />
+      </div>
       <div class="flex-grow flex flex-col justify-between mr-4">
-        <h2 class="text-center">教育情緣-回首七十人生教育路</h2>
+        <h2 class="text-center">{{ title }}</h2>
         <div class="self-end">
           <button class="mr-6">
             <span class="sr-only"> 收藏 </span>
@@ -61,6 +63,8 @@ export default {
   name: 'Audio',
   data() {
     return {
+      title: '教育情緣-回首七十人生教育路',
+      imgSrc: 'sampleBook.jpg',
       play: false,
       duration: 0,
       rangeValue: 0,
