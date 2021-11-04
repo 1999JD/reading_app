@@ -1,5 +1,5 @@
 <template>
-  <li class="mb-6 p-3 bg-white rounded-md shadow-sm">
+  <li class="mb-6 p-3 bg-white rounded-md shadow-content">
     <div class="mb-4">
       <p class="inline-block mr-3">
         {{ remark.name }}

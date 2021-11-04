@@ -1,5 +1,5 @@
 <template>
-  <aside class="absolute z-0 w-80 top-13.5 bg-white filter drop-shadow">
+  <aside class="fixed z-10 w-80 top-13.5 bg-white filter drop-shadow">
     <h2>訂購專區</h2>
     <ul>
       <li v-for="item in orderLinks" :key="item.title">

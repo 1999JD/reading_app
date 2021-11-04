@@ -18,6 +18,7 @@ module.exports = {
         15: '3.75rem',
         18: '4.5rem',
         12.5: '3.125rem',
+        35: '8.75rem',
         45: '11.25rem',
         fit: 'fit-content',
         'fill-available': '-webkit-fill-available',
@@ -90,6 +91,7 @@ module.exports = {
         'btn': '0px 4px 0px 0px #E7D5A7',
         'btn-pay': '  0px 2px 4px 0px #39393940',
         'account-main': ' 0px 2px 6px 0px #00000040',
+        'content': '0px 2px 4px 0px #AEAEAE40',
       },
       dropShadow: {
         'footer': '0px -1px 2px rgba(174, 174, 174, 0.25)',

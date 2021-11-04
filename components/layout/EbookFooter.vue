@@ -6,7 +6,7 @@
       justify-between
       fixed
       bottom-0
-      z-10
+      z-20
       w-full
       px-10
       py-3
