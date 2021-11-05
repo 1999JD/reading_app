@@ -1,7 +1,7 @@
 <template>
   <div class="relative">
     <slot :eyeOpen="eyeOpen" :testStr="textStr" />
-    <button class="account-eye" @click.prevent="handleEyeOpen(eyeOpen)">
+    <button class="account__eye" @click.prevent="handleEyeOpen(eyeOpen)">
       <img
         :src="
           require(`~/assets/icon/account/${

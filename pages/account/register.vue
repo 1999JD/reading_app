@@ -1,34 +1,34 @@
 <template>
   <div class="pb-21.5">
     <form action="">
-      <label class="account-label">
-        <span class="account-span">帳號</span>
+      <label class="account__label">
+        <span class="account__span">帳號</span>
         <div>
           <input
-            class="account-input"
+            class="account__input"
             type="text"
             placeholder="example@mail.com"
           />
         </div>
       </label>
-      <label class="account-label">
-        <span class="account-span">設定密碼</span>
+      <label class="account__label">
+        <span class="account__span">設定密碼</span>
         <AccountPwdInputWrap v-slot="{ eyeOpen }">
           <input
             v-model="register.settingsPassword"
-            class="account-input"
+            class="account__input"
             :type="eyeOpen ? 'text' : 'password'"
             placeholder="至少8位字元、英文字母大小寫與數字"
           />
         </AccountPwdInputWrap>
       </label>
       <div class="mb-8">
-        <label class="account-label mb-3">
-          <span class="account-span">確認密碼</span>
+        <label class="account__label mb-3">
+          <span class="account__span">確認密碼</span>
           <AccountPwdInputWrap v-slot="{ eyeOpen }">
             <input
               v-model="register.confirmPassword"
-              class="account-input"
+              class="account__input"
               :type="eyeOpen ? 'text' : 'password'"
               placeholder="至少8位字元、英文字母大小寫與數字"
             />
@@ -47,7 +47,7 @@
           </li>
         </ul>
       </div>
-      <button class="account-btn" @click.prevent="handleModalOpen">
+      <button class="account__btn" @click.prevent="handleModalOpen">
         確認註冊
       </button>
     </form>

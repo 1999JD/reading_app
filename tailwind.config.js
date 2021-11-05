@@ -20,6 +20,7 @@ module.exports = {
         12.5: '3.125rem',
         35: '8.75rem',
         45: '11.25rem',
+        65: '16.25rem',
         fit: 'fit-content',
         'fill-available': '-webkit-fill-available',
         'book': '',
@@ -44,12 +45,14 @@ module.exports = {
         18: '4.5rem',
       },
       padding: {
-        21.5: '5.375rem',
         1.25: '0.3125rem',
+        7.5: '1.875rem',
+        21.5: '5.375rem',
       },
       colors: {
         primary: {
-          DEFAULT: '#f5efdf'
+          DEFAULT: '#f5efdf',
+          dark: '#CCBC90',
         },
         highlight: {
           DEFAULT: '#ffc651',
@@ -92,6 +95,9 @@ module.exports = {
         'btn-pay': '  0px 2px 4px 0px #39393940',
         'account-main': ' 0px 2px 6px 0px #00000040',
         'content': '0px 2px 4px 0px #AEAEAE40',
+        'test': '0px 2px 4px 0px #00000040',
+
+
 
       },
       dropShadow: {

@@ -1,22 +1,22 @@
 <template>
   <div class="pb-12">
     <form @submit.prevent="userLogin">
-      <label class="account-label">
-        <span class="account-span">帳號</span>
+      <label class="account__label">
+        <span class="account__span">帳號</span>
         <input
           v-model="login.username"
-          class="account-input"
+          class="account__input"
           type="text"
           placeholder="example@mail.com"
         />
       </label>
       <div class="mb-8">
-        <label class="account-label mb-3">
-          <span class="account-span">密碼</span>
+        <label class="account__label mb-3">
+          <span class="account__span">密碼</span>
           <AccountPwdInputWrap v-slot="{ eyeOpen }">
             <input
               v-model="login.password"
-              class="account-input"
+              class="account__input"
               :type="eyeOpen ? 'text' : 'password'"
               placeholder="至少8位字元、英文字母大小寫與數字"
             />
@@ -29,13 +29,13 @@
         >
       </div>
 
-      <button class="account-btn mb-9" type="submit">登入</button>
+      <button class="account__btn mb-9" type="submit">登入</button>
       <div class="or-line flex justify-center items-center mb-7.5">
         <p class="px-2 bg-white text-base">或</p>
       </div>
       <NuxtLink
         to="/account/register"
-        class="account-btn bg-white border border-highlight"
+        class="account__btn bg-white border border-highlight"
       >
         立即註冊
       </NuxtLink>

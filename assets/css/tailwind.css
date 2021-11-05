@@ -4,35 +4,45 @@
 @tailwind utilities;
 
 @layer components {
-  .account-btn {
+  .account__btn {
     @apply block w-full py-3 bg-highlight text-base border border-highlight text-center rounded-3xl;
   }
-  .account-label {
+  .account__label {
     @apply block mb-6;
   }
-  .account-span {
+  .account__span {
     @apply block mb-2 text-base;
   }
-  .account-input {
+  .account__input {
     @apply w-full py-3 pl-3 pr-10 border border-gray-accountInput text-xs rounded-3xl;
   }
-  .account-eye {
+  .account__eye {
     @apply absolute top-0 bottom-0 right-5 w-5 h-5 m-auto;
   }
-  .account-input::placeholder {
+  .account__input::placeholder {
     /* Chrome, Firefox, Opera, Safari 10.1+ */
     @apply text-gray-accountPlaceholder;
     opacity: 1; /* Firefox */
   }
 
-  .account-input::-ms-input-placeholder {
+  .account__input::-ms-input-placeholder {
     /* Internet Explorer 10-11 */
     @apply text-gray-accountPlaceholder;
   }
 
-  .account-input::-ms-input-placeholder {
+  .account__input::-ms-input-placeholder {
     /* Microsoft Edge */
     @apply text-gray-accountPlaceholder;
+  }
+
+  .test__question__wrap {
+    @apply flex gap-2.5;
+  }
+  .test__question__avatar {
+    @apply w-12 h-12 rounded-full;
+  }
+  .test__question__bubble {
+    @apply box-border w-65 mb-8 bg-primary shadow-test rounded-xl;
   }
 }
 
