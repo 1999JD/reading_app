@@ -92,6 +92,7 @@ module.exports = {
         'btn-pay': '  0px 2px 4px 0px #39393940',
         'account-main': ' 0px 2px 6px 0px #00000040',
         'content': '0px 2px 4px 0px #AEAEAE40',
+
       },
       dropShadow: {
         'footer': '0px -1px 2px rgba(174, 174, 174, 0.25)',

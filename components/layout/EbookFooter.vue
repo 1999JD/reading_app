@@ -16,14 +16,14 @@
       drop-shadow-md
     "
   >
-    <LayoutFooterIcons
+    <!-- <LayoutFooterIcons
       v-for="button in footerButtons"
       :key="button.title"
       :src="button.src"
       :alt="button.alt"
       :to="button.to"
       >{{ button.title }}
-    </LayoutFooterIcons>
+    </LayoutFooterIcons> -->
   </footer>
 </template>
 
