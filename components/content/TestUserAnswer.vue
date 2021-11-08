@@ -4,7 +4,21 @@
       <img src="~/assets/img/user.png" alt="" />
     </div>
     <p class="py-3.5 px-6 bg-third shadow-test rounded-xl">
-      我的答案: {{ `C` }}
+      我的答案: {{ answer }}
     </p>
   </div>
 </template>
+
+<script>
+export default {
+  name: 'TestUserAnswer',
+  props: {
+    answer: {
+      type: String,
+      default() {
+        return ''
+      },
+    },
+  },
+}
+</script>

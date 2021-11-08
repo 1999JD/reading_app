@@ -1,6 +1,8 @@
 <template>
-  <div>
-    <header class="flex justify-center items-center relative bg-primary py-5">
+  <div class="flex flex-col min-h-screen">
+    <header
+      class="flex justify-center items-center fixed w-full bg-primary py-4"
+    >
       <NuxtLink
         to="/content"
         class="
@@ -20,6 +22,7 @@
       </NuxtLink>
       <p class="text-base font-medium">現正播放</p>
     </header>
+    <div class="h-14"></div>
     <nuxt />
     <div class="h-18" />
     <LayoutFooterNav />
