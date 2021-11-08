@@ -28,7 +28,10 @@
         />
       </transition-group>
       <transition name="fade">
-        <ContentTestEndBubble v-show="currentQuestion === questions.length" :total="questions.length" />
+        <ContentTestEndBubble
+          v-show="currentQuestion === questions.length"
+          :total="questions.length"
+        />
       </transition>
       <transition name="fade">
         <ContentTestResult
@@ -95,72 +98,72 @@ export default {
           ],
           correctAns: 'A',
         },
-        // {
-        //   qNumber: 5,
-        //   topic: '茉莉花.太陽花.玫瑰花,哪一朵花最沒力 ?',
-        //   options: [
-        //     { index: 'A', desc: '茉莉花' },
-        //     { index: 'B', desc: '太陽花' },
-        //     { index: 'C', desc: '玫瑰花' },
-        //     { index: 'D', desc: '都不是' },
-        //   ],
-        //   correctAns: 'A',
-        // },
-        // {
-        //   qNumber: 6,
-        //   topic: '茉莉花.太陽花.玫瑰花,哪一朵花最沒力 ?',
-        //   options: [
-        //     { index: 'A', desc: '茉莉花' },
-        //     { index: 'B', desc: '太陽花' },
-        //     { index: 'C', desc: '玫瑰花' },
-        //     { index: 'D', desc: '都不是' },
-        //   ],
-        //   correctAns: 'A',
-        // },
-        // {
-        //   qNumber: 7,
-        //   topic: '茉莉花.太陽花.玫瑰花,哪一朵花最沒力 ?',
-        //   options: [
-        //     { index: 'A', desc: '茉莉花' },
-        //     { index: 'B', desc: '太陽花' },
-        //     { index: 'C', desc: '玫瑰花' },
-        //     { index: 'D', desc: '都不是' },
-        //   ],
-        //   correctAns: 'A',
-        // },
-        // {
-        //   qNumber: 8,
-        //   topic: '茉莉花.太陽花.玫瑰花,哪一朵花最沒力 ?',
-        //   options: [
-        //     { index: 'A', desc: '茉莉花' },
-        //     { index: 'B', desc: '太陽花' },
-        //     { index: 'C', desc: '玫瑰花' },
-        //     { index: 'D', desc: '都不是' },
-        //   ],
-        //   correctAns: 'A',
-        // },
-        // {
-        //   qNumber: 9,
-        //   topic: '茉莉花.太陽花.玫瑰花,哪一朵花最沒力 ?',
-        //   options: [
-        //     { index: 'A', desc: '茉莉花' },
-        //     { index: 'B', desc: '太陽花' },
-        //     { index: 'C', desc: '玫瑰花' },
-        //     { index: 'D', desc: '都不是' },
-        //   ],
-        //   correctAns: 'A',
-        // },
-        // {
-        //   qNumber: 10,
-        //   topic: '茉莉花.太陽花.玫瑰花,哪一朵花最沒力 ?',
-        //   options: [
-        //     { index: 'A', desc: '茉莉花' },
-        //     { index: 'B', desc: '太陽花' },
-        //     { index: 'C', desc: '玫瑰花' },
-        //     { index: 'D', desc: '都不是' },
-        //   ],
-        //   correctAns: 'A',
-        // },
+        {
+          qNumber: 5,
+          topic: '茉莉花.太陽花.玫瑰花,哪一朵花最沒力 ?',
+          options: [
+            { index: 'A', desc: '茉莉花' },
+            { index: 'B', desc: '太陽花' },
+            { index: 'C', desc: '玫瑰花' },
+            { index: 'D', desc: '都不是' },
+          ],
+          correctAns: 'A',
+        },
+        {
+          qNumber: 6,
+          topic: '茉莉花.太陽花.玫瑰花,哪一朵花最沒力 ?',
+          options: [
+            { index: 'A', desc: '茉莉花' },
+            { index: 'B', desc: '太陽花' },
+            { index: 'C', desc: '玫瑰花' },
+            { index: 'D', desc: '都不是' },
+          ],
+          correctAns: 'A',
+        },
+        {
+          qNumber: 7,
+          topic: '茉莉花.太陽花.玫瑰花,哪一朵花最沒力 ?',
+          options: [
+            { index: 'A', desc: '茉莉花' },
+            { index: 'B', desc: '太陽花' },
+            { index: 'C', desc: '玫瑰花' },
+            { index: 'D', desc: '都不是' },
+          ],
+          correctAns: 'A',
+        },
+        {
+          qNumber: 8,
+          topic: '茉莉花.太陽花.玫瑰花,哪一朵花最沒力 ?',
+          options: [
+            { index: 'A', desc: '茉莉花' },
+            { index: 'B', desc: '太陽花' },
+            { index: 'C', desc: '玫瑰花' },
+            { index: 'D', desc: '都不是' },
+          ],
+          correctAns: 'A',
+        },
+        {
+          qNumber: 9,
+          topic: '茉莉花.太陽花.玫瑰花,哪一朵花最沒力 ?',
+          options: [
+            { index: 'A', desc: '茉莉花' },
+            { index: 'B', desc: '太陽花' },
+            { index: 'C', desc: '玫瑰花' },
+            { index: 'D', desc: '都不是' },
+          ],
+          correctAns: 'A',
+        },
+        {
+          qNumber: 10,
+          topic: '茉莉花.太陽花.玫瑰花,哪一朵花最沒力 ?',
+          options: [
+            { index: 'A', desc: '茉莉花' },
+            { index: 'B', desc: '太陽花' },
+            { index: 'C', desc: '玫瑰花' },
+            { index: 'D', desc: '都不是' },
+          ],
+          correctAns: 'A',
+        },
       ],
     }
   },
@@ -174,6 +177,7 @@ export default {
   },
   methods: {
     handleInputAnswer(questionIndex, optionIndex) {
+      if( this.currentQuestion === this.questions.length) return
       this.answers[questionIndex].answer = optionIndex
       this.answers[questionIndex].hasAnswer = true
       if (
@@ -181,12 +185,11 @@ export default {
         questionIndex < this.questions.length
       ) {
         this.currentQuestion++
+        this.handleScrollBottom()
         if (this.currentQuestion === this.questions.length) {
           this.handleCalcAccuracy()
         }
       }
-
-      this.handleScrollBottom()
     },
     handleScrollBottom() {
       this.$nextTick(() => {
@@ -199,7 +202,6 @@ export default {
         if (element.correctAns === this.answers[index].answer)
           this.correctAnsCount++
       })
-      console.log(this.correctAnsCount)
     },
   },
 }
