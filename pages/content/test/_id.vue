@@ -9,13 +9,17 @@
         text-center text-white text-base
       "
     >
-      {{ (currentQuestion + 1).toString() }}/{{ totalQuestion.toString() }}
+      {{
+        currentQuestion === questions.length
+          ? currentQuestion.toString()
+          : (currentQuestion + 1).toString()
+      }}/{{ questions.length.toString() }}
     </p>
     <section ref="scrollContainer" class="mt-12 mx-6">
       <transition-group name="fade">
         <ContentTestQuestion
           v-for="(question, index) in questions"
-          v-show="index < currentQuestion + 1"
+          v-show="index <= currentQuestion"
           :key="question.qNumber"
           :question="question"
           :answer="answers[index]"
@@ -23,7 +27,16 @@
           @onClick="handleInputAnswer"
         />
       </transition-group>
-      <ContentTestEndBubble v-show="currentQuestion === 9" />
+      <transition name="fade">
+        <ContentTestEndBubble v-show="currentQuestion === questions.length" :total="questions.length" />
+      </transition>
+      <transition name="fade">
+        <ContentTestResult
+          v-show="currentQuestion === questions.length"
+          :total="questions.length"
+          :count="correctAnsCount"
+        />
+      </transition>
     </section>
   </main>
 </template>
@@ -34,9 +47,9 @@ export default {
   layout: 'content',
   data() {
     return {
-      totalQuestion: 10,
       currentQuestion: 0,
       answers: [],
+      correctAnsCount: 0,
       questions: [
         {
           qNumber: 1,
@@ -82,72 +95,72 @@ export default {
           ],
           correctAns: 'A',
         },
-        {
-          qNumber: 5,
-          topic: '茉莉花.太陽花.玫瑰花,哪一朵花最沒力 ?',
-          options: [
-            { index: 'A', desc: '茉莉花' },
-            { index: 'B', desc: '太陽花' },
-            { index: 'C', desc: '玫瑰花' },
-            { index: 'D', desc: '都不是' },
-          ],
-          correctAns: 'A',
-        },
-        {
-          qNumber: 6,
-          topic: '茉莉花.太陽花.玫瑰花,哪一朵花最沒力 ?',
-          options: [
-            { index: 'A', desc: '茉莉花' },
-            { index: 'B', desc: '太陽花' },
-            { index: 'C', desc: '玫瑰花' },
-            { index: 'D', desc: '都不是' },
-          ],
-          correctAns: 'A',
-        },
-        {
-          qNumber: 7,
-          topic: '茉莉花.太陽花.玫瑰花,哪一朵花最沒力 ?',
-          options: [
-            { index: 'A', desc: '茉莉花' },
-            { index: 'B', desc: '太陽花' },
-            { index: 'C', desc: '玫瑰花' },
-            { index: 'D', desc: '都不是' },
-          ],
-          correctAns: 'A',
-        },
-        {
-          qNumber: 8,
-          topic: '茉莉花.太陽花.玫瑰花,哪一朵花最沒力 ?',
-          options: [
-            { index: 'A', desc: '茉莉花' },
-            { index: 'B', desc: '太陽花' },
-            { index: 'C', desc: '玫瑰花' },
-            { index: 'D', desc: '都不是' },
-          ],
-          correctAns: 'A',
-        },
-        {
-          qNumber: 9,
-          topic: '茉莉花.太陽花.玫瑰花,哪一朵花最沒力 ?',
-          options: [
-            { index: 'A', desc: '茉莉花' },
-            { index: 'B', desc: '太陽花' },
-            { index: 'C', desc: '玫瑰花' },
-            { index: 'D', desc: '都不是' },
-          ],
-          correctAns: 'A',
-        },
-        {
-          qNumber: 10,
-          topic: '茉莉花.太陽花.玫瑰花,哪一朵花最沒力 ?',
-          options: [
-            { index: 'A', desc: '茉莉花' },
-            { index: 'B', desc: '太陽花' },
-            { index: 'C', desc: '玫瑰花' },
-            { index: 'D', desc: '都不是' },
-          ],
-          correctAns: 'A',
-        },
+        // {
+        //   qNumber: 5,
+        //   topic: '茉莉花.太陽花.玫瑰花,哪一朵花最沒力 ?',
+        //   options: [
+        //     { index: 'A', desc: '茉莉花' },
+        //     { index: 'B', desc: '太陽花' },
+        //     { index: 'C', desc: '玫瑰花' },
+        //     { index: 'D', desc: '都不是' },
+        //   ],
+        //   correctAns: 'A',
+        // },
+        // {
+        //   qNumber: 6,
+        //   topic: '茉莉花.太陽花.玫瑰花,哪一朵花最沒力 ?',
+        //   options: [
+        //     { index: 'A', desc: '茉莉花' },
+        //     { index: 'B', desc: '太陽花' },
+        //     { index: 'C', desc: '玫瑰花' },
+        //     { index: 'D', desc: '都不是' },
+        //   ],
+        //   correctAns: 'A',
+        // },
+        // {
+        //   qNumber: 7,
+        //   topic: '茉莉花.太陽花.玫瑰花,哪一朵花最沒力 ?',
+        //   options: [
+        //     { index: 'A', desc: '茉莉花' },
+        //     { index: 'B', desc: '太陽花' },
+        //     { index: 'C', desc: '玫瑰花' },
+        //     { index: 'D', desc: '都不是' },
+        //   ],
+        //   correctAns: 'A',
+        // },
+        // {
+        //   qNumber: 8,
+        //   topic: '茉莉花.太陽花.玫瑰花,哪一朵花最沒力 ?',
+        //   options: [
+        //     { index: 'A', desc: '茉莉花' },
+        //     { index: 'B', desc: '太陽花' },
+        //     { index: 'C', desc: '玫瑰花' },
+        //     { index: 'D', desc: '都不是' },
+        //   ],
+        //   correctAns: 'A',
+        // },
+        // {
+        //   qNumber: 9,
+        //   topic: '茉莉花.太陽花.玫瑰花,哪一朵花最沒力 ?',
+        //   options: [
+        //     { index: 'A', desc: '茉莉花' },
+        //     { index: 'B', desc: '太陽花' },
+        //     { index: 'C', desc: '玫瑰花' },
+        //     { index: 'D', desc: '都不是' },
+        //   ],
+        //   correctAns: 'A',
+        // },
+        // {
+        //   qNumber: 10,
+        //   topic: '茉莉花.太陽花.玫瑰花,哪一朵花最沒力 ?',
+        //   options: [
+        //     { index: 'A', desc: '茉莉花' },
+        //     { index: 'B', desc: '太陽花' },
+        //     { index: 'C', desc: '玫瑰花' },
+        //     { index: 'D', desc: '都不是' },
+        //   ],
+        //   correctAns: 'A',
+        // },
       ],
     }
   },
@@ -163,16 +176,30 @@ export default {
     handleInputAnswer(questionIndex, optionIndex) {
       this.answers[questionIndex].answer = optionIndex
       this.answers[questionIndex].hasAnswer = true
-      if (questionIndex === this.currentQuestion) {
+      if (
+        questionIndex === this.currentQuestion &&
+        questionIndex < this.questions.length
+      ) {
         this.currentQuestion++
-        this.scrollBottom()
+        if (this.currentQuestion === this.questions.length) {
+          this.handleCalcAccuracy()
+        }
       }
+
+      this.handleScrollBottom()
     },
-    scrollBottom() {
+    handleScrollBottom() {
       this.$nextTick(() => {
         document.documentElement.scrollTop =
           document.documentElement.scrollHeight
       })
+    },
+    handleCalcAccuracy() {
+      this.questions.forEach((element, index) => {
+        if (element.correctAns === this.answers[index].answer)
+          this.correctAnsCount++
+      })
+      console.log(this.correctAnsCount)
     },
   },
 }

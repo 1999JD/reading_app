@@ -4,7 +4,7 @@
       <img src="~/assets/img/tkb.png" alt="" />
     </div>
     <div class="test__question__bubble p-7.5 text-base text-center">
-      <p class="mb-3">10/10</p>
+      <p class="mb-3">{{ total }}/{{ total }}</p>
       <p class="mb-4">您已完成作答</p>
       <p class="mb-1.5">進一步查看結果吧!</p>
       <div class="relative right-3 block w-11 ml-auto">
@@ -18,6 +18,18 @@
     </div>
   </div>
 </template>
+
+<script>
+export default {
+  name: 'TestEndBubble',
+  props: {
+    total: {
+      type: Number,
+      default: 0,
+    },
+  },
+}
+</script>
 
 <style scoped>
 .result__check {
