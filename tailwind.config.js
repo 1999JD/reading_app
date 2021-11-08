@@ -10,7 +10,8 @@ module.exports = {
   theme: {
     extend: {
       inset: {
-        13.5: '3.25rem',
+        13: '3.25rem',
+        31: '7.75rem',
         33: '8.25rem',
         '-33': '-8.25rem',
       },
@@ -46,6 +47,8 @@ module.exports = {
         7.5: '1.875rem',
         13: '3.125rem',
         18: '4.5rem',
+        30: '7.5rem',
+        34: '8.5rem',
       },
       padding: {
         1.25: '0.3125rem',
@@ -99,9 +102,6 @@ module.exports = {
         'account-main': ' 0px 2px 6px 0px #00000040',
         'content': '0px 2px 4px 0px #AEAEAE40',
         'test': '0px 2px 4px 0px #00000040',
-
-
-
       },
       dropShadow: {
         'footer': '0px -1px 2px rgba(174, 174, 174, 0.25)',

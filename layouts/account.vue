@@ -42,7 +42,7 @@ export default {
         heading = '忘記密碼'
         break
     }
-    store.commit('SetAuthPageHeading', heading)
+    store.commit('setAuthPageHeading', heading)
   },
 }
 </script>
