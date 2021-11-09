@@ -1,25 +1,13 @@
 <template>
   <div>
-    <ContentBookSubEntry class="mb-10 bg-primary" />
-    <div
-      class="
-        flex
-        justify-end
-        items-center
-        fixed
-        z-40
-        top-31
-        w-full
-        pt-6
-        pb-2
-        pr-7
-        bg-white
-      "
-    >
-      <div class="w-3.5">
-        <img src="~/assets/icon/content/two-way-arrow.svg" alt="" />
+    <div class="box-border fixed top-13 w-full z-10">
+      <ContentBookSubEntry class="bg-primary" />
+      <div class="flex justify-end items-center pt-6 pb-2 pr-7 bg-white">
+        <div class="w-3.5">
+          <img src="~/assets/icon/content/two-way-arrow.svg" alt="" />
+        </div>
+        <p>依下載量排序</p>
       </div>
-      <p>依下載量排序</p>
     </div>
     <ul class="px-6 mt-30">
       <ContentBookListItem v-for="book in books" :key="book.id" :book="book" />
