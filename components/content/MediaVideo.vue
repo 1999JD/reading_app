@@ -6,11 +6,10 @@
       </video>
     </div>
     <div class="flex justify-end">
-      <button class="mr-6">
-        <img src="~/assets/icon/common/store.svg" class="m-auto" />
-        <span class=""> 收藏 </span>
-      </button>
-      <button>
+      <CommonStore v-slot="{ note }" :book="book" class="w-7 mr-10">
+        <span class="whitespace-nowrap">{{ note }}</span>
+      </CommonStore>
+      <button class="w-7">
         <img src="~/assets/icon/content/download.svg" class="m-auto" />
         <span class=""> 下載 </span>
       </button>
@@ -19,12 +18,30 @@
 </template>
 
 <script>
+import { mapActions } from 'vuex'
+
 export default {
   name: 'Video',
   data() {
     return {
       fileName: 'exampleVideo',
+      book: {
+        bookId: 1,
+        name: '素養人才',
+        desc: '書本小標內容書本小標內容書本小標內容書本小標內容書本小標內容書本小容',
+        author: '一路',
+        publishTime: '2021-06-30',
+        imgSrc: 'sampleBook.jpg',
+        imgAlt: '',
+      },
     }
+  },
+  created() {
+    // 暫時的
+    this.book.bookId = parseInt(this.$route.params.id)
+  },
+  methods: {
+    ...mapActions(['handleAddCollection']),
   },
 }
 </script>

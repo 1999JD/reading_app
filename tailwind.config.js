@@ -41,6 +41,7 @@ module.exports = {
         'account-modal': '204px',
       },
       minHeight: {
+        12: '3rem',
         'account-main': '28.875rem',
       },
       margin: {

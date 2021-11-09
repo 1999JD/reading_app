@@ -14,7 +14,7 @@
         <li class="mb-1">出版日期: {{ book.pubDate }}</li>
       </ul>
       <p class="pl-10 text-quote text-base font-medium">NT${{ book.price }}</p>
-      <button class="absolute top-3 right-3">
+      <button class="absolute top-3 right-3" @click="handleAddCollection(book)">
         <div class="store inline-block w-5 mr-1 align-middle">
           <img src="~/assets/icon/common/store.svg" alt="" />
         </div>
@@ -88,6 +88,8 @@
 </template>
 
 <script>
+import { mapActions } from 'vuex'
+
 export default {
   name: 'PaperBook',
   layout: 'content',
@@ -141,10 +143,15 @@ export default {
       },
     }
   },
+  created() {
+    // 暫時的
+    this.book.bookId = parseInt(this.$route.params.id)
+  },
   methods: {
     handleOpen() {
       this.open = !this.open
     },
+    ...mapActions(['handleAddCollection']),
   },
 }
 </script>

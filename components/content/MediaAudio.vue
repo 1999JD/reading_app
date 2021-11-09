@@ -2,15 +2,12 @@
   <div class="bg-primary px-6">
     <div class="flex bg-white rounded-md py-2 pl-3">
       <div class="w-24 mr-2 flex-shrink-0">
-        <img :src="require(`~/assets/img/${imgSrc}`)" alt="書籍圖片" class="" />
+        <img :src="require(`~/assets/img/${book.imgSrc}`)" :alt="book.imgAlt" />
       </div>
       <div class="flex-grow flex flex-col justify-between mr-4">
-        <h2 class="text-center">{{ title }}</h2>
-        <div class="self-end">
-          <button class="mr-6">
-            <span class="sr-only"> 收藏 </span>
-            <img src="~/assets/icon/common/store.svg" />
-          </button>
+        <h2>{{ book.name }}</h2>
+        <div class="flex self-end">
+          <CommonStore :book="book" class="mr-6" />
           <button>
             <span class="sr-only"> 下載 </span>
             <img src="~/assets/icon/content/download.svg" />
@@ -58,18 +55,30 @@
 </template>
 
 <script>
-// <audio ref="audioPlayer" :src="'http://localhost:5500/media/exampleAudio.mp3'"></audio>
+
 export default {
   name: 'Audio',
   data() {
     return {
-      title: '教育情緣-回首七十人生教育路',
-      imgSrc: 'sampleBook.jpg',
+      book: {
+        bookId: 1,
+        name: '素養人才',
+        desc: '書本小標內容書本小標內容書本小標內容書本小標內容書本小標內容書本小容',
+        author: '一路',
+        publishTime: '2021-06-30',
+        imgSrc: 'sampleBook.jpg',
+        imgAlt: '',
+      },
       play: false,
       duration: 0,
       rangeValue: 0,
     }
   },
+  created() {
+    // 暫時的
+    this.book.bookId = parseInt(this.$route.params.id)
+  },
+
   methods: {
     handleAudioTime(behavior) {
       this.$refs.audioPlayer.play()

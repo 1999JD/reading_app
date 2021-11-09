@@ -37,7 +37,6 @@ export default {
   middleware({ store, route }) {
     let heading
     const routeName = route.name
-    console.log(routeName)
     switch (routeName) {
       case 'content-media-id':
         heading = '現正播放'
@@ -52,7 +51,7 @@ export default {
         heading = '測驗挑戰'
         break
     }
-    store.commit('SetContentPageHeading', heading)
+    store.commit('setContentPageHeading', heading)
   },
 }
 </script>

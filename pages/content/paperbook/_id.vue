@@ -14,12 +14,13 @@
         <li class="mb-1">出版日期: {{ book.pubDate }}</li>
       </ul>
       <p class="pl-10 text-quote text-base font-medium">NT${{ book.price }}</p>
-      <button class="absolute top-3 right-3">
-        <div class="store inline-block w-5 mr-1 align-middle">
-          <img src="~/assets/icon/common/store.svg" alt="" />
-        </div>
-        收藏
-      </button>
+      <CommonStore
+        v-slot="{ note }"
+        :book="book"
+        class="flex absolute top-3 right-3"
+      >
+        <span class="block ml-1 whitespace-nowrap">{{ note }}</span>
+      </CommonStore>
     </section>
 
     <nav class="flex justify-between mx-6 pb-4 border-b border-gray-300">
@@ -88,6 +89,8 @@
 </template>
 
 <script>
+import { mapActions } from 'vuex'
+
 export default {
   name: 'PaperBook',
   layout: 'content',
@@ -95,6 +98,7 @@ export default {
     return {
       open: false,
       book: {
+        bookId: 0,
         title: '教育情緣 - 回首七十人生教育路',
         imgSrc: 'sampleBook.jpg',
         ISBN: '9789867868084',
@@ -141,10 +145,15 @@ export default {
       },
     }
   },
+  created() {
+    // 暫時的
+    this.book.bookId = parseInt(this.$route.params.id)
+  },
   methods: {
     handleOpen() {
       this.open = !this.open
     },
+    ...mapActions(['handleAddCollection']),
   },
 }
 </script>
@@ -154,10 +163,6 @@ export default {
   content: '';
   background-color: #eb7513;
   @apply inline-block w-2 h-2 rounded-full mr-1;
-}
-.store {
-  filter: invert(85%) sepia(87%) saturate(1075%) hue-rotate(315deg)
-    brightness(100%) contrast(101%);
 }
 .menu {
   background-color: #fffaee;

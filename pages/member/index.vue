@@ -102,7 +102,7 @@ export default {
           title: '我的收藏',
           src: 'store.png',
           alt: '我的收藏',
-          to: '/member/favorites',
+          to: '/member/collections',
         },
         {
           title: '我的優惠券',
