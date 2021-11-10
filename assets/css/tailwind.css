@@ -44,6 +44,14 @@
   .test__question__bubble {
     @apply box-border w-65 mb-8 bg-primary shadow-test rounded-xl;
   }
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
 }
 
 body {
@@ -54,13 +62,4 @@ body {
 
 img {
   @apply block w-full h-auto;
-}
-
-.no-scrollbar::-webkit-scrollbar {
-  display: none;
-}
-
-.no-scrollbar {
-  -ms-overflow-style: none;
-  scrollbar-width: none;
 }

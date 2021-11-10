@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="box-border fixed top-13 w-full z-10">
-      <ContentBookSubEntry class="bg-primary" />
+      <CommonBookSubEntry class="bg-primary" />
       <div class="flex justify-end items-center pt-6 pb-2 pr-7 bg-white">
         <div class="w-3.5">
           <img src="~/assets/icon/content/two-way-arrow.svg" alt="" />
