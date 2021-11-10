@@ -20,7 +20,7 @@
       >
         <li
           v-for="(book, index) in books"
-          :key="book.id"
+          :key="book.bookId"
           :class="[index === currentIndex ? 'current' : '']"
           @touchstart.prevent="mousedown(index, $event)"
           @touchmove.prevent="mousemove"
@@ -31,8 +31,7 @@
         >
           <div class="w-28 m-auto">
             <img
-              :src="require(`~/assets/img/${book.src}.jpg`)"
-              :alt="book.alt"
+              :src="require(`~/assets/img/${book.imgSrc}`)"
               class="shadow-img"
             />
           </div>
@@ -43,12 +42,14 @@
               'mt-4 mb-2  text-center',
             ]"
           >
-            {{ book.title }}
+            {{ book.name }}
           </h3>
           <p :class="[index !== currentIndex ? 'text-xs' : 'text-sm', 'mb-4']">
-            {{ book.intro }}
+            {{ book.desc }}
           </p>
-          <span class="text-gray-400 text-xs"> 觀看人數：{{ book.view }} </span>
+          <span class="text-gray-400 text-xs">
+            觀看人數：{{ book.download }}
+          </span>
         </li>
       </ul>
     </div>
@@ -58,7 +59,14 @@
 <script>
 export default {
   name: 'CateHit',
-
+  props: {
+    books: {
+      type: Array,
+      default() {
+        return []
+      },
+    },
+  },
   data() {
     return {
       isDragging: false,
@@ -67,54 +75,6 @@ export default {
       prevTranslate: -220,
       animationID: 0,
       currentIndex: 0,
-
-      books: [
-        {
-          id: 0,
-          title: '素養人才',
-          intro:
-            '我是內容我是內容我是內容我是內容我是內容我是內容我是內容我是......',
-          view: 888,
-          src: 'sampleBook',
-          alt: '素養人才',
-        },
-        {
-          id: 1,
-          title: '素養人才',
-          intro:
-            '我是內容我是內容我是內容我是內容我是內容我是內容我是內容我是......',
-          view: 888,
-          src: 'sampleBook',
-          alt: '素養人才',
-        },
-        {
-          id: 2,
-          title: '素養人才',
-          intro:
-            '我是內容我是內容我是內容我是內容我是內容我是內容我是內容我是......',
-          view: 888,
-          src: 'sampleBook',
-          alt: '素養人才',
-        },
-        {
-          id: 3,
-          title: '素養人才',
-          intro:
-            '我是內容我是內容我是內容我是內容我是內容我是內容我是內容我是......',
-          view: 888,
-          src: 'sampleBook',
-          alt: '素養人才',
-        },
-        {
-          id: 4,
-          title: '素養人才',
-          intro:
-            '我是內容我是內容我是內容我是內容我是內容我是內容我是內容我是......',
-          view: 888,
-          src: 'sampleBook',
-          alt: '素養人才',
-        },
-      ],
     }
   },
   created() {

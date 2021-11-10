@@ -21,6 +21,14 @@
 <script>
 export default {
   name: 'CateLatest',
+  // props: {
+  //   books: {
+  //     type: Array,
+  //     default() {
+  //       return []
+  //     },
+  //   },
+  // },
   data() {
     return {
       books: [
@@ -54,7 +62,8 @@ export default {
               title: '素養人才',
               src: 'sampleBook.jpg',
               alt: '素養人才',
-              intro: '我是內容我是內容我是內容我是內容我是內容我是內容是內容是內容',
+              intro:
+                '我是內容我是內容我是內容我是內容我是內容我是內容是內容是內容',
             },
           ],
         },
