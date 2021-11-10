@@ -163,6 +163,8 @@ export default {
 <style scoped>
 .slide {
   @apply box-border flex items-center transition-all;
+
+  touch-action: none;
 }
 .slide li {
   @apply box-border self-center flex-shrink-0 relative w-40 mx-7 p-2.5 pt-4 bg-primary rounded shadow-img;
