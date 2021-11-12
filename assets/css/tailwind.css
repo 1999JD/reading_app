@@ -5,16 +5,19 @@
 
 @layer components {
   .account__btn {
-    @apply block w-full py-3 bg-highlight text-base border border-highlight text-center rounded-3xl;
+    @apply block w-full py-2 bg-highlight text-base border border-highlight text-center rounded-3xl;
+  }
+  .account__input__wrap {
+    @apply block relative mb-6;
   }
   .account__label {
-    @apply block mb-6;
-  }
-  .account__span {
     @apply block mb-2 text-base;
   }
   .account__input {
-    @apply w-full py-3 pl-3 pr-10 border border-gray-accountInput text-xs rounded-3xl;
+    @apply w-full py-3 pl-3 pr-10 border-1.5 border-gray-accountInput text-xs rounded-3xl focus:border-highlight focus:outline-none;
+  }
+  .account__input__help {
+    @apply absolute -bottom-4 right-2 text-xs text-red-600 whitespace-nowrap;
   }
   .account__eye {
     @apply absolute top-0 bottom-0 right-5 w-5 h-5 m-auto;

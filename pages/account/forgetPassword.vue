@@ -1,15 +1,7 @@
 <template>
   <div>
     <form action="">
-      <label class="account__label mb-8">
-        <span class="account__span">帳號</span>
-        <input
-          v-model="verify.account"
-          class="field__acount account__input"
-          type="text"
-          placeholder="example@mail.com"
-        />
-      </label>
+      <AccountAcctInput v-model="verify.account" class="mb-8" />
       <button
         :class="['account__btn mb-10', hasSent ? 'text-white' : '']"
         :disabled="verify.account === ''"
@@ -18,17 +10,9 @@
         發送新密碼 ({{ count }})
       </button>
       <div v-show="hasSent">
-        <label class="account__label mb-13">
-          <span class="account__span"> 輸入信箱預設密碼 </span>
-          <AccountPwdInputWrap v-slot="{ eyeOpen }">
-            <input
-              v-model="verify.password"
-              class="account__input"
-              :type="eyeOpen ? 'text' : 'password'"
-              placeholder="至少8位字元、英文字母大小寫與數字"
-            />
-          </AccountPwdInputWrap>
-        </label>
+        <AccountPwdInput v-model="verify.password" class="mb-10">
+          <template #label>輸入信箱預設密碼</template>
+        </AccountPwdInput>
         <button class="account__btn">登入</button>
       </div>
     </form>

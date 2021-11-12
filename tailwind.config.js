@@ -90,6 +90,9 @@ module.exports = {
       lineHeight: {
         '20': '5rem',
       },
+      borderWidth: {
+        '1.5': '1.5px',
+      },
       borderRadius: {
         '2lg': '0.625rem',
         '2.5xl': '1.25rem',
@@ -114,9 +117,12 @@ module.exports = {
   variants: {
     extend: {
       borderWidth: ['hover', 'focus'],
+      borderStyle: ['hover', 'focus'],
+      outline: ['focus'],
     },
   },
   plugins: [
     require('@tailwindcss/line-clamp')
   ],
+
 }

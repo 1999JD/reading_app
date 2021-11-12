@@ -1,36 +1,15 @@
 <template>
   <div class="pb-12">
     <form @submit.prevent="userLogin">
-      <label class="account__label">
-        <span class="account__span">帳號</span>
-        <input
-          v-model="login.username"
-          class="account__input"
-          type="text"
-          placeholder="example@mail.com"
-        />
-      </label>
-      <div class="mb-8">
-        <label class="account__label mb-3">
-          <span class="account__span">密碼</span>
-          <AccountPwdInputWrap v-slot="{ eyeOpen }">
-            <input
-              v-model="login.password"
-              class="account__input"
-              :type="eyeOpen ? 'text' : 'password'"
-              placeholder="至少8位字元、英文字母大小寫與數字"
-            />
-          </AccountPwdInputWrap>
-        </label>
-        <NuxtLink
-          to="/account/forgetPassword"
-          class="block w-fit ml-auto underline"
-          >忘記密碼了嗎?</NuxtLink
-        >
-      </div>
-
+      <AccountAcctInput v-model="login.account" />
+      <AccountPwdInput v-model="login.password" />
+      <NuxtLink
+        to="/account/forgetPassword"
+        class="block w-fit ml-auto mb-8 underline"
+        >忘記密碼了嗎?</NuxtLink
+      >
       <button class="account__btn mb-9" type="submit">登入</button>
-      <div class="or-line flex justify-center items-center mb-7.5">
+      <div class="line--divide flex justify-center items-center mb-7.5">
         <p class="px-2 bg-white text-base">或</p>
       </div>
       <NuxtLink
@@ -47,11 +26,16 @@
 export default {
   name: 'Login',
   layout: 'account',
+  setup() {},
   data() {
     return {
       login: {
-        username: '',
+        account: '',
         password: '',
+      },
+      isValidated: {
+        account: true,
+        password: true,
       },
     }
   },
@@ -84,8 +68,8 @@ export default {
 </script>
 
 <style scoped>
-.or-line::before,
-.or-line::after {
+.line--divide::before,
+.line--divide::after {
   content: '';
   @apply block w-20 h-px bg-gray-300;
 }
