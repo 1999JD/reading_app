@@ -1,6 +1,7 @@
 export const state = () => ({
   authPageHeading: 'default',
   contentPageHeading: 'default',
+  memberPageHeading: 'default',
   collections: [
     {
       bookId: 1,
@@ -59,6 +60,9 @@ export const mutations = {
   },
   setContentPageHeading(state, heading) {
     state.contentPageHeading = heading
+  },
+  setMemberPageHeading(state, heading) {
+    state.memberPageHeading = heading
   },
   addCollection(state, payload) {
     state.collections.push({ ...payload })
