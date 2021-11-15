@@ -30,7 +30,7 @@
     </header>
 
     <transition :name="open ? 'open' : 'close'">
-      <LayoutSideBar v-show="open" />
+      <LayoutSideBar v-show="open" @onClick="handleCloseSidebar" />
     </transition>
     <div class="h-13"></div>
     <nuxt />
@@ -46,6 +46,11 @@ export default {
     return {
       open: false,
     }
+  },
+  methods: {
+    handleCloseSidebar() {
+      this.open = false
+    },
   },
 }
 </script>

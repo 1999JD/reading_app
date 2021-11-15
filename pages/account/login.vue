@@ -26,7 +26,14 @@
 export default {
   name: 'Login',
   layout: 'account',
-  setup() {},
+  middleware({ store, redirect }) {
+    if (store.state.auth.loggedIn) {
+      if (typeof window !== 'undefined') {
+        alert('您已經登入!')
+      }
+      redirect('/')
+    }
+  },
   data() {
     return {
       login: {
@@ -40,28 +47,26 @@ export default {
     }
   },
   methods: {
-    async userLogin() {
-      try {
-        const response = await this.$auth
-          .loginWith('local', {
-            data: {
-              userInfo: this.login,
-            },
-          })
-          .then((res) => {
-            if (res.data.token) {
-              this.$auth.setUser({
-                name: 'Joyce',
-                age: 22,
-              })
-              this.$router.push({ path: '/member' })
-            } else alert('something went wrong')
-          })
-          .catch((err) => alert(err))
-        return response
-      } catch (err) {
-        alert(err)
-      }
+    userLogin() {
+      this.error = null
+      return this.$auth
+        .loginWith('local', {
+          data: {
+            userInfo: this.login,
+          },
+        })
+        .then((res) => {
+          if (res.data.token) {
+            this.$auth.setUser(res.data.userInfo)
+            if (this.$auth.loggedIn) this.$router.push('/member')
+            else alert('出現錯誤，無法登入')
+          }
+        })
+        .catch((_err) => {
+          // eslint-disable-next-line no-console
+          alert('出現錯誤，無法登入')
+          this.$router.push('/account/login')
+        })
     },
   },
 }

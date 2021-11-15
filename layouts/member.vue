@@ -45,8 +45,13 @@
 <script>
 export default {
   name: 'LayoutMember',
-  // middleware: 'auth',
-  middleware({ store, route }) {
+  middleware({ store, route, redirect }) {
+    if (!store.state.auth.loggedIn) {
+      if (typeof window !== 'undefined') {
+        alert('您尚未登入')
+      }
+      redirect('/account/login')
+    }
     let heading
     const routeName = route.name
     switch (routeName) {

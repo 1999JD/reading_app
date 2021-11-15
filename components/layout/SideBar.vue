@@ -12,6 +12,13 @@
         <NuxtLink :to="item.to">{{ item.title }}</NuxtLink>
       </li>
     </ul>
+    <button
+      class="w-full text-left border-t border-gray-divide"
+      @click="handleUserLog"
+    >
+      {{ $auth.loggedIn ? '登出' : '登入' }}
+    </button>
+    <button @click="handleRefreshToken">手動刷新</button>
   </aside>
 </template>
 
@@ -31,9 +38,22 @@ export default {
         { title: '里程碑', to: '~/' },
         { title: '我的收藏', to: '~/' },
         { title: '優惠卷', to: '~/' },
-        { title: '登出', to: '~/' },
       ],
     }
+  },
+  methods: {
+    async handleUserLog() {
+      if (this.$auth.loggedIn) {
+        await this.$auth.logout()
+        this.$emit('onClick')
+        this.$router.push('/')
+      } else {
+        this.$router.push('/account/login')
+      }
+    },
+    handleRefreshToken() {
+      this.$auth.refreshTokens()
+    },
   },
 }
 </script>
@@ -51,7 +71,8 @@ ul {
   @apply divide-y divide-gray-divide divide-solid;
 }
 
-a {
+a,
+button {
   @apply block py-3 px-9 leading-4;
 }
 </style>

@@ -1,14 +1,24 @@
 import * as yup from 'yup'
 import Vue from 'vue'
 
-const schema = yup.object().shape({
-  account: yup.string().required().email(),
+const schemaAll = yup.object().shape({
+  // accountRequired: yup.string().required(),
+  // accountFormat: yup.string().email(),
+  account: yup.string().required(),
   password: yup.string().required(),
   settingPassword: yup.string().matches(/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=^.{8,15}$)/)
 })
 
+// yup.setLocale({
+//   mixed: {
+//     default: '格式不對'
+//   }
+// })
+
 Vue.prototype.$validate = async (field, userInput) => {
-  const result = await schema.fields[field].isValid(userInput)
+  userInput = await schemaAll.fields[field].ensure(userInput).cast(userInput)
+  // const result = await schemaAll.fields[field].isValid(userInput)
+  const result = await schemaAll.validateAt(field, userInput)
   return result
 }
 

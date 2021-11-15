@@ -1,3 +1,4 @@
+
 export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
@@ -61,12 +62,20 @@ export default {
     },
     strategies: {
       local: {
+        scheme: 'refresh',
         token: {
-          property: 'token'
+          property: 'token.accessToken',
+          maxAge: 1800,
+          global: true,
+          type: 'Bearer'
+        },
+        refreshToken: {
+          property: 'token.refreshToken',
+          data: 'refreshToken',
+          maxAge: false,
         },
         user: {
-          property: 'data',
-          // autoFetch: false
+          property: 'user',
           autoFetch: true
         },
         endpoints: {
@@ -74,42 +83,37 @@ export default {
             url: '/auth/login',
             method: 'post'
           },
+          refresh: {
+            url: '/auth/refresh',
+            method: 'post'
+          },
           logout: {
             url: '/auth/logout',
             method: 'post'
           },
-          // user: false,
           user: {
             url: '/auth/user',
             method: 'get',
-            propertyName: ''
           }
         },
-
       }
     },
     plugins: [{
       src: '~/plugins/axios',
       ssr: true
-    },
-      '~/plugins/axios.js']
+    }]
   },
-
-  env: {
-    baseUrl:
-      process.env.NODE_ENV === 'development'
-        ? 'http://127.0.0.1:3000'
-        : 'http://127.0.0.1:3000',
-    apiURL:
-      process.env.NODE_ENV === 'development'
-        ? 'http://127.0.0.1:3000'
-        : 'http://127.0.0.1:3000',
-  },
-
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
+  // axios: {
+  //   baseUrl:
+  //     process.env.NODE_ENV === 'development' ? 'http://127.0.0.1:3000/api/' : 'http://127.0.0.1:3000/api/',
+  //   retry: { retires: 3 }
+  // },
   axios: {
     baseUrl:
       process.env.NODE_ENV === 'development' ? 'http://127.0.0.1:3000/api/' : 'http://127.0.0.1:3000/api/',
+    // proxy: true,
+    credentials: true,
     retry: { retires: 3 }
   },
 
@@ -117,11 +121,12 @@ export default {
     '/api': {
       target:
         process.env.NODE_ENV === 'development'
-          ? 'http://127.0.0.1:3000'
-          : 'http://127.0.0.1:3000',
-      pathRewrite: { '^/api/': '' },
+          ? 'http://127.0.0.1:3000/api/'
+          : 'http://127.0.0.1:3000/api/',
+      // pathRewrite: { "^/api/": "" }
     },
   },
+
   // PWA module configuration: https://go.nuxtjs.dev/pwa
   pwa: {
     manifest: {
