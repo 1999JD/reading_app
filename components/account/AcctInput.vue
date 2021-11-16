@@ -1,8 +1,8 @@
 <template>
   <label class="account__input__wrap">
-    <AccountInputHelp :is-validated="isValidated">
-      *帳號格式錯誤
-    </AccountInputHelp>
+    <span class="account__input__help">
+      {{ errorMessage }}
+    </span>
     <span class="account__label">帳號</span>
     <input
       v-model="userInput"
@@ -20,16 +20,13 @@ export default {
   data() {
     return {
       userInput: '',
-      isValidated: true,
+      errorMessage: '',
     }
   },
   methods: {
-    handleInput(event) {
+    async handleInput(event) {
       this.$emit('input', event.target.value)
-      this.handleValidate('account')
-    },
-    async handleValidate(field) {
-      this.isValidated = await this.$validate(field, this.userInput)
+      this.errorMessage = await this.$validate('account', this.userInput)
     },
   },
 }

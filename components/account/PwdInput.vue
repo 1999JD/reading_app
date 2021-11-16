@@ -19,9 +19,9 @@
         @input="handleInput($event)"
       />
     </div>
-    <AccountInputHelp :is-validated="isValidated">
-      *此欄位不得為空
-    </AccountInputHelp>
+    <span class="account__input__help">
+      {{ errorMessage }}
+    </span>
   </label>
 </template>
 
@@ -31,26 +31,23 @@ export default {
   props: {
     field: {
       type: String,
-      default: 'password',
+      default: '',
     },
   },
   data() {
     return {
       eyeOpen: false,
       userInput: '',
-      isValidated: true,
+      errorMessage: '',
     }
   },
   methods: {
     handleEyeOpen() {
       this.eyeOpen = !this.eyeOpen
     },
-    handleInput(event) {
+    async handleInput(event) {
       this.$emit('input', event.target.value)
-      this.handleValidate(this.field)
-    },
-    async handleValidate(field) {
-      this.isValidated = await this.$validate(field, this.userInput)
+      this.errorMessage = await this.$validate(this.field, this.userInput)
     },
   },
 }

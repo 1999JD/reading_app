@@ -2,7 +2,7 @@
   <div class="pb-12">
     <form @submit.prevent="userLogin">
       <AccountAcctInput v-model="login.account" />
-      <AccountPwdInput v-model="login.password" />
+      <AccountPwdInput v-model="login.password" filed="password" />
       <NuxtLink
         to="/account/forgetPassword"
         class="block w-fit ml-auto mb-8 underline"
@@ -41,8 +41,8 @@ export default {
         password: '',
       },
       isValidated: {
-        account: true,
-        password: true,
+        account: '',
+        password: '',
       },
     }
   },
@@ -63,7 +63,6 @@ export default {
           }
         })
         .catch((_err) => {
-          // eslint-disable-next-line no-console
           alert('出現錯誤，無法登入')
           this.$router.push('/account/login')
         })

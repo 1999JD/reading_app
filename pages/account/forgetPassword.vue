@@ -10,7 +10,11 @@
         發送新密碼 ({{ count }})
       </button>
       <div v-show="hasSent">
-        <AccountPwdInput v-model="verify.password" class="mb-10">
+        <AccountPwdInput
+          v-model="verify.password"
+          class="mb-10"
+          field="password"
+        >
           <template #label>輸入信箱預設密碼</template>
         </AccountPwdInput>
         <button class="account__btn">登入</button>

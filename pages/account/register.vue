@@ -2,7 +2,7 @@
   <div class="pb-21.5">
     <form action="">
       <AccountAcctInput v-model="register.account" />
-      <AccountPwdInput v-model="register.password">
+      <AccountPwdInput v-model="register.password" field="setPassword">
         <template #label>設定密碼</template>
       </AccountPwdInput>
       <AccountCfmPwdInput v-model="register.settingPassword" class="mb-8" />
