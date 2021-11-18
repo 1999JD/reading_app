@@ -103,12 +103,7 @@ export default {
       ssr: true
     }]
   },
-  // Axios module configuration: https://go.nuxtjs.dev/config-axios
-  // axios: {
-  //   baseUrl:
-  //     process.env.NODE_ENV === 'development' ? 'http://127.0.0.1:3000/api/' : 'http://127.0.0.1:3000/api/',
-  //   retry: { retires: 3 }
-  // },
+
   axios: {
     baseUrl:
       process.env.NODE_ENV === 'development' ? 'http://127.0.0.1:3000/api/' : 'http://127.0.0.1:3000/api/',

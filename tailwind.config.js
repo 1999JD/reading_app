@@ -72,6 +72,11 @@ module.exports = {
         quote: {
           DEFAULT: '#EB7513'
         },
+        ebook: {
+          white: '#ffffff',
+          light: '#EBE0C5',
+          dark: '#838383'
+        },
         gray: {
           divide: '#ECECEC',
           mainentries: '#f0f0f0',
@@ -82,10 +87,10 @@ module.exports = {
           accountInput: '#B9B9B9',
           accountInputFocus: '#969696',
           accountPlaceholder: '#B5B5B5',
-
         },
       },
       fontSize: {
+        '2.5xl': '1.75rem',
         '3.5xl': '2rem',
       },
       lineHeight: {
@@ -93,6 +98,7 @@ module.exports = {
       },
       borderWidth: {
         '1.5': '1.5px',
+        '3': '3px',
       },
       borderRadius: {
         '2lg': '0.625rem',
@@ -107,11 +113,16 @@ module.exports = {
         'account-main': ' 0px 2px 6px 0px #00000040',
         'content': '0px 2px 4px 0px #AEAEAE40',
         'test': '0px 2px 4px 0px #00000040',
+        'ebook-btn': '0px 1px 2px 0px #7D7D7D40',
+
       },
       dropShadow: {
         'footer': '0px -1px 2px rgba(174, 174, 174, 0.25)',
         'card': '0px 4px 4px rgba(159, 159, 159, 0.25)',
       },
+      zIndex: {
+        '-1': '-1',
+      }
 
     },
   },
