@@ -100,6 +100,7 @@ export default {
     proxy: true,
     prefix: '/api',
   },
+
   proxy: {
     '/api': {
       target:
@@ -129,6 +130,7 @@ export default {
         }
       })
     },
+    vendor: ['axios'],
     loaders: {
       file: { esModule: false },
       imgUrl: { esModule: false },

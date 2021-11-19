@@ -32,8 +32,18 @@ export default {
   data() {
     return {
       footerButtons: [
-        { title: '目錄', src: 'catalog.svg', alt: '目錄', handler: '' },
-        { title: '筆記', src: 'pen-line.svg', alt: '筆記', handler: '' },
+        {
+          title: '目錄',
+          src: 'catalog.svg',
+          alt: '目錄',
+          handler: 'onClickCatalog',
+        },
+        {
+          title: '筆記',
+          src: 'pen-line.svg',
+          alt: '筆記',
+          handler: 'onClickPen',
+        },
         { title: '收藏', src: 'store-tag.svg', alt: '收藏', handler: '' },
         {
           title: '設定',

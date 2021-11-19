@@ -46,9 +46,17 @@
     </header>
     <NuxtChild
       :setting-open="settingOpen"
+      :catalog-open="catalogOpen"
+      :pen-use="penUse"
       @onClickSetting="handleOpenSetting"
+      @onClickCatalog="handleOpenCatalog"
+      @onClickPen="handleUsePen"
     />
-    <LayoutEbookFooterNav @onClickSetting="handleOpenSetting" />
+    <LayoutEbookFooterNav
+      @onClickSetting="handleOpenSetting"
+      @onClickCatalog="handleOpenCatalog"
+      @onClickPen="handleUsePen"
+    />
   </div>
 </template>
 
@@ -58,11 +66,25 @@ export default {
   data() {
     return {
       settingOpen: false,
+      catalogOpen: false,
+      penUse: false,
     }
   },
   methods: {
     handleOpenSetting() {
       this.settingOpen = !this.settingOpen
+      this.catalogOpen = false
+      this.penUse = false
+    },
+    handleOpenCatalog() {
+      this.catalogOpen = !this.catalogOpen
+      this.settingOpen = false
+      this.penUse = false
+    },
+    handleUsePen() {
+      this.penUse = !this.penUse
+      this.settingOpen = false
+      this.catalogOpen = false
     },
   },
 }
