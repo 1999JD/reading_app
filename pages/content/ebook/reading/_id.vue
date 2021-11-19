@@ -27,12 +27,25 @@
       </div>
 
       <section
+        v-show="catalogOpen"
+        class="absolute bottom-0 w-full bg-primary py-4 px-6 rounded-t-2xl"
+      >
+        <h3 class="mb-3 pb-2 text-base font-medium border-b border-gray-order">
+          目錄
+        </h3>
+        <ul>
+          <li v-for="chapter in catalog" :key="chapter.label" class="mb-3">
+            <button class="ml-" @click="handleSwitchChapter(chapter.href)">
+              {{ chapter.label }}
+            </button>
+          </li>
+        </ul>
+      </section>
+
+      <section
         v-show="settingOpen"
         class="absolute bottom-0 w-full bg-primary px-8 py-10 rounded-t-2xl"
       >
-        <button class="absolute top-3 right-3" @click="$emit('onClickSetting')">
-          <img src="~/assets/icon/common/downArrow.svg" alt="收起" />
-        </button>
         <ul>
           <li class="settings__setting">
             <h3 class="settings__title">字型大小</h3>
@@ -40,7 +53,7 @@
               v-for="item in settings.fontSize"
               :key="item.fontSizeClass"
               :class="[
-                item.active && 'active--font',
+                item.fontSize === ebookStyle.fontSize && 'active--font',
                 item.fontSizeClass,
                 'settings__button--font',
               ]"
@@ -52,14 +65,14 @@
           <li class="settings__setting">
             <h3 class="settings__title">護眼模式</h3>
             <button
-              v-for="item in settings.bgColor"
-              :key="item.bgColor"
+              v-for="color in settings.bgColor"
+              :key="color"
               :class="[
-                item.active && 'active--bg',
-                item.bgColor,
+                color === ebookStyle.bgColor && 'active--bg',
+                color,
                 'settings__button--bg',
               ]"
-              @click="handleSwitchBgColor(item.bgColor)"
+              @click="handleSwitchBgColor(color)"
             ></button>
           </li>
           <!-- <li class="settings__setting">
@@ -99,7 +112,15 @@ export default {
   props: {
     settingOpen: {
       type: Boolean,
-      default: undefined,
+      default: false,
+    },
+    catalogOpen: {
+      type: Boolean,
+      default: false,
+    },
+    penUse: {
+      type: Boolean,
+      default: false,
     },
   },
   data() {
@@ -112,60 +133,24 @@ export default {
       locations: {},
       location: 0,
       bookAvailable: true,
-      url: 'http://localhost:7777/chinese-vertical.epub',
+      catalog: [],
+      url: 'http://localhost:7777/55a.epub',
       ebookStyle: {
-        bgColor: 'white',
+        bgColor: 'bg-white',
         fontSize: 18,
         writingMode: 'horizontal-tb',
       },
       settings: {
         fontSize: [
-          {
-            fontSizeClass: 'text-sm',
-            fontSize: 14,
-            active: false,
-          },
-          {
-            fontSizeClass: 'text-lg',
-            fontSize: 18,
-            active: true,
-          },
-          {
-            fontSizeClass: 'text-2xl',
-            fontSize: 20,
-            active: false,
-          },
-          {
-            fontSizeClass: 'text-2.5xl',
-            fontSize: 24,
-            active: false,
-          },
+          { fontSizeClass: 'text-sm', fontSize: 14 },
+          { fontSizeClass: 'text-lg', fontSize: 18 },
+          { fontSizeClass: 'text-2xl', fontSize: 20 },
+          { fontSizeClass: 'text-2.5xl', fontSize: 24 },
         ],
-        bgColor: [
-          {
-            bgColor: 'bg-ebook-white',
-            active: true,
-          },
-          {
-            bgColor: 'bg-ebook-light',
-            active: false,
-          },
-          {
-            bgColor: 'bg-ebook-dark',
-            active: false,
-          },
-        ],
+        bgColor: ['bg-ebook-white', 'bg-ebook-light', 'bg-ebook-dark'],
         // direction: [
-        //   {
-        //     icon: 'south',
-        //     writingMode: 'vertical-rl',
-        //     active: false,
-        //   },
-        //   {
-        //     icon: 'east',
-        //     writingMode: 'horizontal-tb',
-        //     active: true,
-        //   },
+        //   {icon: 'south', writingMode: 'vertical-rl' },
+        //   {icon: 'east',writingMode: 'horizontal-tb' },
         // ],
       },
     }
@@ -184,14 +169,29 @@ export default {
       })
       .then((_result) => {
         this.locations = this.book.locations
+        this.rendition.themes.fontSize(this.ebookStyle.fontSize + 'px')
+
         this.rendition.themes.default({
           html: {
-            'font-size': `${this.ebookStyle.fontSize}px !important`,
             'writing-mode': `${this.ebookStyle.writingMode} !important`,
           },
         })
         this.bookReady = true
       })
+    this.book.loaded.navigation.then((navigation) => {
+      this.catalog = navigation.toc.map((chapter) => {
+        return {
+          label: chapter.label,
+          href: chapter.href,
+        }
+      })
+    })
+    const vm = this
+    this.rendition.on('selected', function (cfiRange, _contents) {
+      const penUse = vm.penUse
+      if (penUse) this.book.rendition.annotations.highlight(cfiRange)
+      // rendition.display(cfiRange);
+    })
   },
   methods: {
     async prevPage() {
@@ -233,28 +233,18 @@ export default {
       this.progress = progress
       this.onProgressInput(progress)
     },
-    jumpTo(href) {
-      this.rendition.display(href)
-    },
     handleSwitchBgColor(color) {
       this.ebookStyle.bgColor = color
-      this.settings.bgColor.forEach((element) => {
-        if (element.bgColor === color) element.active = true
-        else element.active = false
-      })
     },
     handleSwitchFontsize(fontSize) {
       this.ebookStyle.fontSize = fontSize
-      this.settings.fontSize.forEach((element) => {
-        if (element.fontSize === fontSize) element.active = true
-        else element.active = false
-      })
-      this.rendition.themes.default({
-        html: {
-          'font-size': `${this.ebookStyle.fontSize}px !important`,
-          'writing-mode': `${this.ebookStyle.writingMode} !important`,
-        },
-      })
+      this.rendition.themes.fontSize(fontSize + 'px')
+      // this.rendition.themes.default({
+      //   html: {
+      //     'font-size': `${this.ebookStyle.fontSize}px !important`,
+      //     'writing-mode': `${this.ebookStyle.writingMode} !important`,
+      //   },
+      // })
     },
     // handleSwitchDirection(writingMode) {
     //   this.book.package.metadata.direction =
@@ -271,6 +261,9 @@ export default {
     //     },
     //   })
     // },
+    handleSwitchChapter(href) {
+      this.rendition.display(href)
+    },
   },
 }
 </script>
