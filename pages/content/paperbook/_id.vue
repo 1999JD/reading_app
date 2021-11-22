@@ -3,7 +3,7 @@
     <div class="w-35 mx-auto mb-6 rounded-md overflow-hidden">
       <img :src="require(`~/assets/img/${book.imgSrc}`)" alt="" />
     </div>
-    <h2 class="mb-5 text-center text-base font-medium">{{ book.title }}</h2>
+    <h2 class="mb-5 text-center text-base font-medium">{{ book.name }}</h2>
     <section
       class="relative mx-6 mb-6 p-2.5 pb-3.5 bg-white rounded-md shadow-content"
     >
@@ -43,7 +43,7 @@
         免費試閱
       </button>
       <div class="flex items-center">
-        <button class="mr-7.5">
+        <button class="mr-7.5" @click="handleAddShoppingList(book)">
           <div class="w-8 mx-auto mb-1">
             <img src="~/assets/icon/content/cart.png" alt="" />
           </div>
@@ -99,7 +99,7 @@ export default {
       open: false,
       book: {
         bookId: 0,
-        title: '教育情緣 - 回首七十人生教育路',
+        name: '教育情緣 - 回首七十人生教育路',
         imgSrc: 'sampleBook.jpg',
         ISBN: '9789867868084',
         author: '吳清基',
@@ -154,6 +154,7 @@ export default {
       this.open = !this.open
     },
     ...mapActions(['handleAddCollection']),
+    ...mapActions(['handleAddShoppingList']),
   },
 }
 </script>

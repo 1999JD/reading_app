@@ -11,11 +11,18 @@
           border-b border-gray-200
         "
       >
-        <label>
-          <input type="checkbox" class="w-5 h-5 rounded" />
-          <span class="font-medium">全選</span>
+        <label class="flex items-center">
+          <input
+            type="checkbox"
+            class="w-5 h-5 rounded"
+            :checked="selectAll"
+            @input="handleSelectAll(selectAll)"
+          />
+          <span class="ml-2 font-medium">全選</span>
         </label>
-        <button class="mr-2 text-xs">編輯</button>
+        <button class="mr-2 text-xs font-medium" @click="handleDelShoppingList">
+          刪除
+        </button>
       </div>
       <ul class="mb-12 px-4 py-3 pb-5">
         <li
@@ -27,9 +34,11 @@
           ]"
         >
           <input
+            :checked="item.checked"
             type="checkbox"
             name="edit"
             class="flex-grow-0 flex-shrink-0 w-5 h-5 rounded"
+            @input="checkShoppingListItem(item.bookId)"
           />
           <div class="flex gap-1.5">
             <div class="flex-grow-0 flex-shrink-0 w-13">
@@ -54,44 +63,51 @@
         </div>
         繼續購物
       </NuxtLink>
-      <NuxtLink
-        to="member/checkout"
+      <button
         class="inline-flex justify-center py-2 bg-highlight rounded"
+        @click="beforeJumpToCheckout"
       >
         <div class="w-4">
           <img src="" alt="" />
         </div>
         前往結帳
-      </NuxtLink>
+      </button>
     </nav>
   </main>
 </template>
 
 <script>
+import { mapMutations, mapActions } from 'vuex'
+
 export default {
   name: 'Cart',
   layout: 'member',
   data() {
     return {
-      shoppingList: [
-        {
-          bookId: 0,
-          checked: false,
-          imgSrc: 'sampleBook.jpg',
-          name: '教育情緣 - 回首七十人生教育路回首七十人生',
-          author: '吳清基',
-          price: 225,
-        },
-        {
-          bookId: 1,
-          checked: false,
-          imgSrc: 'sampleBook.jpg',
-          name: '教育情緣 - 回首七十人生教育路',
-          author: '吳清基',
-          price: 300,
-        },
-      ],
+      selectAll: false,
+      editShow: false,
     }
+  },
+  computed: {
+    shoppingList() {
+      return this.$store.state.shoppingList
+    },
+  },
+  created() {
+    this.selectAllShoppingListItem(this.selectAll)
+  },
+  methods: {
+    handleDelete() {
+      this.editShow = !this.editShow
+    },
+    handleSelectAll() {
+      this.selectAll = !this.selectAll
+      this.selectAllShoppingListItem(this.selectAll)
+    },
+    ...mapMutations(['selectAllShoppingListItem']),
+    ...mapMutations(['checkShoppingListItem']),
+    ...mapActions(['handleDelShoppingList']),
+    ...mapMutations(['beforeJumpToCheckout']),
   },
 }
 </script>

@@ -30,7 +30,26 @@ export const state = () => ({
       imgSrc: 'sampleBook.jpg',
       imgAlt: '',
     }
-  ]
+  ],
+  shoppingList: [
+    {
+      bookId: 0,
+      name: '教育情緣 - 回首七十人生教育路回首七十人生',
+      author: '吳清基',
+      imgSrc: 'sampleBook.jpg',
+      price: 225,
+      checked: false,
+    },
+    {
+      bookId: 1,
+      checked: true,
+      imgSrc: 'sampleBook.jpg',
+      name: '教育情緣 - 回首七十人生教育路',
+      author: '吳清基',
+      price: 300,
+    },
+  ],
+  billList: [],
 })
 
 export const getters = {
@@ -51,7 +70,16 @@ export const actions = {
   },
   handleDelCollection({ commit }, payload) {
     commit('delCollections', payload)
-  }
+  },
+  handleAddShoppingList({ commit }, payload) {
+    commit('addShoppingList', {
+      ...payload
+    })
+  },
+  handleDelShoppingList({ commit }) {
+    commit('delShoppingList')
+  },
+
 }
 
 export const mutations = {
@@ -71,5 +99,51 @@ export const mutations = {
     state.collections = state.collections.filter((element) => {
       return element.bookId !== bookId
     })
+  },
+  checkShoppingListItem(state, bookId) {
+    const isBook = state.shoppingList.findIndex(
+      (element) => element.bookId === bookId
+    )
+    state.shoppingList[isBook].checked = !state.shoppingList[isBook].checked
+  },
+  selectAllShoppingListItem(state, payload) {
+    state.shoppingList.forEach(element => { element.checked = payload })
+  },
+  addShoppingList(state, payload) {
+    const isExist = state.shoppingList.findIndex((element =>
+      element.bookId === payload.bookId
+    ))
+    if (isExist !== -1) {
+      alert('此商品已在購物車')
+      return false
+    }
+    const newBook = {
+      bookId: payload.bookId,
+      checked: false,
+      imgSrc: payload.imgSrc,
+      name: payload.name,
+      author: payload.author,
+      price: payload.price,
+    }
+    state.shoppingList.push(newBook)
+    alert('加入成功')
+    return false
+  },
+  delShoppingList(state) {
+    const msg = '您真的確定要刪除嗎？\n\n請確認！'
+    if (!confirm(msg)) return false
+    state.shoppingList = state.shoppingList.filter((element) => {
+      return element.checked === false
+    })
+  },
+  beforeJumpToCheckout(state) {
+    state.billList = state.shoppingList.filter((element) => {
+      return element.checked === true
+    })
+    if (state.billList.length !== 0) this.$router.push('/member/checkout')
+    else {
+      alert('您未挑選任何商品')
+      return false
+    }
   }
 }

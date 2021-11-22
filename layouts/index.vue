@@ -25,7 +25,10 @@
         </button>
       </label>
       <button type="button" class="absolute top-0 bottom-0 my-auto right-6">
-        <img src="~/assets/icon/layout/message.svg" alt="訊息中心" />
+        <span class="absolute top-1 w-4 h-4 bg-highlight rounded-full">
+          {{ shoppingList.length }}
+        </span>
+        <img src="~/assets/icon/layout/cart.svg" alt="購物車" />
       </button>
     </header>
 
@@ -46,6 +49,11 @@ export default {
     return {
       open: false,
     }
+  },
+  computed: {
+    shoppingList() {
+      return this.$store.state.shoppingList
+    },
   },
   methods: {
     handleCloseSidebar() {

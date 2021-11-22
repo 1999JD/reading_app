@@ -133,28 +133,12 @@ export default {
   name: 'Checkout',
   layout: 'member',
   data() {
-    return {
-      shoppingList: [
-        {
-          bookId: 0,
-          checked: false,
-          imgSrc: 'sampleBook.jpg',
-          name: '教育情緣 - 回首七十人生教育路回首七十人生',
-          author: '吳清基',
-          price: 225,
-        },
-        {
-          bookId: 1,
-          checked: false,
-          imgSrc: 'sampleBook.jpg',
-          name: '教育情緣 - 回首七十人生教育路',
-          author: '吳清基',
-          price: 300,
-        },
-      ],
-    }
+    return {}
   },
   computed: {
+    shoppingList() {
+      return this.$store.state.billList
+    },
     sum() {
       const reducer = (previousValue, currentValue) =>
         previousValue + currentValue
