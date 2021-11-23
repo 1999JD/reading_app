@@ -1,6 +1,11 @@
 <template>
   <ul class="m-6">
-    <li v-for="book in books" :key="book.bookId" class="flex gap-3 mb-3">
+    <li
+      v-for="book in books"
+      :key="book.bookId"
+      class="flex gap-3 mb-3"
+      @click="$router.push(`/content/media/${book.bookId}`)"
+    >
       <div class="w-24 flex-shrink-0">
         <img
           :src="require(`~/assets/img/${book.imgSrc}`)"

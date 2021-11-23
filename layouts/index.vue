@@ -8,7 +8,7 @@
     >
       <button
         type="button"
-        class="absolute top-0 bottom-0 my-auto left-6"
+        class="absolute inline-block top-0 bottom-0 my-auto left-6"
         @click.prevent="open = !open"
       >
         <img src="~/assets/icon/layout/ham.svg" alt="漢堡選單" />
@@ -24,7 +24,11 @@
           <img src="~/assets/icon/layout/search.svg" alt="送出按鈕" />
         </button>
       </label>
-      <button type="button" class="absolute top-0 bottom-0 my-auto right-6">
+      <button
+        type="button"
+        class="absolute top-0 bottom-0 my-auto right-6"
+        @click="$router.push('/member/cart')"
+      >
         <span class="absolute top-1 w-4 h-4 bg-highlight rounded-full">
           {{ shoppingList.length }}
         </span>

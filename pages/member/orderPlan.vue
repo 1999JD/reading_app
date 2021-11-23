@@ -71,9 +71,9 @@ export default {
           bgColor: '#FFC651',
         },
         {
-          title: '月訂閱',
+          title: '年訂閱',
           price: 1500,
-          unit: '月',
+          unit: '年',
           desc: '原價$2,200。多元說書內容任您看。內容大綱簡介內容大綱簡介內容大綱簡介',
           bgColor: '#6AD8D8',
         },

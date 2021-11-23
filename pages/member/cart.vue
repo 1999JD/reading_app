@@ -32,6 +32,7 @@
             index === shoppingList.length - 1 && 'mt-6',
             'flex items-center gap-2',
           ]"
+          @click="$router.push(`/content/media/${item.bookId}`)"
         >
           <input
             :checked="item.checked"

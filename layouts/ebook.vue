@@ -13,7 +13,7 @@
       "
     >
       <NuxtLink
-        to="/content"
+        :to="$store.state.backRoute"
         class="
           absolute
           left-6
@@ -63,6 +63,7 @@
 <script>
 export default {
   name: 'Ebook',
+  middleware: 'layoutEbook',
   data() {
     return {
       settingOpen: false,

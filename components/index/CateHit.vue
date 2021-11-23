@@ -28,6 +28,7 @@
           @mousedown.prevent="mousedown(index, $event)"
           @mousemove.prevent="mousemove"
           @mouseup.prevent="mouseup"
+          @click="$router.push(`/content/media/${bookId}`)"
         >
           <div class="w-28 m-auto">
             <img

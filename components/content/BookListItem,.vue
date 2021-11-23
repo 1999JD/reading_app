@@ -15,7 +15,7 @@
       >
     </div>
     <NuxtLink
-      :to="`content/media/${book.id}`"
+      :to="`/content/media/${book.id}`"
       class="block absolute top-2.5 right-2 w-6"
     >
       <img src="~/assets/icon/content/earphone.png" alt="" />

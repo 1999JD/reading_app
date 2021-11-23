@@ -90,10 +90,10 @@ export default {
         },
       }
     },
-    plugins: [{
-      src: '~/plugins/axios',
-      ssr: true
-    }]
+    plugins: [
+      { src: '~/plugins/axios', ssr: true },
+      // { src: '~/plugins/route', ssr: true }
+    ]
   },
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
   axios: {

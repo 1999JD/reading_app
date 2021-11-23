@@ -1,9 +1,14 @@
 <template>
   <main class="mt-9 mb-13">
-    <section v-for="subCate in books" :key="subCate.id">
+    <section v-for="subCate in books" :key="subCate.cate">
       <h2 class="title">{{ subCate.cate }}</h2>
       <ul class="flex mb-10 overflow-x-auto overflow-y-hidden no-scrollbar">
-        <li v-for="book in subCate.books" :key="book.id" class="mr-4">
+        <li
+          v-for="book in subCate.books"
+          :key="book.bookId"
+          class="mr-4"
+          @click="$router.push(`/content/media/${book.bookId}`)"
+        >
           <div class="card__img mb-2 rounded">
             <img
               :src="require(`~/assets/img/${book.src}`)"
@@ -37,28 +42,28 @@ export default {
           cate: '本周',
           books: [
             {
-              id: 1,
+              bookId: 1,
               title: '素養人才',
               src: 'sampleBook.jpg',
               alt: '素養人才',
               intro: '我是內容我是內容我是內容我是內容我是內容我是內容',
             },
             {
-              id: 2,
+              bookId: 2,
               title: '素養人才',
               src: 'sampleBook.jpg',
               alt: '素養人才',
               intro: '我是內容我是內容我是內容我是內容我是內容我是內容',
             },
             {
-              id: 3,
+              bookId: 3,
               title: '素養人才',
               src: 'sampleBook.jpg',
               alt: '素養人才',
               intro: '我是內容我是內容我是內容我是內容我是內容我是內容',
             },
             {
-              id: 4,
+              bookId: 4,
               title: '素養人才',
               src: 'sampleBook.jpg',
               alt: '素養人才',
@@ -72,28 +77,28 @@ export default {
           cate: '近期',
           books: [
             {
-              id: 5,
+              bookId: 5,
               title: '素養人才',
               src: 'sampleBook.jpg',
               alt: '素養人才',
               intro: '我是內容我是內容我是內容我是內容我是內容我是內容',
             },
             {
-              id: 6,
+              bookId: 6,
               title: '素養人才',
               src: 'sampleBook.jpg',
               alt: '素養人才',
               intro: '我是內容我是內容我是內容我是內容我是內容我是內容',
             },
             {
-              id: 7,
+              bookId: 7,
               title: '素養人才',
               src: 'sampleBook.jpg',
               alt: '素養人才',
               intro: '我是內容我是內容我是內容我是內容我是內容我是內容',
             },
             {
-              id: 8,
+              bookId: 8,
               title: '素養人才',
               src: 'sampleBook.jpg',
               alt: '素養人才',

@@ -35,6 +35,7 @@
           rounded-2xl
           shadow-content
         "
+        @click="$router.push(`/content/ebook/reading/${$route.params.id}`)"
       >
         <div class="inline-block w-6 mr-2 align-middle">
           <img src="~/assets/icon/content/book-open.svg" alt="" />
@@ -97,6 +98,7 @@ export default {
     return {
       open: false,
       book: {
+        bookId: 1,
         title: '教育情緣 - 回首七十人生教育路',
         imgSrc: 'sampleBook.jpg',
         ISBN: '9789867868084',

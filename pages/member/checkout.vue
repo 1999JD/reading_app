@@ -140,6 +140,7 @@ export default {
       return this.$store.state.billList
     },
     sum() {
+      if (this.shoppingList.length <= 0) return 0
       const reducer = (previousValue, currentValue) =>
         previousValue + currentValue
       const priceArr = this.shoppingList.map((item) => item.price)

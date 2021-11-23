@@ -7,7 +7,7 @@
       ]"
     >
       <NuxtLink
-        to="/member"
+        :to="$store.state.backRoute"
         class="
           block
           absolute
@@ -24,7 +24,7 @@
         <img src="~/assets/icon/common/leftArrow.svg" alt="返回" />
       </NuxtLink>
       <h2 class="text-base font-medium">
-        {{ $store.state.memberPageHeading }}
+        {{ $store.state.heading }}
       </h2>
       <div class="flex items-center absolute top-0 bottom-0 right-6 my-auto">
         <button type="button" class="w-5 mr-3">
@@ -45,36 +45,6 @@
 <script>
 export default {
   name: 'LayoutMember',
-  middleware({ store, route, redirect }) {
-    if (!store.state.auth.loggedIn) {
-      if (typeof window !== 'undefined') {
-        alert('您尚未登入')
-      }
-      redirect('/account/login')
-    }
-    let heading
-    const routeName = route.name
-    switch (routeName) {
-      case 'member-cart':
-        heading = '購物清單'
-        break
-      case 'member-collections':
-        heading = '我的收藏'
-        break
-      case 'member-orderPlan':
-        heading = '訂購專區'
-        break
-      case 'member-orderReceipt':
-        heading = '訂購專區'
-        break
-      case 'member-checkout':
-        heading = '付款資訊'
-        break
-    }
-    store.commit('setMemberPageHeading', heading)
-  },
-  data() {
-    return {}
-  },
+  middleware: 'layoutMember',
 }
 </script>

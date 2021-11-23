@@ -4,6 +4,7 @@
       <img
         :src="require(`~/assets/img/${collection.imgSrc}`)"
         :alt="collection.name"
+        @click="$router.push(`/content/media/${collection.bookId}`)"
       />
     </div>
     <div

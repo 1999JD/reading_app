@@ -28,16 +28,16 @@ export default {
   data() {
     return {
       orderLinks: [
-        { title: '熱門商品', to: '~/' },
-        { title: '訂閱方案', to: '~/' },
-        { title: '團購方案', to: '~/' },
-        { title: '周邊商品', to: '~/' },
+        { title: '熱門商品', to: '/member/hit' },
+        { title: '訂閱方案', to: '/member/orderPlan' },
+        { title: '團購方案', to: '/member/groupBuy' },
+        { title: '周邊商品', to: '/member/merch' },
       ],
       memberLinks: [
-        { title: '購買紀錄', to: '~/' },
-        { title: '里程碑', to: '~/' },
-        { title: '我的收藏', to: '~/' },
-        { title: '優惠卷', to: '~/' },
+        { title: '購買紀錄', to: '/member/records' },
+        { title: '里程碑', to: '/member/milestone' },
+        { title: '我的收藏', to: '/member/collections' },
+        { title: '優惠卷', to: '/member/coupon' },
       ],
     }
   },

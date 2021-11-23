@@ -26,14 +26,6 @@
 export default {
   name: 'Login',
   layout: 'account',
-  middleware({ store, redirect }) {
-    if (store.state.auth.loggedIn) {
-      if (typeof window !== 'undefined') {
-        alert('您已經登入!')
-      }
-      redirect('/')
-    }
-  },
   data() {
     return {
       login: {

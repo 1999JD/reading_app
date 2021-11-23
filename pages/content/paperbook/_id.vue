@@ -36,6 +36,7 @@
           rounded-2xl
           shadow-content
         "
+        @click="$router.push(`/content/ebook/reading/${$route.params.id}`)"
       >
         <div class="inline-block w-6 mr-2 align-middle">
           <img src="~/assets/icon/content/book-open.svg" alt="" />

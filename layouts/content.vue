@@ -4,7 +4,7 @@
       class="flex justify-center items-center fixed z-40 w-full bg-primary py-4"
     >
       <NuxtLink
-        to="/content"
+        :to="$store.state.backRoute"
         class="
           self-center
           absolute
@@ -21,7 +21,7 @@
         <img src="~/assets/icon/common/leftArrow.svg" alt="返回按鈕" />
       </NuxtLink>
       <p class="text-base font-medium">
-        {{ $store.state.contentPageHeading }}
+        {{ $store.state.heading }}
       </p>
     </header>
     <div class="h-14"></div>
@@ -34,24 +34,6 @@
 <script>
 export default {
   name: 'LayoutContent',
-  middleware({ store, route }) {
-    let heading
-    const routeName = route.name
-    switch (routeName) {
-      case 'content-media-id':
-        heading = '現正播放'
-        break
-      case 'content-paperbook-id':
-        heading = '書籍簡介'
-        break
-      case 'content-ebook-id':
-        heading = '書籍簡介'
-        break
-      case 'content-test-id':
-        heading = '測驗挑戰'
-        break
-    }
-    store.commit('setContentPageHeading', heading)
-  },
+  middleware: 'layoutContent',
 }
 </script>

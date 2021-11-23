@@ -10,7 +10,6 @@
       />
     </div>
     <IndexNav />
-    {{ pathJson }}
     <div class="flex justify-around py-3 bg-gray-mainentries shadow-entries">
       <a
         v-for="entry in mainEntries"

@@ -5,6 +5,7 @@
         <img
           :src="require(`~/assets/img/${orderData.imgSrc}`)"
           :alt="orderData.name"
+          @click="$router.push(`/content/ebook/${orderData.bookId}`)"
         />
       </div>
       <ul>
