@@ -3,8 +3,7 @@
     <header
       class="flex justify-center items-center fixed z-40 w-full bg-primary py-4"
     >
-      <NuxtLink
-        :to="$store.state.backRoute"
+      <a
         class="
           self-center
           absolute
@@ -17,9 +16,10 @@
           bg-white
           rounded-full
         "
+        @click="$router.go(-1)"
       >
         <img src="~/assets/icon/common/leftArrow.svg" alt="返回按鈕" />
-      </NuxtLink>
+      </a>
       <p class="text-base font-medium">
         {{ $store.state.heading }}
       </p>

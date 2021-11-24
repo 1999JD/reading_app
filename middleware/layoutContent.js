@@ -1,6 +1,6 @@
 
 
-export default async function ({ app, store, route, params }) {
+export default function ({ store, route }) {
   let heading
   const routeName = route.name
   switch (routeName) {
@@ -36,14 +36,4 @@ export default async function ({ app, store, route, params }) {
       break
   }
   store.commit('setHeading', heading)
-
-  let backRoute = '/content'
-  store.commit('setBackRoute', backRoute)
-  await app.router.beforeEach((to, from, next) => {
-    if (from.path.includes('/content/media'))
-      backRoute = `/content/media/${params.id}`
-    else
-      backRoute = from.path
-    return next(store.commit('setBackRoute', backRoute))
-  })
 }

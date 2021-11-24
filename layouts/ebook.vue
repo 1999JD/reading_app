@@ -12,8 +12,7 @@
         delay-100
       "
     >
-      <NuxtLink
-        :to="$store.state.backRoute"
+      <a
         class="
           absolute
           left-6
@@ -25,9 +24,10 @@
           bg-white
           rounded-full
         "
+        @click.prevent="$router.go(-1)"
       >
         <img src="~/assets/icon/common/leftArrow.svg" alt="返回按鈕" />
-      </NuxtLink>
+      </a>
       <label for="" class="relative p-3">
         <input
           type="text"
@@ -63,7 +63,6 @@
 <script>
 export default {
   name: 'Ebook',
-  middleware: 'layoutEbook',
   data() {
     return {
       settingOpen: false,
