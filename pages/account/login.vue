@@ -1,13 +1,14 @@
 <template>
   <div class="pb-12">
-    <form @submit.prevent="userLogin">
+    <form @submit.prevent="$validateFunctions.userLogin(login)">
       <AccountAcctInput v-model="login.account" />
-      <AccountPwdInput v-model="login.password" filed="password" />
+      <AccountPwdInput v-model="login.password" field="password" />
       <NuxtLink
         to="/account/forgetPassword"
         class="block w-fit ml-auto mb-8 underline"
-        >忘記密碼了嗎?</NuxtLink
       >
+        忘記密碼了嗎?
+      </NuxtLink>
       <button class="account__btn mb-9" type="submit">登入</button>
       <div class="line--divide flex justify-center items-center mb-7.5">
         <p class="px-2 bg-white text-base">或</p>
@@ -37,28 +38,6 @@ export default {
         password: '',
       },
     }
-  },
-  methods: {
-    userLogin() {
-      this.error = null
-      return this.$auth
-        .loginWith('local', {
-          data: {
-            userInfo: this.login,
-          },
-        })
-        .then((res) => {
-          if (res.data.token) {
-            this.$auth.setUser(res.data.userInfo)
-            if (this.$auth.loggedIn) this.$router.push('/member')
-            else alert('出現錯誤，無法登入')
-          }
-        })
-        .catch((_err) => {
-          alert('出現錯誤，無法登入')
-          this.$router.push('/account/login')
-        })
-    },
   },
 }
 </script>

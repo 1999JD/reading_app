@@ -1,14 +1,12 @@
 <template>
   <div class="pb-21.5">
-    <form action="">
+    <form @submit.prevent="userRegister">
       <AccountAcctInput v-model="register.account" />
-      <AccountPwdInput v-model="register.password" field="setPassword">
+      <AccountPwdInput v-model="register.confirmPassword" field="setPassword">
         <template #label>設定密碼</template>
       </AccountPwdInput>
       <AccountCfmPwdInput v-model="register.settingPassword" class="mb-8" />
-      <button class="account__btn" @click.prevent="handleModalOpen">
-        確認註冊
-      </button>
+      <button class="account__btn" type="submit">確認註冊</button>
     </form>
     <transition name="fade">
       <div v-show="modalOpen">
@@ -33,6 +31,36 @@ export default {
     }
   },
   methods: {
+    async userRegister() {
+      if (
+        !(await this.$validateFunctions.allFormValidate(
+          'register',
+          this.register
+        ))
+      ) {
+        alert('格式不對，請檢查後重填')
+        return false
+      }
+      if (this.register.settingPassword !== this.register.confirmPassword) {
+        alert('確認密碼與設定密碼不一致，請檢查後重填')
+        return false
+      }
+      // try {
+      //   await this.$axios.post('register', {
+      //     username: this.username,
+      //     email: this.email,
+      //     password: this.password,
+      //   })
+      this.handleModalOpen()
+      this.$validateFunctions.userLogin({
+        account: this.register.account,
+        password: this.register.confirmPassword,
+      })
+      //   this.$router.push('/')
+      // } catch (e) {
+      //   this.error = e.response.data.message
+      // }
+    },
     handleModalOpen() {
       this.modalOpen = !this.modalOpen
     },

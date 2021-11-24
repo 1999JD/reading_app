@@ -26,7 +26,10 @@ export default {
   methods: {
     async handleInput(event) {
       this.$emit('input', event.target.value)
-      this.errorMessage = await this.$validate('account', this.userInput)
+      this.errorMessage = await this.$validateFunctions.inputValidate(
+        'account',
+        this.userInput
+      )
     },
   },
 }

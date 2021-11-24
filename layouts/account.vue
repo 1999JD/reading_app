@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="box-border h-82 bg-primary"></div>
+    <div class="banner box-border h-82 bg-primary"></div>
     <div class="relative -top-33 px-6">
       <h2 class="mb-3 text-2xl font-medium">
         {{ $store.state.heading }}
@@ -28,3 +28,11 @@ export default {
   middleware: 'layoutAccount',
 }
 </script>
+
+<style scoped>
+.banner {
+  background-image: url('~/assets/img/account-bg.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+</style>

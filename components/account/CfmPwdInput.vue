@@ -27,7 +27,7 @@
         :key="item.text"
         :class="[
           item.isValidated ? 'active' : '',
-          'check__item flex mb-3 text-gray-accountInput',
+          'check__item flex items-center mb-3 text-gray-accountInput',
         ]"
       >
         {{ item.text }}
@@ -78,7 +78,9 @@ export default {
       this.handleMulValidate(this.field)
     },
     async handleMulValidate() {
-      const invalidations = await this.$mulPwdVal(this.userInput)
+      const invalidations = await this.$validateFunctions.mulPwdVal(
+        this.userInput
+      )
       this.pwdConditions.forEach((element) => {
         if (invalidations.includes(element.conditionName)) {
           element.isValidated = false
@@ -92,15 +94,18 @@ export default {
 <style scoped>
 .check__item::before {
   content: '';
-  @apply w-4 h-4 mr-1;
+  background-image: url('~/assets/icon/account/times.svg');
+  filter: invert(82%) sepia(11%) saturate(18%) hue-rotate(335deg)
+    brightness(89%) contrast(90%);
+  @apply w-2 h-2 ml-1 mr-2 bg-center bg-no-repeat bg-cover;
 }
 
 .check__item.active {
   @apply text-quote;
 }
 .check__item.active::before {
-  @apply bg-center bg-no-repeat bg-cover;
-
   background-image: url('~/assets/icon/account/check.svg');
+  filter: unset;
+  @apply w-4 h-4 ml-0 mr-1;
 }
 </style>

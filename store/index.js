@@ -1,3 +1,5 @@
+import Vue from 'vue'
+
 export const state = () => ({
   heading: 'default',
   backRoute: 'default',
@@ -62,6 +64,30 @@ export const getters = {
 }
 
 export const actions = {
+  async handleUserLogin(userInfo) {
+    if (!(await Vue.$allFormValidate('login', userInfo))) {
+      alert('格式錯誤，請檢查後再送出')
+      return false
+    }
+    return this.$auth
+      .loginWith('local', {
+        data: {
+          userInfo: this.login,
+        },
+      })
+      .then((res) => {
+        if (res.data.token) {
+          this.$auth.setUser(res.data.userInfo)
+          if (this.$auth.loggedIn) this.$router.push('/member')
+          else alert('出現錯誤，無法登入')
+        }
+      })
+      .catch((_err) => {
+        alert('出現錯誤，無法登入')
+        this.$router.push('/account/login')
+      })
+  },
+
   handleAddCollection({ commit }, payload) {
     commit('addCollection', {
       ...payload

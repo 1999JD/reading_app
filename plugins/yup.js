@@ -1,5 +1,4 @@
 import * as yup from 'yup'
-import Vue from 'vue'
 
 const schemaAccount = yup.object({
   accountRequired: yup.string().required(),
@@ -15,7 +14,24 @@ const schemaSetPassword = yup.object({
   passwordFormat: yup.string().matches(/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=^.{8,15}$)/)
 })
 
-Vue.prototype.$validate = async (field, userInput) => {
+const schemaLogin = yup.object({
+  account: yup.string().required().email(),
+  password: yup.string().required(),
+})
+
+const schemaRegister = yup.object({
+  account: yup.string().required().email(),
+  settingPassword: yup.string().required().matches(/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=^.{8,15}$)/),
+  confirmPassword: yup.string().required().matches(/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=^.{8,15}$)/),
+})
+
+const schemaReset = yup.object({
+  oldPassword: yup.string().required(),
+  newPassword: yup.string().required().matches(/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=^.{8,15}$)/),
+  cfmPassword: yup.string().required().matches(/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=^.{8,15}$)/),
+})
+
+const inputValidate = async (field, userInput) => {
   if (field === 'account') {
     for (const condition in schemaAccount.fields) {
       const result = await schemaAccount.fields[condition].isValid(userInput)
@@ -36,13 +52,12 @@ Vue.prototype.$validate = async (field, userInput) => {
       }
     }
   }
-
 }
 
-Vue.prototype.$mulPwdVal = async (userInput) => {
+const mulPwdVal = async (userInput) => {
   const conditions = yup.object().shape({
     length: yup.string().matches(/(?=^.{8,15}$)/),
-    case: yup.string().matches(/(?=.*[a-z](?=.*[A-Z]))/),
+    case: yup.string().matches(/(?=.*[a-z])(?=.*[A-Z])/),
     hasNumber: yup.string().matches(/(?=.*\d)/),
   })
   const results = []
@@ -53,4 +68,52 @@ Vue.prototype.$mulPwdVal = async (userInput) => {
     }
   }
   return results
+}
+
+const allFormValidate = async (field, userInput) => {
+  const formSchemas = {
+    register: schemaRegister,
+    login: schemaLogin,
+    reset: schemaReset,
+  }
+  let result
+  await formSchemas[field].isValid(userInput)
+    .then(valid => (result = valid))
+    .catch(_err => (result = false))
+  return result
+}
+
+export default ({ app }, inject) => {
+  const userLogin = async (userInfo) => {
+    if (!(await allFormValidate('login', userInfo))) {
+      alert('格式錯誤，請檢查後再送出')
+      return false
+    }
+    return app.$auth
+      .loginWith('local', {
+        data: {
+          userInfo,
+        },
+      })
+      .then((res) => {
+        if (res.data.token) {
+          app.$auth.setUser(res.data.userInfo)
+          if (!app.$auth.loggedIn) alert('出現錯誤，無法登入')
+        }
+        else alert('出現錯誤，無法登入')
+      })
+      .catch((err) => {
+        alert(err)
+        app.router.push('/account/login')
+      })
+  }
+
+  const validateFunctions = {
+    inputValidate,
+    mulPwdVal,
+    allFormValidate,
+    userLogin,
+  }
+
+  inject('validateFunctions', validateFunctions)
 }
