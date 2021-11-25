@@ -119,23 +119,3 @@ export default {
   },
 }
 </script>
-
-<style scoped>
-option {
-  font-size: 18px;
-  background-color: green;
-}
-
-option::before {
-  content: '>';
-  font-size: 20px;
-  display: none;
-  padding-right: 10px;
-  padding-left: 5px;
-  color: #fff;
-}
-
-option:hover::before {
-  display: inline;
-}
-</style>
