@@ -29,7 +29,21 @@
         class="absolute top-0 bottom-0 my-auto right-6"
         @click="$router.push('/member/cart')"
       >
-        <span class="absolute top-1 w-4 h-4 bg-highlight rounded-full">
+        <span
+          class="
+            flex
+            justify-center
+            items-center
+            absolute
+            top-1
+            left-3
+            w-5
+            h-5
+            text-2xs text-white
+            bg-highlight
+            rounded-full
+          "
+        >
           {{ shoppingList.length }}
         </span>
         <img src="~/assets/icon/layout/cart.svg" alt="購物車" />

@@ -25,6 +25,7 @@ module.exports = {
         35: '8.75rem',
         45: '11.25rem',
         65: '16.25rem',
+        67: '16.75rem',
         fit: 'fit-content',
         'fill-available': '-webkit-fill-available',
         'book': '',
@@ -91,6 +92,7 @@ module.exports = {
         },
       },
       fontSize: {
+        '2xs': '10px',
         '2.5xl': '1.75rem',
         '3.5xl': '2rem',
       },
