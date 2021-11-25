@@ -14,6 +14,7 @@ module.exports = {
         31: '7.75rem',
         33: '8.25rem',
         '-33': '-8.25rem',
+        'over': 'calc(100% + 1px)'
       },
       width: {
         12.5: '3.125rem',

@@ -20,7 +20,10 @@
           />
           <span class="ml-2 font-medium">全選</span>
         </label>
-        <button class="mr-2 text-xs font-medium" @click="handleDelShoppingList">
+        <button
+          class="mr-2 text-xs font-medium"
+          @click.prevent="handleDelShoppingList"
+        >
           刪除
         </button>
       </div>
@@ -32,7 +35,6 @@
             index === shoppingList.length - 1 && 'mt-6',
             'flex items-center gap-2',
           ]"
-          @click="$router.push(`/content/media/${item.bookId}`)"
         >
           <input
             :checked="item.checked"
@@ -46,7 +48,12 @@
               <img :src="require(`~/assets/img/${item.imgSrc}`)" alt="" />
             </div>
             <div>
-              <h3 class="mb-1.5 font-medium line-clamp-1">{{ item.name }}</h3>
+              <h3
+                class="mb-1.5 font-medium line-clamp-1"
+                @click.prevent="$router.push(`/content/media/${item.bookId}`)"
+              >
+                {{ item.name }}
+              </h3>
               <p class="mb-1.5 text-xs">作者：{{ item.author }}</p>
               <p class="text-quote font-medium">${{ item.price }}</p>
             </div>
@@ -66,7 +73,7 @@
       </NuxtLink>
       <button
         class="inline-flex justify-center py-2 bg-highlight rounded"
-        @click="beforeJumpToCheckout"
+        @click.prevent="beforeJumpToCheckout"
       >
         <div class="w-4">
           <img src="" alt="" />

@@ -34,89 +34,99 @@
       <form>
         <fieldset>
           <MemberReceiptTitle>訂購人資訊 </MemberReceiptTitle>
-          <label class="block mb-4">
-            <span>會員帳號</span>
-            <input type="text" placeholder="登入本會員使用的帳號" />
+          <label class="checkout__wrap">
+            <span class="checkout__label">會員帳號</span>
+            <input
+              type="text"
+              class="checkout__input"
+              placeholder="登入本會員使用的帳號"
+            />
           </label>
-          <label class="block mb-4">
-            <span>姓名</span>
-            <input type="text" placeholder="林大一" />
+          <label class="checkout__wrap">
+            <span class="checkout__label">姓名</span>
+            <input type="text" class="checkout__input" placeholder="林大一" />
           </label>
-          <label class="block mb-4">
-            <span> 手機 </span>
-            <input type="number" placeholder="0912345678" />
+          <label class="checkout__wrap">
+            <span class="checkout__label">手機</span>
+            <input
+              type="text"
+              class="checkout__input"
+              placeholder="0912345678"
+            />
           </label>
           <label class="block mb-10">
-            <span>信箱</span>
-            <input type="email" placeholder="sample@reading.com.tw" />
+            <span class="checkout__label">信箱</span>
+            <input
+              type="email"
+              class="checkout__input"
+              placeholder="sample@reading.com.tw"
+            />
           </label>
         </fieldset>
-        <fieldset>
+        <fieldset class="mb-10">
           <MemberReceiptTitle>付款方式</MemberReceiptTitle>
-          <div class="relative mb-9">
-            <button class="absolute inset-y-0 right-2 w-5 m-auto">
-              <img src="~/assets/icon/common/downArrow.svg" alt="" />
-            </button>
-            <select name="" class="w-full p-2 text-sm appearance-none">
-              <option value="" disabled selected hidden>請選擇</option>
-              <option value="">現金</option>
-              <option value="">電子</option>
-            </select>
-          </div>
+          <ContentSelectBox
+            v-model="paymentValue"
+            :select-value="paymentValue"
+            :options="paymentOptions"
+          />
         </fieldset>
         <fieldset>
           <MemberReceiptTitle>發票資訊 </MemberReceiptTitle>
           <div class="grid grid-cols-2 mb-4">
             <label class="flex items-center">
-              <input type="radio" class="mr-1" name="receipt" />
-              <span>個人(兩聯式)</span>
+              <input type="radio" class="checkout__radio" name="receipt" />
+              <span class="checkout__label">個人(兩聯式)</span>
             </label>
             <label class="flex items-center">
-              <input type="radio" class="mr-1" name="receipt" />
-              <span> 公司(三聯式) </span>
+              <input type="radio" class="checkout__radio" name="receipt" />
+              <span class="checkout__label"> 公司(三聯式) </span>
             </label>
           </div>
-          <label class="block mb-4">
-            <span>姓名或公司名稱</span>
-            <input type="text" />
+          <label class="checkout__wrap">
+            <span class="checkout__label">姓名或公司名稱</span>
+            <input type="text" class="checkout__input" />
           </label>
-          <label class="block mb-4">
-            <span>統一編號</span>
-            <input type="number" />
+          <label class="checkout__wrap">
+            <span class="checkout__label">統一編號</span>
+            <input type="text" class="checkout__input" />
           </label>
           <h4 class="mb-4">送貨地址</h4>
           <div class="grid grid-cols-2">
             <label class="flex items-center mb-4">
-              <input type="radio" class="mr-1" name="address" />
-              <span>台灣</span>
+              <input type="radio" class="checkout__radio" name="address" />
+              <span class="checkout__label">台灣</span>
             </label>
             <label class="flex">
-              <input type="radio" class="mr-1" name="address" />
-              <span>非台灣</span>
+              <input type="radio" class="checkout__radio" name="address" />
+              <span class="checkout__label">非台灣</span>
             </label>
           </div>
           <div class="grid grid-cols-2 gap-x-7 mb-4 justify-items-stretch">
             <label class="block">
-              <span>縣市選擇</span>
-              <select name="" class="w-full py-1.5 px-4 rounded">
-                <option value="" disabled selected hidden>請選擇</option>
-                <option value="台北">台北</option>
-                <option value="台中">台中</option>
-                <option value="高雄">高雄</option>
-              </select>
+              <span class="checkout__label">縣市選擇</span>
+              <ContentSelectBox
+                v-model="countyValue"
+                placeholder="請選擇"
+                :select-value="countyValue"
+                :options="countyOptions"
+              />
             </label>
             <label class="block">
-              <span>鄉鎮選擇</span>
-              <select name="" class="w-full py-1.5 px-4 rounded">
-                <option value="" disabled selected hidden>請選擇</option>
-
-                <option value="大安區">大安</option>
-                <option value="東區">東區</option>
-                <option value="美濃">美濃</option>
-              </select>
+              <span class="checkout__label">鄉鎮選擇</span>
+              <ContentSelectBox
+                v-model="districtValue"
+                placeholder="請選擇"
+                :select-value="districtValue"
+                :options="districtOptions"
+              />
             </label>
           </div>
-          <input type="text" placeholder="輸入詳細地址" class="mb-4" />
+          <input
+            type="text"
+            class="checkout__input"
+            placeholder="輸入詳細地址"
+          />
         </fieldset>
       </form>
     </section>
@@ -133,7 +143,25 @@ export default {
   name: 'Checkout',
   layout: 'member',
   data() {
-    return {}
+    return {
+      paymentValue: '',
+      paymentOptions: [
+        { label: '線上刷卡', input: 'cash' },
+        { label: 'LINEPAY', input: 'linepay' },
+        { label: 'ATM轉帳', input: 'atm' },
+        { label: '現金(臨櫃)', input: 'cash' },
+      ],
+      countyValue: '',
+      countyOptions: [
+        { label: '高雄', input: '高雄' },
+        { label: '台北', input: '台北' },
+      ],
+      districtValue: '',
+      districtOptions: [
+        { label: '新莊', input: '新莊' },
+        { label: '三重', input: '三重' },
+      ],
+    }
   },
   computed: {
     shoppingList() {
@@ -149,14 +177,3 @@ export default {
   },
 }
 </script>
-
-<style scoped>
-label span {
-  @apply block mb-1;
-}
-input[type='text'],
-input[type='number'],
-input[type='email'] {
-  @apply w-full py-2 px-4 text-sm rounded;
-}
-</style>
