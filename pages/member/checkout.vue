@@ -109,7 +109,6 @@
               <span>鄉鎮選擇</span>
               <select name="" class="w-full py-1.5 px-4 rounded">
                 <option value="" disabled selected hidden>請選擇</option>
-
                 <option value="大安區">大安</option>
                 <option value="東區">東區</option>
                 <option value="美濃">美濃</option>
@@ -117,6 +116,7 @@
             </label>
           </div>
           <input type="text" placeholder="輸入詳細地址" class="mb-4" />
+          <ContentSelectBox v-model="selectValue" :select-value="selectValue" />
         </fieldset>
       </form>
     </section>
@@ -133,7 +133,9 @@ export default {
   name: 'Checkout',
   layout: 'member',
   data() {
-    return {}
+    return {
+      selectValue: 'default',
+    }
   },
   computed: {
     shoppingList() {
@@ -157,6 +159,22 @@ label span {
 input[type='text'],
 input[type='number'],
 input[type='email'] {
-  @apply w-full py-2 px-4 text-sm rounded;
+  @apply w-full py-2 px-4 text-sm rounded focus:outline-none;
+}
+
+option {
+  @apply py-2 p-4 border-b border-gray-divide;
+}
+
+option::before {
+  content: '>';
+  font-size: 20px;
+  display: none;
+  background: purple;
+  color: #fff;
+}
+
+option:hover::before {
+  display: inline;
 }
 </style>
