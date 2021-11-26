@@ -30,7 +30,7 @@ export default function ({ app, store, route, redirect }) {
       heading = '購買紀錄'
   }
   app.router.beforeEach((to, from, next) => {
-    if (to.path === '/member/cart') {
+    if (to.path === '/member/cart' && from.path !== '/member/checkout') {
       backRoute = from.path
       store.commit('setBackRoute', backRoute)
       next()
