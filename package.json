@@ -14,7 +14,7 @@
   "dependencies": {
     "@nuxtjs/auth-next": "5.0.0-1624817847.21691f1",
     "@nuxtjs/axios": "^5.13.6",
-    "@nuxtjs/pwa": "^3.3.5",
+    "@nuxtjs/workbox": "^3.0.0-beta.16",
     "@tailwindcss/line-clamp": "^0.2.2",
     "body-parser": "^1.19.0",
     "core-js": "^3.15.1",
@@ -29,6 +29,7 @@
     "@babel/eslint-parser": "^7.14.7",
     "@nuxtjs/eslint-config": "^6.0.1",
     "@nuxtjs/eslint-module": "^3.0.2",
+    "@nuxtjs/pwa": "^3.3.5",
     "@nuxtjs/stylelint-module": "^4.0.0",
     "@nuxtjs/tailwindcss": "^4.2.1",
     "autoprefixer": "^10.3.3",

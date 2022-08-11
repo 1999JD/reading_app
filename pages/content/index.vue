@@ -10,7 +10,7 @@
       </div>
     </div>
     <ul class="px-6 mt-30">
-      <ContentBookListItem v-for="book in books" :key="book.id" :book="book" />
+      <!-- <ContentBookListItem v-for="book in books" :key="book.id" :book="book" /> -->
     </ul>
   </div>
 </template>

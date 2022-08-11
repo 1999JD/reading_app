@@ -1,3 +1,6 @@
+import path from 'path'
+import fs from 'fs'
+
 export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
@@ -36,6 +39,7 @@ export default {
     '@nuxtjs/stylelint-module',
     // https://go.nuxtjs.dev/tailwindcss
     '@nuxtjs/tailwindcss',
+    '@nuxtjs/pwa',
   ],
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
@@ -97,23 +101,35 @@ export default {
   },
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
   axios: {
-    proxy: true,
+    endpoints: 'http:172.16.131.46:7690',
     prefix: '/api',
   },
 
-  proxy: {
-    '/api': {
-      target:
-        process.env.NODE_ENV === 'development'
-          ? 'http://127.0.0.1:3000/api/'
-          : 'http://127.0.0.1:3000/api/',
-      pathRewrite: { '^/api': '/' },
-    },
-  },
+  // proxy: {
+  //   '/api': {
+  //     target: 'http:172.16.131.46:7690',
+  //     pathRewrite: { '^/api': '/' },
+  //   },
+  // },
   // PWA module configuration: https://go.nuxtjs.dev/pwa
   pwa: {
+    meta: {
+      title: 'readingApp',
+      author: 'Me',
+    },
     manifest: {
-      lang: 'en'
+      name: 'readingApp',
+      short_name: 'reading',
+      descripotion: 'fantasitc literacy reading app',
+      lang: 'en',
+    },
+    workbox: {
+      dev: process.env.NODE_ENV !== 'production'
+    },
+    icon: {
+      fileName: 'icon.png',
+      size: [64, 120, 144, 152, 384, 512],
+
     }
   },
   serverMiddleware: [
@@ -152,5 +168,6 @@ export default {
     height: '4px',
     continuous: true,
     duration: 3000
-  }
+  },
+
 }
