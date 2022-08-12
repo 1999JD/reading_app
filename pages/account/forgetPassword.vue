@@ -5,7 +5,7 @@
       <button
         :class="[
           'account__btn mb-10',
-          hasSent ? 'text-white bg-highlight-light border-highlight-light' : '',
+          hasSent ? 'text-white bg-yellow border-yellow' : '',
         ]"
         :disabled="login.account === ''"
         @click.prevent="sentAccount"
@@ -49,7 +49,10 @@ export default {
   methods: {
     async sentAccount() {
       if (
-        await this.$validateFunctions.inputValidate('account', this.login.account)
+        await this.$validateFunctions.inputValidate(
+          'account',
+          this.login.account
+        )
       ) {
         // 如果驗證沒過
         alert('格式不對，請確認後重填')
@@ -70,9 +73,8 @@ export default {
   },
 }
 </script>
-
 <style scoped>
 button:disabled {
-  @apply bg-white text-gray-accountPlaceholder border-gray-accountInput;
+  @apply bg-white text-gray-300;
 }
 </style>

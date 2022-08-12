@@ -13,7 +13,7 @@
         <li class="mb-1">出版社: {{ book.publisher }}</li>
         <li class="mb-1">出版日期: {{ book.pubDate }}</li>
       </ul>
-      <p class="pl-10 text-quote text-base font-medium">NT${{ book.price }}</p>
+      <p class="pl-10 text-tangerine text-base font-medium">NT${{ book.price }}</p>
       <CommonStore
         v-slot="{ note }"
         :book="book"
@@ -34,7 +34,7 @@
           py-1
           bg-white
           rounded-2xl
-          shadow-content
+          shadow-md
         "
         @click="$router.push(`/content/ebook/reading/${$route.params.id}`)"
       >

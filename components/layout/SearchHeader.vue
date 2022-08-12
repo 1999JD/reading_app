@@ -2,7 +2,7 @@
   <div>
     <header
       :class="[
-        open ? 'shadow-lg' : '',
+        open ? 'shadow-md' : '',
         'flex justify-center fixed z-10 w-full bg-primary transition delay-100',
       ]"
     >
@@ -15,6 +15,7 @@
       </button>
       <label for="" class="relative p-2.5">
         <input
+        
           type="text"
           name=""
           value=""
@@ -53,10 +54,6 @@
     <transition :name="open ? 'open' : 'close'">
       <LayoutSideBar v-show="open" @onClick="handleCloseSidebar" />
     </transition>
-    <div class="h-13"></div>
-    <nuxt />
-    <div class="h-18" />
-    <LayoutFooterNav />
   </div>
 </template>
 

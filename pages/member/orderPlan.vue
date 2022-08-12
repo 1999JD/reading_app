@@ -3,7 +3,7 @@
     <div class="title flex items-center mb-5">
       <h2 class="px-3 text-center text-xl font-medium">訂閱方案</h2>
     </div>
-    <ul class="pt-5 pb-4 bg-gray-memberbg">
+    <ul class="pt-5 pb-4">
       <li
         v-for="plan in plans"
         :key="plan.title"
@@ -15,7 +15,7 @@
           rounded-lg
           overflow-hidden
           filter
-          drop-shadow-card
+          drop-sm
         "
       >
         <div
@@ -38,7 +38,7 @@
               mx-auto
               bg-primary
               shadow-btn
-              rounded-2.5xl
+              rounded-2xl
             "
           >
             訂閱

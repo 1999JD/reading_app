@@ -11,7 +11,7 @@
           min-h-account-main
           pt-10
           px-8
-          shadow-account-main
+          shadow-md
           bg-white
         "
       >

@@ -20,7 +20,7 @@
             flex flex-col
             justify-center
             items-center
-            bg-highlight-light
+            bg-yellow
             rounded-full
           "
         >
@@ -85,7 +85,7 @@ export default {
 }
 .turntable__outside::before {
   content: '';
-  @apply block absolute z-10 w-2/4 h-full bg-highlight;
+  @apply block absolute z-10 w-2/4 h-full bg-yellow;
 
   transform-origin: right center;
   transform: var(--percent);

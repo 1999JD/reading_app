@@ -28,7 +28,7 @@
         v-for="(option, index) in options"
         :key="option.label"
         :class="[
-          index !== options.length - 1 && ' border-b border-gray-divide',
+          index !== options.length - 1 && ' border-b ',
         ]"
       >
         <label
@@ -41,7 +41,7 @@
             py-2
             rounded
             cursor-pointer
-            hover:bg-highlight hover:text-white
+            hover:bg-yellow hover:text-white
           "
           >{{ option.label }}</label
         >

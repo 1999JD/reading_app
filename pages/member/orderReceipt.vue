@@ -1,5 +1,5 @@
 <template>
-  <div class="mt-8 mb-32 mx-6 px-6 py-5 bg-gray-memberbg">
+  <div class="mt-8 mb-32 mx-6 px-6 py-5">
     <form>
       <fieldset class="mb-6">
         <MemberReceiptTitle> 訂閱方案 </MemberReceiptTitle>
@@ -107,7 +107,7 @@
         </div>
         <input type="text" class="checkout__input" placeholder="輸入詳細地址" />
       </fieldset>
-      <p class="mb-12 text-quote text-center leading-normal">
+      <p class="mb-12 text-tangerine text-center leading-normal">
         *依統一發票使用辦法規定：個人發票一經開立，不得任意更改或改開公司戶發票。
       </p>
       <button
@@ -117,9 +117,9 @@
           mx-auto
           mb-5
           py-2.5
-          bg-highlight
-          rounded-2.5xl
-          shadow-btn-pay
+          bg-yellow
+          rounded-2xl
+          shadow-sm
         "
       >
         立即付款

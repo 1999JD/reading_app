@@ -1,16 +1,12 @@
 <template>
   <main>
     <div class="px-6 py-3 bg-primary">
-      <img
-        src="~/assets/img/banner.jpg"
-        alt="banner"
-        class="max-w-full h-auto border"
-        width="366"
-        height="100"
-      />
+      <div class="banner">
+        <img src="https://fakeimg.pl/366x100/ff0000/" />
+      </div>
     </div>
     <IndexNav />
-    <div class="flex justify-around py-3 bg-gray-mainentries shadow-entries">
+    <div class="flex justify-around py-3">
       <a
         v-for="entry in mainEntries"
         :key="entry.title"
@@ -21,19 +17,14 @@
         {{ entry.title }}
       </a>
     </div>
-    <CommonBookSubEntry />
+    <CommonBookSubEntry />             
     <component :is="show" :books="books" />
   </main>
 </template>
 <script>
 export default {
   name: 'Index',
-  layout: 'index',
   loading: true,
-  async asyncData({ $api }) {
-    const pathJson = await $api.apiFake().then((res) => res.data)
-    return { pathJson }
-  },
   data() {
     return {
       mainEntries: [
@@ -143,7 +134,7 @@ export default {
 }
 </script>
 
-<style scoped>
+<style lang="postcss" scoped>
 .active::after {
   content: '';
   @apply absolute w-8 h-1 -bottom-1.5 left-0 bg-gray-500 rounded-xl;

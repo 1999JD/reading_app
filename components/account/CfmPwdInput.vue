@@ -101,7 +101,7 @@ export default {
 }
 
 .check__item.active {
-  @apply text-quote;
+  @apply text-tangerine;
 }
 .check__item.active::before {
   background-image: url('~/assets/icon/account/check.svg');

@@ -13,7 +13,7 @@
         <li class="mb-1">出版社: {{ book.publisher }}</li>
         <li class="mb-1">出版日期: {{ book.pubDate }}</li>
       </ul>
-      <p class="pl-10 text-quote text-base font-medium">NT${{ book.price }}</p>
+      <p class="pl-10 text-tangerine text-base font-medium">NT${{ book.price }}</p>
       <button class="absolute top-3 right-3" @click="handleAddCollection(book)">
         <div class="store inline-block w-5 mr-1 align-middle">
           <img src="~/assets/icon/common/store.svg" alt="" />
@@ -33,7 +33,7 @@
           py-1
           bg-white
           rounded-2xl
-          shadow-content
+          shadow-sm
         "
         @click="$router.push(`/content/ebook/reading/${$route.params.id}`)"
       >

@@ -33,7 +33,7 @@
           <div class="w-28 m-auto">
             <img
               :src="require(`~/assets/img/${book.imgSrc}`)"
-              class="shadow-img"
+              class="shadow-sm"
             />
           </div>
 
@@ -128,7 +128,7 @@ export default {
   touch-action: none;
 }
 .slide li {
-  @apply box-border self-center flex-shrink-0 relative w-40 mx-7 p-2.5 pt-4 bg-primary rounded shadow-img;
+  @apply box-border self-center flex-shrink-0 relative w-40 mx-7 p-2.5 pt-4 bg-primary rounded shadow-md;
 }
 
 .slide .current {

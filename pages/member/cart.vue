@@ -1,6 +1,7 @@
 <template>
   <main class="pt-4 px-6 pb-20">
-    <section class="bg-gray-memberbg">
+    <section class="
+    ">
       <div
         class="
           flex
@@ -55,7 +56,7 @@
                 {{ item.name }}
               </h3>
               <p class="mb-1.5 text-xs">作者：{{ item.author }}</p>
-              <p class="text-quote font-medium">${{ item.price }}</p>
+              <p class="text-tangerine font-medium">${{ item.price }}</p>
             </div>
           </div>
         </li>
@@ -64,7 +65,7 @@
     <nav class="grid grid-cols-2 gap-3.5">
       <NuxtLink
         to="/"
-        class="inline-flex justify-center py-2 border border-highlight rounded"
+        class="inline-flex justify-center py-2 border border-yellow rounded"
       >
         <div class="w-4">
           <img src="" alt="" />
@@ -72,7 +73,7 @@
         繼續購物
       </NuxtLink>
       <button
-        class="inline-flex justify-center py-2 bg-highlight rounded"
+        class="inline-flex justify-center py-2 bg-yellow rounded"
         @click.prevent="beforeJumpToCheckout"
       >
         <div class="w-4">

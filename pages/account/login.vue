@@ -15,7 +15,7 @@
       </div>
       <NuxtLink
         to="/account/register"
-        class="account__btn bg-white border border-highlight"
+        class="account__btn bg-white border border-yellow"
       >
         立即註冊
       </NuxtLink>

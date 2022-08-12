@@ -1,5 +1,5 @@
 <template>
-  <section class="pl-6 whitespace-nowrap shadow-entries">
+  <section class="pl-6 whitespace-nowrap shadow-md">
     <div v-for="menu in subEntries" :key="menu.cate">
       <div
         :class="[
@@ -113,6 +113,6 @@ export default {
   @apply flex-shrink-0 block mr-4 py-1 px-2.5 text-center rounded-xl;
 }
 .active {
-  @apply bg-highlight;
+  @apply bg-yellow;
 }
 </style>

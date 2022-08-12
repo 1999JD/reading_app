@@ -3,7 +3,7 @@
     <div class="navbar flex justify-between relative w-45 mb-4 mx-auto">
       <button
         :class="[
-          mediaType === 'Audio' ? 'bg-highlight' : 'bg-transparent',
+          mediaType === 'Audio' ? 'bg-yellow' : 'bg-transparent',
           'py-1 px-2 rounded-xl',
         ]"
         @click="mediaType = 'Audio'"
@@ -12,7 +12,7 @@
       </button>
       <button
         :class="[
-          mediaType === 'Video' ? 'bg-highlight' : 'bg-transparent',
+          mediaType === 'Video' ? 'bg-yellow' : 'bg-transparent',
           'py-1 px-2 rounded-xl',
         ]"
         @click="mediaType = 'Video'"
@@ -111,6 +111,6 @@ export default {
 }
 .navbar::before {
   content: '';
-  @apply absolute top-0 right-0 bottom-0 left-0 w-0.5 h-4  m-auto bg-gray-subInfo;
+  @apply absolute top-0 right-0 bottom-0 left-0 w-0.5 h-4  m-auto;
 }
 </style>

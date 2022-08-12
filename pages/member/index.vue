@@ -24,7 +24,7 @@
         pl-4
         pr-5
         bg-white
-        border border-highlight-light
+        border border-yellow
         rounded-lg
       "
     >
@@ -32,7 +32,7 @@
       <div class="block rounded w-9 mr-4">
         <img src="~/assets/icon/member/cash.png" />
       </div>
-      <p class="text-quote font-bold">$<span class="text-xl">50.00</span></p>
+      <p class="text-tangerine font-bold">$<span class="text-xl">50.00</span></p>
       <a class="block w-6 ml-auto"
         ><img src="~/assets/icon/member/ahead.svg" alt="前往"
       /></a>

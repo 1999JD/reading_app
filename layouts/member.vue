@@ -3,7 +3,7 @@
     <header
       :class="[
         $route.path.search('order') !== -1 ? 'bg-white' : 'bg-primary',
-        `flex justify-center fixed w-full mb-6 py-4 z-10 shadow-header`,
+        `flex justify-center fixed w-full mb-6 py-4 z-10 shadow-lg`,
       ]"
     >
       <NuxtLink

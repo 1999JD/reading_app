@@ -5,7 +5,7 @@
 
 @layer components {
   .account__btn {
-    @apply block w-full py-2 bg-highlight text-base border border-highlight text-center rounded-3xl;
+    @apply block w-full py-2 bg-yellow text-base border text-center rounded-3xl;
   }
   .account__input__wrap {
     @apply block relative mb-6;
@@ -14,7 +14,7 @@
     @apply block mb-2 text-base;
   }
   .account__input {
-    @apply w-full py-3 pl-3 pr-10 border-1.5 border-gray-accountInput text-xs rounded-3xl focus:border-highlight focus:outline-none;
+    @apply w-full py-3 pl-3 pr-10 border text-xs rounded-3xl focus:border-yellow focus:outline-none;
   }
   .account__input__help {
     @apply absolute -bottom-4 right-2 text-xs text-red-600 whitespace-nowrap;
@@ -24,18 +24,18 @@
   }
   .account__input::placeholder {
     /* Chrome, Firefox, Opera, Safari 10.1+ */
-    @apply text-gray-accountPlaceholder;
+    @apply text-gray-300;
     opacity: 1; /* Firefox */
   }
 
   .account__input::-ms-input-placeholder {
     /* Internet Explorer 10-11 */
-    @apply text-gray-accountPlaceholder;
+    @apply text-gray-300;
   }
 
   .account__input::-ms-input-placeholder {
     /* Microsoft Edge */
-    @apply text-gray-accountPlaceholder;
+    @apply text-gray-300;
   }
   .checkout__input {
     @apply w-full py-2 px-4 text-sm rounded focus:outline-none appearance-none;
@@ -68,7 +68,7 @@
     @apply w-12 h-12 rounded-full;
   }
   .test__question__bubble {
-    @apply box-border w-65 mb-8 bg-primary shadow-test rounded-xl;
+    @apply box-border w-65 mb-8 bg-primary shadow-md rounded-xl;
   }
   .no-scrollbar::-webkit-scrollbar {
     display: none;

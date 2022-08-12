@@ -1,12 +1,12 @@
 <template>
   <main class="pt-4 px-6 pb-20">
-    <section class="mb-2 border border-gray-memberbg rounded overflow-hidden">
-      <h3 class="mb-7.5 py-2 bg-gray-memberbg text-center">訂單資訊</h3>
-      <ul class="mx-4 border-b border-gray-divide">
+    <section class="mb-2 border rounded overflow-hidden">
+      <h3 class="mb-7.5 py-2 text-center">訂單資訊</h3>
+      <ul class="mx-4 border-b">
         <li
           v-for="item in shoppingList"
           :key="item.bookId"
-          class="flex gap-1.5 mb-6 p-2 bg-gray-memberbg rounded-lg"
+          class="flex gap-1.5 mb-6 p-2 rounded-lg"
         >
           <div class="flex-grow-0 flex-shrink-0 w-13">
             <img :src="require(`~/assets/img/${item.imgSrc}`)" alt="" />
@@ -21,16 +21,16 @@
       <dl class="w-fit ml-auto mr-4 pt-4 pb-3">
         <div class="flex justify-between mb-3">
           <dt class="w-18">商品數量</dt>
-          <dd class="text-quote font-medium">{{ shoppingList.length }}</dd>
+          <dd class="text-tangerine font-medium">{{ shoppingList.length }}</dd>
         </div>
         <div class="flex gap-4">
           <dt class="w-18">訂購總金額</dt>
-          <dd class="text-quote font-medium">${{ sum }}</dd>
+          <dd class="text-tangerine font-medium">${{ sum }}</dd>
         </div>
       </dl>
-      <button class="ml-4 mb-4 text-quote underline">使用優惠券</button>
+      <button class="ml-4 mb-4 text-tangerine underline">使用優惠券</button>
     </section>
-    <section class="mb-8 px-6 py-3 bg-gray-memberbg">
+    <section class="mb-8 px-6 py-3">
       <form>
         <fieldset>
           <MemberReceiptTitle>訂購人資訊 </MemberReceiptTitle>
@@ -130,9 +130,7 @@
         </fieldset>
       </form>
     </section>
-    <button
-      class="block w-44 mx-auto mb-18 py-3 text-center bg-highlight rounded"
-    >
+    <button class="block w-44 mx-auto mb-18 py-3 text-center bg-yellow rounded">
       立即付款
     </button>
   </main>

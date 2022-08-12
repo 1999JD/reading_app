@@ -30,7 +30,7 @@
         v-show="catalogOpen"
         class="absolute bottom-0 w-full bg-primary py-4 px-6 rounded-t-2xl"
       >
-        <h3 class="mb-3 pb-2 text-base font-medium border-b border-gray-order">
+        <h3 class="mb-3 pb-2 text-base font-medium border-b">
           目錄
         </h3>
         <ul>
@@ -286,18 +286,18 @@ export default {
 }
 .active--font::before {
   content: '';
-  @apply absolute -z-1 inset-x-0 bottom-0 w-full h-1 mx-auto bg-highlight rounded-sm;
+  @apply absolute -z-1 inset-x-0 bottom-0 w-full h-1 mx-auto bg-yellow rounded-sm;
 }
 .settings__button--bg {
-  @apply w-6 h-6 mr-3 rounded-full shadow-ebook-btn;
+  @apply w-6 h-6 mr-3 rounded-full shadow-sm;
 }
 .active--bg {
-  @apply border-3 border-highlight;
+  @apply border-4 border-yellow;
 }
 .settings__button--direction {
-  @apply flex justify-center items-center w-6 h-6 mr-3 rounded-full shadow-ebook-btn;
+  @apply flex justify-center items-center w-6 h-6 mr-3 rounded-full shadow-sm;
 }
 .active--direction {
-  @apply bg-highlight;
+  @apply bg-yellow;
 }
 </style>

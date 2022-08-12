@@ -8,7 +8,7 @@
       py-2
       bg-white
       filter
-      drop-shadow-footer
+shadow-lg
     "
   >
     <button

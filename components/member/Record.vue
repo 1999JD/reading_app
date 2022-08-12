@@ -31,15 +31,15 @@
       <ul class="grid grid-cols-3">
         <li class="">
           <h3 class="mb-3">訂單金額</h3>
-          <p class="text-quote">${{ orderData.price }}</p>
+          <p class="text-tangerine">${{ orderData.price }}</p>
         </li>
         <li class="decoration relative">
           <h3 class="mb-3">付款方式</h3>
-          <p class="text-quote">{{ orderData.pay }}</p>
+          <p class="text-tangerine">{{ orderData.pay }}</p>
         </li>
         <li class="decoration relative">
           <h3 class="mb-3">訂單狀態</h3>
-          <p class="text-quote">{{ orderData.status }}</p>
+          <p class="text-tangerine">{{ orderData.status }}</p>
         </li>
       </ul>
     </div>

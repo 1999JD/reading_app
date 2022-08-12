@@ -14,9 +14,7 @@
       </div>
       <div
         :class="[
-          book.bookId === books.length - 1
-            ? ''
-            : 'border-solid border-b-2 border-gray-divide',
+          book.bookId === books.length - 1 ? '' : 'border-solid border-b-2',
         ]"
       >
         <h3 class="mb-1 text- font-medium">{{ book.name }}</h3>

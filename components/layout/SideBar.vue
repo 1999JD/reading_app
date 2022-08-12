@@ -1,25 +1,16 @@
 <template>
-  <aside class="fixed z-30 w-80 top-13 bg-white filter drop-shadow">
+  <nav class="fixed z-30 w-80 top-13 bg-white filter drop-shadow">
     <h2>訂購專區</h2>
-    <ul>
-      <li v-for="item in orderLinks" :key="item.title">
-        <NuxtLink :to="item.to">{{ item.title }}</NuxtLink>
-      </li>
-    </ul>
+
+    <NuxtLink v-for="item in orderLinks" :key="item.title" :to="item.to">
+      {{ item.title }}
+    </NuxtLink>
+
     <h2>會員專區</h2>
-    <ul>
-      <li v-for="item in memberLinks" :key="item.title">
-        <NuxtLink :to="item.to">{{ item.title }}</NuxtLink>
-      </li>
-    </ul>
-    <button
-      class="w-full text-left border-t border-gray-divide"
-      @click="handleUserLog"
-    >
-      {{ $auth.loggedIn ? '登出' : '登入' }}
-    </button>
-    <button @click="handleRefreshToken">手動刷新</button>
-  </aside>
+    <NuxtLink v-for="item in memberLinks" :key="item.title" :to="item.to">
+      {{ item.title }}
+    </NuxtLink>
+  </nav>
 </template>
 
 <script>
@@ -38,37 +29,20 @@ export default {
         { title: '里程碑', to: '/member/milestone' },
         { title: '我的收藏', to: '/member/collections' },
         { title: '優惠卷', to: '/member/coupon' },
+        { title: '登出', to: '/member/coupon' },
       ],
     }
-  },
-  methods: {
-    async handleUserLog() {
-      if (this.$auth.loggedIn) {
-        await this.$auth.logout()
-        this.$emit('onClick')
-        this.$router.push('/')
-      } else {
-        this.$router.push('/account/login')
-      }
-    },
-    handleRefreshToken() {
-      this.$auth.refreshTokens()
-    },
   },
 }
 </script>
 
-<style scoped>
-aside {
-  height: calc(100vh - 3.25rem);
+<style lang="postcss" scoped>
+nav {
+  height: calc(100vh - 52px);
 }
 
 h2 {
   @apply py-2 bg-primary text-center;
-}
-
-ul {
-  @apply divide-y divide-gray-divide divide-solid;
 }
 
 a,

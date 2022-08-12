@@ -14,10 +14,10 @@
         mx-auto
         mb-28
         py-2.5
-        bg-highlight
+        bg-yellow
         text-center
-        rounded-2.5xl
-        shadow-btn-pay
+        rounded-2xl
+        shadow-sm
       "
     >
       返回首頁

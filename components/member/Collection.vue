@@ -29,7 +29,7 @@
       <div class="w-4 mr-0.5">
         <img src="~/assets/icon/member/store.svg" alt="收藏icon" />
       </div>
-      <span class="text-quote whitespace-nowrap">取消</span>
+      <span class="text-tangerine whitespace-nowrap">取消</span>
     </div>
   </li>
 </template>

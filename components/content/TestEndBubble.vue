@@ -11,7 +11,7 @@
         <img src="~/assets/img/test-btn-decoration.png" alt="" />
       </div>
       <button
-        class="result__check block w-full py-2 shadow-content rounded-2.5xl"
+        class="result__check block w-full py-2 shadow-md rounded-2xl"
       >
         查看結果
       </button>

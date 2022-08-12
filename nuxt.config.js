@@ -1,6 +1,3 @@
-import path from 'path'
-import fs from 'fs'
-
 export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
@@ -39,103 +36,43 @@ export default {
     '@nuxtjs/stylelint-module',
     // https://go.nuxtjs.dev/tailwindcss
     '@nuxtjs/tailwindcss',
-    '@nuxtjs/pwa',
+    // '@nuxtjs/pwa',
   ],
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
     // https://go.nuxtjs.dev/axios
     '@nuxtjs/axios',
-    // https://go.nuxtjs.dev/pwa
-    '@nuxtjs/pwa',
-    '@nuxtjs/auth-next'
   ],
-  auth: {
-    redirect: {
-      login: '/account/login',
-      logout: '/',
-      callback: 'account/login',
-      home: '/',
-    },
-    strategies: {
-      local: {
-        scheme: 'refresh',
-        token: {
-          property: 'token.accessToken',
-          maxAge: 1800,
-          global: true,
-          type: 'Bearer'
-        },
-        refreshToken: {
-          property: 'token.refreshToken',
-          data: 'refreshToken',
-          maxAge: false,
-        },
-        user: {
-          property: 'user',
-          autoFetch: true,
-        },
-        endpoints: {
-          login: {
-            url: '/auth/login',
-            method: 'post'
-          },
-          refresh: {
-            url: '/auth/refresh',
-            method: 'post'
-          },
-          logout: {
-            url: '/auth/logout',
-            method: 'post'
-          },
-          user: {
-            url: '/auth/user',
-            method: 'get',
-          }
-        },
-      }
-    },
-    plugins: [
-      { src: '~/plugins/axios', ssr: true },
-      // { src: '~/plugins/route', ssr: true }
-    ]
-  },
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
   axios: {
     endpoints: 'http:172.16.131.46:7690',
     prefix: '/api',
   },
 
-  // proxy: {
-  //   '/api': {
-  //     target: 'http:172.16.131.46:7690',
-  //     pathRewrite: { '^/api': '/' },
-  //   },
-  // },
   // PWA module configuration: https://go.nuxtjs.dev/pwa
-  pwa: {
-    meta: {
-      title: 'readingApp',
-      author: 'Me',
-    },
-    manifest: {
-      name: 'readingApp',
-      short_name: 'reading',
-      descripotion: 'fantasitc literacy reading app',
-      lang: 'en',
-    },
-    workbox: {
-      dev: process.env.NODE_ENV !== 'production'
-    },
-    icon: {
-      fileName: 'icon.png',
-      size: [64, 120, 144, 152, 384, 512],
+  // pwa: {
+  //   meta: {
+  //     title: 'readingApp',
+  //     author: 'Me',
+  //   },
+  //   manifest: {
+  //     name: 'readingApp',
+  //     short_name: 'reading',
+  //     descripotion: 'fantasitc literacy reading app',
+  //     lang: 'en',
+  //   },
+  //   workbox: {
+  //     dev: process.env.NODE_ENV !== 'production'
+  //   },
+  //   icon: {
+  //     fileName: 'icon.png',
+  //     size: [64, 120, 144, 152, 384, 512],
 
-    }
-  },
+  //   }
+  // },
   serverMiddleware: [
     { path: '/api', handler: '~/server/app.js' }
   ],
-  // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
     extend(config) {
       config.module.rules.push({
@@ -146,28 +83,7 @@ export default {
         }
       })
     },
-    vendor: ['axios'],
-    loaders: {
-      file: { esModule: false },
-      imgUrl: { esModule: false },
-      vue: {
-        transformAssetUrls: {
-          audio: 'src'
-        }
-      }
-    },
   },
-  video: ['src', 'poster'],
-  source: 'src',
-  audio: 'src',
-  img: 'src',
-  image: ['xlink:href', 'href'],
-  use: ['xlink:href', 'href'],
-  loading: {
-    color: 'Black',
-    height: '4px',
-    continuous: true,
-    duration: 3000
-  },
-
+  // video: ['src', 'poster'],
+  // audio: 'src',
 }

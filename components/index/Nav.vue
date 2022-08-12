@@ -11,7 +11,7 @@
           p-1.25
           bg-white
           rounded-lg
-          shadow-img
+          shadow-sm
         "
       >
         <img
