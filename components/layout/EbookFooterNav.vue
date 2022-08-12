@@ -1,15 +1,6 @@
 <template>
   <footer
-    class="
-      flex
-      justify-between
-      mt-auto
-      px-10
-      py-2
-      bg-white
-      filter
-shadow-lg
-    "
+    class="flex justify-between mt-auto px-10 py-2 bg-white filter shadow-lg"
   >
     <button
       v-for="button in footerButtons"

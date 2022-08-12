@@ -88,7 +88,7 @@ export default {
       contentPageLinks: [
         {
           title: '購物車',
-          src: 'cart.png',
+          src: 'record.png',
           alt: '購物車',
           to: '/member/cart',
         },

@@ -28,7 +28,7 @@
       </h2>
       <div class="flex items-center absolute top-0 bottom-0 right-6 my-auto">
         <button type="button" class="w-5 mr-3">
-          <img src="~/assets/icon/layout/search.svg" alt="搜尋" />
+          <SvgHeaderSearch />
         </button>
         <button type="button" class="w-5">
           <img src="~/assets/icon/layout/message.svg" alt="訊息中心" />

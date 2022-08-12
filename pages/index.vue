@@ -2,7 +2,7 @@
   <main>
     <div class="px-6 py-3 bg-primary">
       <div class="banner">
-        <img src="https://fakeimg.pl/366x100/ff0000/" />
+        <img src="~/assets/img/banner.jpg" />
       </div>
     </div>
     <IndexNav />
@@ -17,7 +17,7 @@
         {{ entry.title }}
       </a>
     </div>
-    <CommonBookSubEntry />             
+    <CommonBookSubEntry />
     <component :is="show" :books="books" />
   </main>
 </template>
@@ -125,8 +125,7 @@ export default {
   methods: {
     switchMainEntry(entryName) {
       this.mainEntries.forEach((element) => {
-        if (element.name === entryName) element.active = true
-        else element.active = false
+        element.active = element.name === entryName
       })
       this.show = `IndexCate${entryName}`
     },

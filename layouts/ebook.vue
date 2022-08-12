@@ -37,7 +37,7 @@
           class="w-full pl-8 py-1.5 rounded-lg leading-none"
         />
         <button type="button" class="absolute top-0 bottom-0 left-3">
-          <img src="~/assets/icon/layout/search.svg" alt="送出按鈕" />
+          <SvgHeaderSearch />
         </button>
       </label>
       <button type="button" class="absolute top-0 bottom-0 my-auto right-6">

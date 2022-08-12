@@ -13,7 +13,9 @@
         <li class="mb-1">出版社: {{ book.publisher }}</li>
         <li class="mb-1">出版日期: {{ book.pubDate }}</li>
       </ul>
-      <p class="pl-10 text-tangerine text-base font-medium">NT${{ book.price }}</p>
+      <p class="pl-10 text-tangerine text-base font-medium">
+        NT${{ book.price }}
+      </p>
       <button class="absolute top-3 right-3" @click="handleAddCollection(book)">
         <div class="store inline-block w-5 mr-1 align-middle">
           <img src="~/assets/icon/common/store.svg" alt="" />
@@ -45,7 +47,7 @@
       <div class="flex items-center">
         <button class="mr-7.5">
           <div class="w-8 mx-auto mb-1">
-            <img src="~/assets/icon/content/cart.png" alt="" />
+            <SvgHeaderCart />
           </div>
           立即購買
         </button>

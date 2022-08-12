@@ -89,3 +89,7 @@ body {
 img {
   @apply block w-full h-auto;
 }
+
+input {
+  @apply focus:outline-none
+}

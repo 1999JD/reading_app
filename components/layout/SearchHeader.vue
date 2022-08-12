@@ -3,26 +3,20 @@
     <header
       :class="[
         open ? 'shadow-md' : '',
-        'flex justify-center fixed z-10 w-full bg-primary transition delay-100',
+        'flex justify-center fixed z-20 w-full bg-primary transition delay-100',
       ]"
     >
       <button
         type="button"
-        class="absolute inline-block top-0 bottom-0 my-auto left-6"
+        class="absolute top-0 bottom-0 left-6"
         @click.prevent="open = !open"
       >
-        <img src="~/assets/icon/layout/ham.svg" alt="漢堡選單" />
+        <SvgHeaderHam />
       </button>
-      <label for="" class="relative p-2.5">
-        <input
-        
-          type="text"
-          name=""
-          value=""
-          class="w-full pl-8 py-1.5 rounded-lg leading-none"
-        />
-        <button type="button" class="absolute top-0 bottom-0 left-3">
-          <img src="~/assets/icon/layout/search.svg" alt="送出按鈕" />
+      <label class="relative block w-full mx-16 p-2.5">
+        <input type="text" class="w-full pl-8 py-1.5 rounded-lg leading-none" />
+        <button type="button" class="absolute top-0 bottom-0 left-5">
+          <SvgHeaderSearch />
         </button>
       </label>
       <button
@@ -30,24 +24,21 @@
         class="absolute top-0 bottom-0 my-auto right-6"
         @click="$router.push('/member/cart')"
       >
-        <span
+        <p
           class="
-            flex
-            justify-center
-            items-center
             absolute
             top-1
             left-3
-            w-5
-            h-5
-            text-2xs text-white
-            bg-yellow
+            px-2
+            py-1
             rounded-full
+            bg-yellow
+            text-2xs text-white
           "
         >
           {{ shoppingList.length }}
-        </span>
-        <img src="~/assets/icon/layout/cart.svg" alt="購物車" />
+        </p>
+        <SvgHeaderCart />
       </button>
     </header>
 
@@ -79,11 +70,6 @@ export default {
 </script>
 
 <style scoped>
-label {
-  box-sizing: border-box;
-  width: 17.875rem;
-}
-
 .open-enter-active,
 .open-leave-active,
 .close-enter-active,
