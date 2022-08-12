@@ -19,6 +19,7 @@
     "epubjs": "^0.3.90",
     "express": "^4.17.1",
     "nuxt": "^2.15.7",
+    "v-drag": "^3.0.8",
     "yup": "^0.32.11"
   },
   "devDependencies": {

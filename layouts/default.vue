@@ -1,7 +1,7 @@
 <template>
   <div class="">
     <LayoutSearchHeader />
-    <header class="fixed z-20 top-0"></header>
+    <!-- <header class="fixed z-20 top-0"></header> -->
     <div class="h-13"></div>
     <Nuxt />
     <div class="h-18"></div>

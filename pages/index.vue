@@ -1,21 +1,33 @@
 <template>
   <main>
-    <div class="px-6 py-3 bg-primary">
+    <div class="px-6 pt-3 bg-primary">
       <div class="banner">
         <img src="~/assets/img/banner.jpg" />
       </div>
     </div>
-    <IndexNav />
-    <div class="flex justify-around py-3">
-      <a
+    <nav class="box-border flex justify-evenly py-6 bg-primary">
+      <NuxtLink v-for="link in links" :key="link.title" :to="link.to">
+        <div class="w-fit p-1 mx-auto mb-2 rounded-lg shadow-md bg-white">
+          <div class="w-10">
+            <img
+              :src="require(`~/assets/icon/index/${link.src}`)"
+              :alt="link.alt"
+            />
+          </div>
+        </div>
+        {{ link.title }}
+      </NuxtLink>
+    </nav>
+    <div class="flex justify-around py-3 bg-gray-100 shadow-md">
+      <button
         v-for="entry in mainEntries"
         :key="entry.title"
-        href="#"
+        type="button"
         :class="[entry.active && 'active', 'block relative w-8 text-center']"
         @click.prevent="switchMainEntry(entry.name)"
       >
         {{ entry.title }}
-      </a>
+      </button>
     </div>
     <CommonBookSubEntry />
     <component :is="show" :books="books" />
@@ -27,13 +39,19 @@ export default {
   loading: true,
   data() {
     return {
+      links: [
+        { title: '線下活動', to: '/', src: 'location.jpg', alt: '' },
+        { title: 'TKB書城', to: '/', src: 'notebook.jpg', alt: '' },
+        { title: '訂閱方案', to: '/test', src: 'subscribe.jpg', alt: '' },
+        { title: '每日簽到', to: '/', src: 'check.jpg', alt: '' },
+      ],
       mainEntries: [
         { title: '最新', name: 'Latest', active: true },
         { title: '熱門', name: 'Hit', active: false },
         { title: '推薦', name: 'Recommend', active: false },
         { title: '精選', name: 'Featured', active: false },
       ],
-      show: 'IndexCateLatest',
+      show: 'IndexCateHit',
       books: [
         {
           bookId: 0,

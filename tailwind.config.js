@@ -49,7 +49,7 @@ module.exports = {
       },
       colors: {
         baseFont: '#363636',
-        primary: '#f5efdf',
+        primary: '#FFF1CF',
         yellow: {
           pale: '#FFD784',
           DEFAULT: '#FFC651',

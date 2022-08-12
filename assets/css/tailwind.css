@@ -70,6 +70,7 @@
   .test__question__bubble {
     @apply box-border w-65 mb-8 bg-primary shadow-md rounded-xl;
   }
+  body::-webkit-scrollbar,
   .no-scrollbar::-webkit-scrollbar {
     display: none;
   }
@@ -92,4 +93,8 @@ img {
 
 input {
   @apply focus:outline-none
+}
+
+a {
+  @apply block
 }

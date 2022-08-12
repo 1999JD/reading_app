@@ -2,11 +2,20 @@
   <main class="mt-9 mb-13">
     <section v-for="subCate in books" :key="subCate.cate">
       <h2 class="title">{{ subCate.cate }}</h2>
-      <ul class="flex mb-10 overflow-x-auto overflow-y-hidden no-scrollbar">
+      <ul
+        class="
+          flex
+          gap-4
+          mb-10
+          px-6
+          overflow-x-auto overflow-y-hidden
+          no-scrollbar
+        "
+      >
         <li
           v-for="book in subCate.books"
           :key="book.bookId"
-          class="mr-4"
+          class=""
           @click="$router.push(`/content/media/${book.bookId}`)"
         >
           <div class="card__img mb-2 rounded">
@@ -26,14 +35,6 @@
 <script>
 export default {
   name: 'CateLatest',
-  // props: {
-  //   books: {
-  //     type: Array,
-  //     default() {
-  //       return []
-  //     },
-  //   },
-  // },
   data() {
     return {
       books: [
