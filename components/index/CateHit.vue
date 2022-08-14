@@ -14,36 +14,36 @@
       熱門排行
     </h2>
     <div class="w-full py-4 overflow-hidden">
-      <client-only>
-        <ul
-          ref="slide"
-          v-drag:x
-          class="slide flex left-1/5"
-          @mousedown="handleMouseDown"
+      <!-- <client-only> -->
+      <ul
+        ref="slide"
+        v-drag:x
+        class="slide flex left-1/5"
+        @mousedown="handleMouseDown"
+      >
+        <li
+          v-for="(book, index) in books"
+          :key="book.bookId"
+          :class="[
+            index === currentIndex && 'transform scale-110',
+            'slide_item',
+          ]"
         >
-          <li
-            v-for="(book, index) in books"
-            :key="book.bookId"
-            :class="[
-              index === currentIndex && 'transform scale-110',
-              'slide_item',
-            ]"
-          >
-            <div class="w-28 m-auto">
-              <img
-                :src="require(`~/assets/img/${book.imgSrc}`)"
-                class="shadow-sm"
-              />
-            </div>
+          <div class="w-28 m-auto">
+            <img
+              :src="require(`~/assets/img/${book.imgSrc}`)"
+              class="shadow-sm"
+            />
+          </div>
 
-            <h3 class="mt-4 mb-2 text-center">{{ book.name }}{{ index }}</h3>
-            <p class="mb-4">{{ book.desc }}</p>
-            <span class="text-gray-400 text-xs">
-              觀看人數：{{ book.download }}
-            </span>
-          </li>
-        </ul>
-      </client-only>
+          <h3 class="mt-4 mb-2 text-center">{{ book.name }}{{ index }}</h3>
+          <p class="mb-4">{{ book.desc }}</p>
+          <span class="text-gray-400 text-xs">
+            觀看人數：{{ book.download }}
+          </span>
+        </li>
+      </ul>
+      <!-- </client-only> -->
     </div>
   </div>
 </template>
@@ -68,19 +68,10 @@ export default {
     }
   },
   mounted() {
-    window.addEventListener('mouseup', (event) => {
-      this.endPos = this.getPositionX(event)
-      const moveby = this.endPos - this.startPos
-      this.isDragging = false
-      if (Math.abs(moveby) > window.innerWidth / 3) {
-        if (moveby > 0 && this.currentIndex) this.currentIndex--
-        else if (moveby < 0 && this.currentIndex < this.books.length - 1)
-          this.currentIndex++
-      }
-
-      this.$refs.slide.style.left = `${this.currentIndex * -60 + 20}%`
-      // 60 為 3/5 ，即為一個 slide item 的寬度
-    })
+    window.addEventListener('mouseup', this.handleDragEnd)
+  },
+  beforeDestroy() {
+    window.removeEventListener('mouseup', this.handleDragEnd)
   },
   methods: {
     getPositionX(event) {
@@ -92,7 +83,19 @@ export default {
       this.startPos = this.getPositionX(event)
       this.isDragging = true
     },
-    handleDragEnd() {},
+    handleDragEnd(event) {
+      this.endPos = this.getPositionX(event)
+      const moveby = this.endPos - this.startPos
+      this.isDragging = false
+      if (Math.abs(moveby) > window.innerWidth / 3) {
+        if (moveby > 0 && this.currentIndex) this.currentIndex--
+        else if (moveby < 0 && this.currentIndex < this.books.length - 1)
+          this.currentIndex++
+      }
+
+      this.$refs.slide.style.left = `${this.currentIndex * -60 + 20}%`
+      // 60 為 3/5 ，即為一個 slide item 的寬度},
+    },
   },
 }
 </script>
@@ -101,6 +104,6 @@ export default {
 .slide_item {
   margin-right: 10%;
   margin-left: 10%;
-  @apply flex-shrink-0 relative w-2/5 p-2.5 pt-4 bg-primary rounded shadow-md;
+  @apply flex-shrink-0 relative w-2/5 p-2.5 pt-4 bg-primary rounded shadow-md transition-transform;
 }
 </style>

@@ -51,7 +51,7 @@ export default {
         { title: '推薦', name: 'Recommend', active: false },
         { title: '精選', name: 'Featured', active: false },
       ],
-      show: 'IndexCateHit',
+      show: 'IndexCateLatest',
       books: [
         {
           bookId: 0,
