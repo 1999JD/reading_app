@@ -1,5 +1,5 @@
 <template>
-  <div class="pt-6 pb-2.5">
+  <div class="py-10">
     <h2
       class="
         w-fit
@@ -13,43 +13,38 @@
     >
       熱門排行
     </h2>
-
-    <ul
-      :style="{ transform: `translateX(${currentTranslate}px)` }"
-      class="slide"
-    >
-      <li
-        v-for="(book, index) in books"
-        :key="book.bookId"
-        :class="[index === currentIndex ? 'current' : '']"
-        @mousedown.prevent="handleMousedown(index, $event)"
-        @mousemove.prevent="handleMousemove"
-        @mouseup.prevent="handleMouseup"
-      >
-        <!-- @click="$router.push(`/content/media/${bookId}`)" -->
-        <div class="w-28 m-auto">
-          <img
-            :src="require(`~/assets/img/${book.imgSrc}`)"
-            class="shadow-sm"
-          />
-        </div>
-
-        <h3
-          :class="[
-            index === currentIndex ? 'text-base' : 'text-sm',
-            'mt-4 mb-2  text-center',
-          ]"
+    <div class="w-full py-4 overflow-hidden">
+      <client-only>
+        <ul
+          ref="slide"
+          v-drag:x
+          class="slide flex left-1/5"
+          @mousedown="handleMouseDown"
         >
-          {{ book.name }}
-        </h3>
-        <p :class="[index !== currentIndex ? 'text-xs' : 'text-sm', 'mb-4']">
-          {{ book.desc }}
-        </p>
-        <span class="text-gray-400 text-xs">
-          觀看人數：{{ book.download }}
-        </span>
-      </li>
-    </ul>
+          <li
+            v-for="(book, index) in books"
+            :key="book.bookId"
+            :class="[
+              index === currentIndex && 'transform scale-110',
+              'slide_item',
+            ]"
+          >
+            <div class="w-28 m-auto">
+              <img
+                :src="require(`~/assets/img/${book.imgSrc}`)"
+                class="shadow-sm"
+              />
+            </div>
+
+            <h3 class="mt-4 mb-2 text-center">{{ book.name }}{{ index }}</h3>
+            <p class="mb-4">{{ book.desc }}</p>
+            <span class="text-gray-400 text-xs">
+              觀看人數：{{ book.download }}
+            </span>
+          </li>
+        </ul>
+      </client-only>
+    </div>
   </div>
 </template>
 
@@ -66,69 +61,46 @@ export default {
   },
   data() {
     return {
-      isDragging: false,
       startPos: 0,
-      currentTranslate: 0,
-      prevTranslate: -220,
-      animationID: 0,
+      endPos: 0,
       currentIndex: 0,
+      isDragging: false,
     }
   },
-  created() {
-    this.currentIndex = 3
-    this.currentTranslate = (this.currentIndex - 1) * -216 + -222 + 99
+  mounted() {
+    window.addEventListener('mouseup', (event) => {
+      this.endPos = this.getPositionX(event)
+      const moveby = this.endPos - this.startPos
+      this.isDragging = false
+      if (Math.abs(moveby) > window.innerWidth / 3) {
+        if (moveby > 0 && this.currentIndex) this.currentIndex--
+        else if (moveby < 0 && this.currentIndex < this.books.length - 1)
+          this.currentIndex++
+      }
+
+      this.$refs.slide.style.left = `${this.currentIndex * -60 + 20}%`
+      // 60 為 3/5 ，即為一個 slide item 的寬度
+    })
   },
   methods: {
-    handleMousedown(index, event) {
-      this.isDragging = true
-      this.currentIndex = index
-      this.startPos = this.getPositionX(event)
-      this.animationID = window.requestAnimationFrame(this.animation)
-    },
-    handleMousemove(event) {
-      if (this.isDragging) {
-        const currentPosition = this.getPositionX(event)
-        this.currentTranslate =
-          this.prevTranslate + currentPosition - this.startPos
-      }
-    },
-    handleMouseup() {
-      console.log('is mouse up')
-      this.isDragging = false
-      const movedBy = this.currentTranslate - this.prevTranslate
-      if (movedBy < -100 && this.currentIndex < this.books.length - 1)
-        this.currentIndex += 1
-      if (movedBy > 100 && this.currentIndex > 0) this.currentIndex -= 1
-      this.setPositionByIndex()
-      window.cancelAnimationFrame(this.animationID)
-    },
-    animation() {
-      if (this.isDragging) window.requestAnimationFrame(this.animation)
-    },
     getPositionX(event) {
       return event.type.includes('mouse')
         ? event.pageX
         : event.touches[0].clientX
     },
-    setPositionByIndex() {
-      this.currentTranslate = (this.currentIndex - 1) * -216 + -222 + 99
-      this.prevTranslate = this.currentTranslate
+    handleMouseDown(event) {
+      this.startPos = this.getPositionX(event)
+      this.isDragging = true
     },
+    handleDragEnd() {},
   },
 }
 </script>
 
-<style scoped>
-.slide {
-  @apply flex items-center transition-all;
-
-  touch-action: none;
-}
-.slide li {
-  @apply flex-shrink-0 relative w-40 mx-7 p-2.5 pt-4 bg-primary rounded shadow-md;
-}
-
-.slide .current {
-  @apply w-44;
+<style lang="postcss" scoped>
+.slide_item {
+  margin-right: 10%;
+  margin-left: 10%;
+  @apply flex-shrink-0 relative w-2/5 p-2.5 pt-4 bg-primary rounded shadow-md;
 }
 </style>

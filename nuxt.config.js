@@ -25,6 +25,7 @@ export default {
   plugins: [
     { src: '~/plugins/axios.js', ssr: true },
     { src: '~/plugins/yup.js', ssr: true },
+    { src: '~/plugins/drag.js', ssr: false },
   ],
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: true,
