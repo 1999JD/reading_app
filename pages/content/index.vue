@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="box-border fixed top-13 w-full z-10">
+    <div class="box-border fixed z-10 top-13 w-full">
       <CommonBookSubEntry class="bg-primary" />
       <div class="flex justify-end items-center pt-6 pb-2 pr-7 bg-white">
         <div class="w-3.5">
@@ -9,8 +9,10 @@
         <p>依下載量排序</p>
       </div>
     </div>
-    <ul class="px-6 mt-30">
-      <!-- <ContentBookListItem v-for="book in books" :key="book.id" :book="book" /> -->
+    <div class="h-18"></div>
+    <div class="h-12"></div>
+    <ul class="px-6">
+      <ContentBookListItem v-for="book in books" :key="book.id" :book="book" />
     </ul>
   </div>
 </template>

@@ -26,7 +26,7 @@
       <h3 class="title mb-4 text-base font-semibold">簡介</h3>
       <p class="mb-6 pb-6 border-b-2 border-gray-300">{{ intro }}</p>
       <h3 class="title mb-2 text-base font-semibold">評論</h3>
-      <section>
+      <section class="pb-px">
         <button class="flex items-center ml-auto mb-3">
           <div class="w-5">
             <img
@@ -51,7 +51,6 @@
 <script>
 export default {
   name: 'Media',
-  layout: 'content',
   data() {
     return {
       mediaType: 'Audio',
@@ -103,7 +102,7 @@ export default {
 }
 </script>
 
-<style scoped>
+<style lang="postcss" scoped>
 .title::before {
   content: '';
   background-color: #eb7513;

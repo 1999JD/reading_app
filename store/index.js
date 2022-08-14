@@ -3,6 +3,9 @@
 export const state = () => ({
   heading: 'default',
   backRoute: 'default',
+  auth: {
+    loggedIn: true,
+  },
   collections: [
     {
       bookId: 1,

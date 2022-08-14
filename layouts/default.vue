@@ -1,11 +1,13 @@
 <template>
   <div class="">
-    <LayoutSearchHeader />
-    <!-- <header class="fixed z-20 top-0"></header> -->
+    <LayoutSearchHeader
+      v-if="$route.name === 'index' || $route.name === 'content'"
+    />
+    <LayoutBackHeader v-else />
     <div class="h-13"></div>
     <Nuxt />
     <div class="h-18"></div>
-    <footer class="fixed bottom-0 w-full  bg-white shadow-md">
+    <footer class="fixed bottom-0 w-full bg-white shadow-md">
       <div class="flex justify-between mx-10 my-2">
         <NuxtLink class="flex flex-col justify-center" to="/content">
           <SvgFooterBook class="mb-2" /> 書城
@@ -24,5 +26,6 @@
 <script>
 export default {
   name: 'DefaultLayout',
+  middleware: 'layoutContent',
 }
 </script>

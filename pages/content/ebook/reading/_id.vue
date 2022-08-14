@@ -30,9 +30,7 @@
         v-show="catalogOpen"
         class="absolute bottom-0 w-full bg-primary py-4 px-6 rounded-t-2xl"
       >
-        <h3 class="mb-3 pb-2 text-base font-medium border-b">
-          目錄
-        </h3>
+        <h3 class="mb-3 pb-2 text-base font-medium border-b">目錄</h3>
         <ul>
           <li v-for="chapter in catalog" :key="chapter.label" class="mb-3">
             <button class="ml-" @click="handleSwitchChapter(chapter.href)">
@@ -108,7 +106,6 @@ import ePub from 'epubjs'
 
 export default {
   name: 'Reading',
-  layout: 'ebook',
   props: {
     settingOpen: {
       type: Boolean,

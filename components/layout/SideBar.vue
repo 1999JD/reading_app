@@ -1,5 +1,5 @@
 <template>
-  <nav class="fixed z-10 w-80 top-13 bg-white filter drop-shadow">
+  <nav class="fixed z-20 w-80 top-13 bg-white filter drop-shadow">
     <h2>訂購專區</h2>
 
     <NuxtLink v-for="item in orderLinks" :key="item.title" :to="item.to">
