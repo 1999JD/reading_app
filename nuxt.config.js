@@ -37,7 +37,7 @@ export default {
     '@nuxtjs/stylelint-module',
     // https://go.nuxtjs.dev/tailwindcss
     '@nuxtjs/tailwindcss',
-    // '@nuxtjs/pwa',
+    '@nuxtjs/pwa',
   ],
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
@@ -51,26 +51,26 @@ export default {
   },
 
   // PWA module configuration: https://go.nuxtjs.dev/pwa
-  // pwa: {
-  //   meta: {
-  //     title: 'readingApp',
-  //     author: 'Me',
-  //   },
-  //   manifest: {
-  //     name: 'readingApp',
-  //     short_name: 'reading',
-  //     descripotion: 'fantasitc literacy reading app',
-  //     lang: 'en',
-  //   },
-  //   workbox: {
-  //     dev: process.env.NODE_ENV !== 'production'
-  //   },
-  //   icon: {
-  //     fileName: 'icon.png',
-  //     size: [64, 120, 144, 152, 384, 512],
+  pwa: {
+    meta: {
+      title: 'readingApp',
+      author: 'Me',
+    },
+    manifest: {
+      name: 'readingApp',
+      short_name: 'reading',
+      descripotion: 'fantasitc literacy reading app',
+      lang: 'en',
+    },
+    workbox: {
+      dev: process.env.NODE_ENV !== 'production'
+    },
+    icon: {
+      fileName: 'icon.png',
+      size: [64, 120, 144, 152, 384, 512],
 
-  //   }
-  // },
+    }
+  },
   serverMiddleware: [
     { path: '/api', handler: '~/server/app.js' }
   ],
@@ -84,7 +84,11 @@ export default {
         }
       })
     },
+    postcss: {
+      plugins: {
+        tailwindcss: {},
+        autoprefixer: {},
+      },
+    },
   },
-  // video: ['src', 'poster'],
-  // audio: 'src',
 }
