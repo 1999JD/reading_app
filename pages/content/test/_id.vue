@@ -1,14 +1,6 @@
 <template>
   <main class="flex-grow">
-    <p
-      class="
-        fixed
-        w-full
-        p-0.5
-        bg-primary-dark
-        text-center text-white text-base
-      "
-    >
+    <p class="fixed top-16 w-full bg-primary-dark text-center text-base">
       {{
         currentQuestion === questions.length
           ? currentQuestion.toString()
@@ -177,7 +169,7 @@ export default {
   },
   methods: {
     handleInputAnswer(questionIndex, optionIndex) {
-      if( this.currentQuestion === this.questions.length) return
+      if (this.currentQuestion === this.questions.length) return
       this.answers[questionIndex].answer = optionIndex
       this.answers[questionIndex].hasAnswer = true
       if (

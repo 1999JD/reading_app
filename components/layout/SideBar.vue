@@ -10,6 +10,14 @@
     <NuxtLink v-for="item in memberLinks" :key="item.title" :to="item.to">
       {{ item.title }}
     </NuxtLink>
+
+    <a
+      v-if="$store.state.auth.loggedIn"
+      href="javascript:void(0)"
+      @click="handleLogout"
+      >登出</a
+    >
+    <a v-else href="javascript:void(0)" @click="handleLogin">登入</a>
   </nav>
 </template>
 
@@ -29,9 +37,16 @@ export default {
         { title: '里程碑', to: '/member/milestone' },
         { title: '我的收藏', to: '/member/collections' },
         { title: '優惠卷', to: '/member/coupon' },
-        { title: '登出', to: '/member/coupon' },
       ],
     }
+  },
+  methods: {
+    handleLogin() {
+      this.$router.push('/account/login')
+    },
+    handleLogout() {
+      this.$store.dispatch('handleLogin', false)
+    },
   },
 }
 </script>

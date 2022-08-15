@@ -1,5 +1,5 @@
 <template>
-  <div class="pb-21.5">
+  <div>
     <form @submit.prevent="userRegister">
       <AccountAcctInput v-model="register.account" />
       <AccountPwdInput v-model="register.confirmPassword" field="setPassword">

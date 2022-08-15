@@ -4,7 +4,10 @@ export const state = () => ({
   heading: 'default',
   backRoute: 'default',
   auth: {
-    loggedIn: true,
+    user: {
+      name: 'Joyce'
+    },
+    loggedIn: false,
   },
   collections: [
     {
@@ -84,7 +87,9 @@ export const actions = {
   handleDelShoppingList({ commit }) {
     commit('delShoppingList')
   },
-
+  handleLogin({ commit }, isLogin) {
+    commit('setLogin', isLogin)
+  },
 }
 
 export const mutations = {
@@ -151,5 +156,9 @@ export const mutations = {
       alert('您未挑選任何商品')
       return false
     }
-  }
+  },
+  setLogin(state, isLogin) {
+    state.auth.loggedIn = isLogin
+  },
+
 }

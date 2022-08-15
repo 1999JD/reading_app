@@ -10,7 +10,7 @@
         :disabled="login.account === ''"
         @click.prevent="sentAccount"
       >
-        發送新密碼 ({{ count }})
+        發送驗證碼 ({{ count }})
       </button>
       <div v-show="show">
         <AccountPwdInput
@@ -18,7 +18,7 @@
           class="mb-10"
           field="password"
         >
-          <template #label>輸入信箱預設密碼</template>
+          <template #label>輸入信箱驗證碼</template>
         </AccountPwdInput>
         <button
           class="account__btn"

@@ -1,26 +1,18 @@
 <template>
   <div class="flex flex-col min-h-screen">
     <header
-      class="
-        flex
-        justify-center
-        items-center
-        relative
-        z-10
-        bg-primary
-        transition
-        delay-100
-      "
+      class="flex justify-center items-center fixed z-20 w-full bg-primary"
     >
       <a
         class="
+          self-center
           absolute
           left-6
           top-0
           bottom-0
-          m-auto
           w-6
-          h-6
+          h-fit
+          m-auto
           bg-white
           rounded-full
         "
@@ -28,15 +20,13 @@
       >
         <img src="~/assets/icon/common/leftArrow.svg" alt="返回按鈕" />
       </a>
-      <label for="" class="relative p-3">
+      <label class="relative block w-full mx-16 p-2.5">
         <input
           type="text"
-          name=""
-          value=""
-          placeholder="內文搜尋"
           class="w-full pl-8 py-1.5 rounded-lg leading-none"
+          placeholder="搜尋內文"
         />
-        <button type="button" class="absolute top-0 bottom-0 left-3">
+        <button type="button" class="absolute top-0 bottom-0 left-5">
           <SvgHeaderSearch />
         </button>
       </label>
@@ -44,6 +34,8 @@
         <img src="~/assets/icon/layout/message.svg" alt="訊息中心" />
       </button>
     </header>
+    <div class="h-13"></div>
+
     <NuxtChild
       :setting-open="settingOpen"
       :catalog-open="catalogOpen"
@@ -52,6 +44,8 @@
       @onClickCatalog="handleOpenCatalog"
       @onClickPen="handleUsePen"
     />
+    <div class="h-18"></div>
+
     <LayoutEbookFooterNav
       @onClickSetting="handleOpenSetting"
       @onClickCatalog="handleOpenCatalog"

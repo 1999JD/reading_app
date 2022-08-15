@@ -1,5 +1,5 @@
 <template>
-  <main class="relative z-0 h-screen pt-2 pb-28 bg-primary">
+  <main class="py-2 bg-primary">
     <nav class="flex justify-end px-6">
       <a class="w-7 mr-3">
         <img src="~/assets/icon/layout/mailbox.svg" alt="訊息" class="" />
@@ -12,17 +12,16 @@
       <div class="block rounded w-16 mr-4">
         <img src="~/assets/icon/layout/account-big.svg" alt="大頭貼" />
       </div>
-      <h2 class="text-base">{{ $auth.user.name }}</h2>
+      <h2 class="text-base">{{ $store.state.auth.user.name }}</h2>
     </div>
     <section
       class="
         flex
         items-center
-        mx-18
+        mx-20
         mb-10
         py-3.5
-        pl-4
-        pr-5
+        px-3
         bg-white
         border border-yellow
         rounded-lg
@@ -32,7 +31,9 @@
       <div class="block rounded w-9 mr-4">
         <img src="~/assets/icon/member/cash.png" />
       </div>
-      <p class="text-tangerine font-bold">$<span class="text-xl">50.00</span></p>
+      <p class="text-tangerine font-bold">
+        $<span class="text-xl">50.00</span>
+      </p>
       <a class="block w-6 ml-auto"
         ><img src="~/assets/icon/member/ahead.svg" alt="前往"
       /></a>
@@ -50,7 +51,7 @@
         >{{ link.title }}
       </MemberIcon>
     </nav>
-    <section class="mb-6 pt-2 pb-5 px-6 bg-white">
+    <section class="mx-6 mb-6 pt-2 pb-5 px-6 rounded-lg bg-white">
       <h3 class="mb-5 text-lg font-medium">里程碑</h3>
       <nav class="flex justify-between">
         <MemberIcon
@@ -63,7 +64,7 @@
         </MemberIcon>
       </nav>
     </section>
-    <section class="mb-6 pt-2 pb-5 px-6 bg-white">
+    <section class="mx-6 mb-6 pt-2 pb-5 px-6 rounded-lg bg-white">
       <h3 class="mb-5 text-lg font-medium">訂購專區</h3>
       <nav class="flex justify-between">
         <MemberIcon
@@ -82,7 +83,6 @@
 <script>
 export default {
   name: 'MemberCenter',
-  layout: 'memberIndex',
   data() {
     return {
       contentPageLinks: [

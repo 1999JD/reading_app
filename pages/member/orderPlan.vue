@@ -14,8 +14,7 @@
           text-center
           rounded-lg
           overflow-hidden
-          filter
-          drop-sm
+          shadow-md
         "
       >
         <div
@@ -31,15 +30,7 @@
           <p class="mb-4 leading-normal">{{ plan.desc }}</p>
           <NuxtLink
             to="/member/orderReceipt"
-            class="
-              block
-              w-44
-              py-2.5
-              mx-auto
-              bg-primary
-              shadow-btn
-              rounded-2xl
-            "
+            class="block w-44 py-2.5 mx-auto bg-primary shadow-sm rounded-2xl"
           >
             訂閱
           </NuxtLink>
@@ -52,7 +43,6 @@
 <script>
 export default {
   name: 'Orders',
-  layout: 'member',
   data() {
     return {
       plans: [

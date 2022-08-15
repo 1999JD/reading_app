@@ -1,20 +1,20 @@
 <template>
-  <footer
-    class="flex justify-between mt-auto px-10 py-2 bg-white filter shadow-lg"
-  >
-    <button
-      v-for="button in footerButtons"
-      :key="button.title"
-      class="block leading-4"
-      @click="$emit(button.handler)"
-    >
-      <img
-        :src="require(`~/assets/icon/layout/${button.src}`)"
-        :alt="button.alt"
-        class="mb-2"
-      />
-      {{ button.title }}
-    </button>
+  <footer class="fixed bottom-0 w-full bg-white shadow-md">
+    <div class="flex justify-between mx-10 my-2">
+      <button
+        v-for="button in footerButtons"
+        :key="button.title"
+        class="flex flex-col justify-center"
+        @click="$emit(button.handler)"
+      >
+        <img
+          :src="require(`~/assets/icon/layout/${button.src}`)"
+          :alt="button.alt"
+          class="mb-2"
+        />
+        {{ button.title }}
+      </button>
+    </div>
   </footer>
 </template>
 

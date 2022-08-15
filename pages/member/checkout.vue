@@ -139,7 +139,6 @@
 <script>
 export default {
   name: 'Checkout',
-  layout: 'member',
   data() {
     return {
       paymentValue: '',

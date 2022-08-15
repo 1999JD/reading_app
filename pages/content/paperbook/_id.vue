@@ -46,15 +46,15 @@
         免費試閱
       </button>
       <div class="flex items-center">
-        <button class="mr-7.5" @click="handleAddShoppingList(book)">
+        <button class="mr-7.5">
           <div class="w-8 mx-auto mb-1">
-            <SvgHeaderCart />
+            <SvgEbookCart />
           </div>
           立即購買
         </button>
         <button>
           <div class="w-8 mx-auto mb-1">
-            <img src="~/assets/icon/content/reading.png" alt="" />
+            <SvgEbookReading />
           </div>
           電子書
         </button>

@@ -15,7 +15,6 @@
 <script>
 export default {
   name: 'Favorites',
-  layout: 'member',
   computed: {
     collections() {
       return this.$store.state.collections

@@ -1,10 +1,21 @@
 <template>
   <div class="relative">
     <button
-      class="block relative w-full py-2.5 pl-4 pr-7 bg-white text-left rounded"
+      class="
+        block
+        relative
+        w-full
+        py-2.5
+        pl-4
+        pr-7
+        bg-white
+        text-left
+        border border-gray-300
+        rounded
+      "
       @click.prevent="handleClickButton"
     >
-      <p :class="[!hasChosen && 'text-gray-accountInput', 'element']">
+      <p :class="[!hasChosen && 'text-gray-500', 'element']">
         {{ hasChosen ? selectValue : placeholder }}
       </p>
       <div class="absolute top-2 right-2 w-5 h-5">
@@ -21,15 +32,14 @@
         px-4
         bg-white
         rounded
+        shadow-sm
         overflow-hidden
       "
     >
       <li
         v-for="(option, index) in options"
         :key="option.label"
-        :class="[
-          index !== options.length - 1 && ' border-b ',
-        ]"
+        :class="[index !== options.length - 1 && ' border-b ']"
       >
         <label
           :for="option.label"

@@ -131,7 +131,6 @@
 <script>
 export default {
   name: 'SubReceipt',
-  layout: 'member',
   data() {
     return {
       countyValue: '',

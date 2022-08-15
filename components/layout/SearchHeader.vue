@@ -3,7 +3,7 @@
     <header
       :class="[
         open ? 'shadow-md' : '',
-        'flex justify-center fixed z-30 w-full bg-primary transition delay-100',
+        'flex justify-center fixed z-30 top-0 w-full bg-primary transition delay-100',
       ]"
     >
       <button

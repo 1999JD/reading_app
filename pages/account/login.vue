@@ -1,5 +1,5 @@
 <template>
-  <div class="pb-12">
+  <div>
     <form @submit.prevent="$validateFunctions.userLogin(login)">
       <AccountAcctInput v-model="login.account" />
       <AccountPwdInput v-model="login.password" field="password" />
@@ -9,8 +9,8 @@
       >
         忘記密碼了嗎?
       </NuxtLink>
-      <button class="account__btn mb-9" type="submit">登入</button>
-      <div class="line--divide flex justify-center items-center mb-7.5">
+      <button class="account__btn mb-4" type="submit">登入</button>
+      <div class="line--divide flex justify-center items-center mb-4">
         <p class="px-2 bg-white text-base">或</p>
       </div>
       <NuxtLink

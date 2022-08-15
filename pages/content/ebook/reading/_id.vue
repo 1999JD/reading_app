@@ -1,7 +1,7 @@
 <template>
   <div :class="[ebookStyle.bgColor, 'flex-grow relative']">
     <client-only>
-      <section id="viewer" class="w-full"></section>
+      <section id="viewer" class="w-full flex justify-center"></section>
       <button id="prev" class="arrow left-6" @click="prevPage">
         <img src="~/assets/icon/common/leftArrow.svg" alt="" />
       </button>
@@ -28,21 +28,24 @@
 
       <section
         v-show="catalogOpen"
-        class="absolute bottom-0 w-full bg-primary py-4 px-6 rounded-t-2xl"
+        class="absolute -bottom-px w-full py-4 px-6 bg-primary rounded-t-2xl"
       >
         <h3 class="mb-3 pb-2 text-base font-medium border-b">目錄</h3>
         <ul>
           <li v-for="chapter in catalog" :key="chapter.label" class="mb-3">
-            <button class="ml-" @click="handleSwitchChapter(chapter.href)">
+            <p
+              class="cursor-pointer"
+              @click="handleSwitchChapter(chapter.href)"
+            >
               {{ chapter.label }}
-            </button>
+            </p>
           </li>
         </ul>
       </section>
 
       <section
         v-show="settingOpen"
-        class="absolute bottom-0 w-full bg-primary px-8 py-10 rounded-t-2xl"
+        class="absolute -bottom-px w-full px-8 py-10 bg-primary rounded-t-2xl"
       >
         <ul>
           <li class="settings__setting">
@@ -61,7 +64,7 @@
             </button>
           </li>
           <li class="settings__setting">
-            <h3 class="settings__title">護眼模式</h3>
+            <h3 class="settings__title">背景顏色</h3>
             <button
               v-for="color in settings.bgColor"
               :key="color"
@@ -73,28 +76,6 @@
               @click="handleSwitchBgColor(color)"
             ></button>
           </li>
-          <!-- <li class="settings__setting">
-            <h3 class="settings__title">閱讀方向</h3>
-            <button
-              v-for="item in settings.direction"
-              :key="item.img"
-              :class="[
-                item.active && 'active--direction',
-                'settings__button--direction',
-              ]"
-              @click="handleSwitchDirection(item.writingMode)"
-            >
-              <div class="w-4">
-                <img
-                  :src="require(`~/assets/icon/content/${item.icon}.svg`)"
-                  alt=""
-                />
-              </div>
-            </button>
-          </li> -->
-          <!-- <li class="settings__setting">
-            <h3 class="settings__title">明暗度調整</h3>
-          </li> -->
         </ul>
       </section>
     </client-only>
@@ -103,9 +84,11 @@
 
 <script>
 import ePub from 'epubjs'
+import sampleEbook from '~/assets/media/sample.epub'
 
 export default {
   name: 'Reading',
+  layout: 'ebook',
   props: {
     settingOpen: {
       type: Boolean,
@@ -131,7 +114,7 @@ export default {
       location: 0,
       bookAvailable: true,
       catalog: [],
-      url: 'http://localhost:7777/55a.epub',
+      url: sampleEbook,
       ebookStyle: {
         bgColor: 'bg-white',
         fontSize: 18,
@@ -144,19 +127,15 @@ export default {
           { fontSizeClass: 'text-2xl', fontSize: 20 },
           { fontSizeClass: 'text-2.5xl', fontSize: 24 },
         ],
-        bgColor: ['bg-ebook-white', 'bg-ebook-light', 'bg-ebook-dark'],
-        // direction: [
-        //   {icon: 'south', writingMode: 'vertical-rl' },
-        //   {icon: 'east',writingMode: 'horizontal-tb' },
-        // ],
+        bgColor: ['bg-white', 'bg-blue', 'bg-red'],
       },
     }
   },
   mounted() {
     this.book = ePub(this.url)
     this.rendition = this.book.renderTo('viewer', {
-      width: window.innerWidth,
-      height: window.innerHeight - 192,
+      width: window.innerWidth * 0.75,
+      height: window.innerHeight * 0.75,
     })
     this.book.rendition.display()
     this.book.ready
@@ -236,28 +215,7 @@ export default {
     handleSwitchFontsize(fontSize) {
       this.ebookStyle.fontSize = fontSize
       this.rendition.themes.fontSize(fontSize + 'px')
-      // this.rendition.themes.default({
-      //   html: {
-      //     'font-size': `${this.ebookStyle.fontSize}px !important`,
-      //     'writing-mode': `${this.ebookStyle.writingMode} !important`,
-      //   },
-      // })
     },
-    // handleSwitchDirection(writingMode) {
-    //   this.book.package.metadata.direction =
-    //     writingMode === 'vertical-rl' ? 'rtl' : 'ltr'
-    //   this.ebookStyle.writingMode = writingMode
-    //   this.settings.direction.forEach((element) => {
-    //     if (element.writingMode === writingMode) element.active = true
-    //     else element.active = false
-    //   })
-    //   this.rendition.themes.default({
-    //     html: {
-    //       'font-size': `${this.ebookStyle.fontSize}px !important`,
-    //       'writing-mode': `${this.ebookStyle.wraitingMode} !important`,
-    //     },
-    //   })
-    // },
     handleSwitchChapter(href) {
       this.rendition.display(href)
     },

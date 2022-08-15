@@ -14,8 +14,8 @@
             v-for="option in question.options"
             :key="option.index"
             :class="[
-              answer.answer === option.index ? 'bg-third' : 'bg-white',
-              'mb-3 py-1 px-3  rounded-lg',
+              answer.answer === option.index ? 'bg-red' : 'bg-white',
+              'w-52 mx-auto mb-3 py-1 px-3  rounded-lg',
             ]"
             @click="$emit('onClick', questionIndex, option.index)"
           >

@@ -13,7 +13,6 @@
 <script>
 export default {
   name: 'Records',
-  layout: 'member',
   data() {
     return {
       orders: [

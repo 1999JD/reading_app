@@ -90,7 +90,6 @@ import { mapMutations, mapActions } from 'vuex'
 
 export default {
   name: 'Cart',
-  layout: 'member',
   data() {
     return {
       selectAll: false,
