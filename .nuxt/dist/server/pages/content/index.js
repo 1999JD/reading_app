@@ -1,7 +1,7 @@
-exports.ids = [36,5];
+exports.ids = [37,5,7];
 exports.modules = {
 
-/***/ 105:
+/***/ 107:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -150,7 +150,7 @@ var componentNormalizer = __webpack_require__(1);
 
 function injectStyles (context) {
   
-  var style0 = __webpack_require__(90)
+  var style0 = __webpack_require__(92)
 if (style0.__inject__) style0.__inject__(context)
 
 }
@@ -172,19 +172,116 @@ var component = Object(componentNormalizer["a" /* default */])(
 
 /***/ }),
 
-/***/ 214:
+/***/ 113:
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "img/earphone.5af43fe.png";
+
+/***/ }),
+
+/***/ 163:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 // ESM COMPAT FLAG
 __webpack_require__.r(__webpack_exports__);
 
-// CONCATENATED MODULE: ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/@nuxt/components/dist/loader.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./pages/content/index.vue?vue&type=template&id=70c8b7f1&
-var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',[_vm._ssrNode("<div class=\"box-border fixed z-10 top-13 w-full\">","</div>",[_c('CommonBookSubEntry',{staticClass:"bg-primary"}),_vm._ssrNode(" <div class=\"flex justify-end items-center pt-6 pb-2 pr-7 bg-white\"><div class=\"w-3.5\"><img"+(_vm._ssrAttr("src",__webpack_require__(89)))+" alt></div> <p>依下載量排序</p></div>")],2),_vm._ssrNode(" <div class=\"h-18\"></div> <div class=\"h-12\"></div> <ul class=\"px-6\"></ul>")],2)}
+// CONCATENATED MODULE: ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/@nuxt/components/dist/loader.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./components/content/BookListItem.vue?vue&type=template&id=14663f2a&
+var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('li',{staticClass:"flex relative bg-primary mb-6 p-4 rounded-lg"},[_vm._ssrNode("<div class=\"w-24 mr-2 flex-shrink-0\"><img"+(_vm._ssrAttr("src",__webpack_require__(72)("./" + (_vm.book.src))))+(_vm._ssrAttr("alt",_vm.book.alt))+"></div> <div class=\"flex-grow-1\"><h3 class=\"mb-3 font-medium text-base\">"+_vm._ssrEscape(_vm._s(_vm.book.title))+"</h3> <ul><li class=\"mb-1\">"+_vm._ssrEscape("作者: "+_vm._s(_vm.book.author))+"</li> <li class=\"mb-1\">"+_vm._ssrEscape("出版社: "+_vm._s(_vm.book.publisher))+"</li> <li class=\"mb-1\">"+_vm._ssrEscape("出版日期: "+_vm._s(_vm.book.publicationDate))+"</li></ul> <span class=\"absolute right-2 bottom-2 text-gray-order\">"+_vm._ssrEscape("下載量 :"+_vm._s(_vm.book.download))+"</span></div> "),_c('NuxtLink',{staticClass:"block absolute top-2.5 right-2 w-6",attrs:{"to":("/content/media/" + (_vm.book.id))}},[_c('img',{attrs:{"src":__webpack_require__(113),"alt":""}})])],2)}
 var staticRenderFns = []
 
 
-// CONCATENATED MODULE: ./pages/content/index.vue?vue&type=template&id=70c8b7f1&
+// CONCATENATED MODULE: ./components/content/BookListItem.vue?vue&type=template&id=14663f2a&
+
+// CONCATENATED MODULE: ./node_modules/babel-loader/lib??ref--2-0!./node_modules/@nuxt/components/dist/loader.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./components/content/BookListItem.vue?vue&type=script&lang=js&
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+/* harmony default export */ var BookListItemvue_type_script_lang_js_ = ({
+  name: 'BookListItem',
+  props: {
+    book: {
+      type: Object,
+
+      default() {
+        return {
+          id: 0,
+          title: '素養人才',
+          author: '吳清基',
+          publisher: '台灣知識庫股份有限公司',
+          publicationDate: '2020-10-11',
+          download: 352,
+          src: '~/assets/img/sampleBook.jpg',
+          alt: 'book'
+        };
+      }
+
+    }
+  }
+});
+// CONCATENATED MODULE: ./components/content/BookListItem.vue?vue&type=script&lang=js&
+ /* harmony default export */ var content_BookListItemvue_type_script_lang_js_ = (BookListItemvue_type_script_lang_js_); 
+// EXTERNAL MODULE: ./node_modules/vue-loader/lib/runtime/componentNormalizer.js
+var componentNormalizer = __webpack_require__(1);
+
+// CONCATENATED MODULE: ./components/content/BookListItem.vue
+
+
+
+
+
+/* normalize component */
+
+var component = Object(componentNormalizer["a" /* default */])(
+  content_BookListItemvue_type_script_lang_js_,
+  render,
+  staticRenderFns,
+  false,
+  null,
+  null,
+  "3fbedabc"
+  
+)
+
+/* harmony default export */ var BookListItem = __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ 218:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+// ESM COMPAT FLAG
+__webpack_require__.r(__webpack_exports__);
+
+// CONCATENATED MODULE: ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/@nuxt/components/dist/loader.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./pages/content/index.vue?vue&type=template&id=3ff9c5bc&
+var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',[_vm._ssrNode("<div class=\"box-border fixed z-10 top-13 w-full\">","</div>",[_c('CommonBookSubEntry',{staticClass:"bg-primary"}),_vm._ssrNode(" <div class=\"flex justify-end items-center pt-6 pb-2 pr-7 bg-white\"><div class=\"w-3.5\"><img"+(_vm._ssrAttr("src",__webpack_require__(91)))+" alt></div> <p>依下載量排序</p></div>")],2),_vm._ssrNode(" <div class=\"h-18\"></div> <div class=\"h-12\"></div> "),_vm._ssrNode("<ul class=\"px-6\">","</ul>",_vm._l((_vm.books),function(book){return _c('ContentBookListItem',{key:book.id,attrs:{"book":book}})}),1)],2)}
+var staticRenderFns = []
+
+
+// CONCATENATED MODULE: ./pages/content/index.vue?vue&type=template&id=3ff9c5bc&
 
 // CONCATENATED MODULE: ./node_modules/babel-loader/lib??ref--2-0!./node_modules/@nuxt/components/dist/loader.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./pages/content/index.vue?vue&type=script&lang=js&
 //
@@ -206,87 +303,77 @@ var staticRenderFns = []
 //
 //
 //
-//
-//
 /* harmony default export */ var contentvue_type_script_lang_js_ = ({
-  name: 'ContentPage',
+  name: 'Content',
   layout: 'index',
 
   data() {
-    return {//   books: [
-      //     {
-      //       id: 0,
-      //       title: '素養人才',
-      //       src: 'sampleBook.jpg',
-      //       author: '吳清基',
-      //       publisher: '台灣知識庫股份有限公司',
-      //       publicationDate: '2020-10-11',
-      //       download: 1000,
-      //     },
-      //     {
-      //       id: 1,
-      //       title: '素養人才',
-      //       src: 'sampleBook.jpg',
-      //       author: '吳清基',
-      //       publisher: '台灣知識庫股份有限公司',
-      //       publicationDate: '2020-10-11',
-      //       download: 32,
-      //     },
-      //     {
-      //       id: 2,
-      //       title: '素養人才',
-      //       src: 'sampleBook.jpg',
-      //       author: '吳清基',
-      //       publisher: '台灣知識庫股份有限公司',
-      //       publicationDate: '2020-10-11',
-      //       download: 352,
-      //     },
-      //     {
-      //       id: 3,
-      //       title: '素養人才',
-      //       src: 'sampleBook.jpg',
-      //       author: '吳清基',
-      //       publisher: '台灣知識庫股份有限公司',
-      //       publicationDate: '2020-10-11',
-      //       download: 352,
-      //     },
-      //     {
-      //       id: 4,
-      //       title: '素養人才',
-      //       src: 'sampleBook.jpg',
-      //       author: '吳清基',
-      //       publisher: '台灣知識庫股份有限公司',
-      //       publicationDate: '2020-10-11',
-      //       download: 352,
-      //     },
-      //     {
-      //       id: 5,
-      //       title: '素養人才',
-      //       src: 'sampleBook.jpg',
-      //       author: '吳清基',
-      //       publisher: '台灣知識庫股份有限公司',
-      //       publicationDate: '2020-10-11',
-      //       download: 352,
-      //     },
-      //     {
-      //       id: 6,
-      //       title: '素養人才',
-      //       src: 'sampleBook.jpg',
-      //       author: '吳清基',
-      //       publisher: '台灣知識庫股份有限公司',
-      //       publicationDate: '2020-10-11',
-      //       download: 352,
-      //     },
-      //     {
-      //       id: 7,
-      //       title: '素養人才',
-      //       src: 'sampleBook.jpg',
-      //       author: '吳清基',
-      //       publisher: '台灣知識庫股份有限公司',
-      //       publicationDate: '2020-10-11',
-      //       download: 352,
-      //     },
-      //   ],
+    return {
+      books: [{
+        id: 0,
+        title: '素養人才',
+        src: 'sampleBook.jpg',
+        author: '吳清基',
+        publisher: '台灣知識庫股份有限公司',
+        publicationDate: '2020-10-11',
+        download: 1000
+      }, {
+        id: 1,
+        title: '素養人才',
+        src: 'sampleBook.jpg',
+        author: '吳清基',
+        publisher: '台灣知識庫股份有限公司',
+        publicationDate: '2020-10-11',
+        download: 32
+      }, {
+        id: 2,
+        title: '素養人才',
+        src: 'sampleBook.jpg',
+        author: '吳清基',
+        publisher: '台灣知識庫股份有限公司',
+        publicationDate: '2020-10-11',
+        download: 352
+      }, {
+        id: 3,
+        title: '素養人才',
+        src: 'sampleBook.jpg',
+        author: '吳清基',
+        publisher: '台灣知識庫股份有限公司',
+        publicationDate: '2020-10-11',
+        download: 352
+      }, {
+        id: 4,
+        title: '素養人才',
+        src: 'sampleBook.jpg',
+        author: '吳清基',
+        publisher: '台灣知識庫股份有限公司',
+        publicationDate: '2020-10-11',
+        download: 352
+      }, {
+        id: 5,
+        title: '素養人才',
+        src: 'sampleBook.jpg',
+        author: '吳清基',
+        publisher: '台灣知識庫股份有限公司',
+        publicationDate: '2020-10-11',
+        download: 352
+      }, {
+        id: 6,
+        title: '素養人才',
+        src: 'sampleBook.jpg',
+        author: '吳清基',
+        publisher: '台灣知識庫股份有限公司',
+        publicationDate: '2020-10-11',
+        download: 352
+      }, {
+        id: 7,
+        title: '素養人才',
+        src: 'sampleBook.jpg',
+        author: '吳清基',
+        publisher: '台灣知識庫股份有限公司',
+        publicationDate: '2020-10-11',
+        download: 352
+      }]
     };
   }
 
@@ -318,18 +405,104 @@ var component = Object(componentNormalizer["a" /* default */])(
 /* harmony default export */ var content = __webpack_exports__["default"] = (component.exports);
 
 /* nuxt-component-imports */
-installComponents(component, {CommonBookSubEntry: __webpack_require__(105).default})
+installComponents(component, {CommonBookSubEntry: __webpack_require__(107).default,ContentBookListItem: __webpack_require__(163).default})
 
 
 /***/ }),
 
-/***/ 83:
+/***/ 66:
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "img/tkb.0c425cc.png";
+
+/***/ }),
+
+/***/ 67:
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "img/user.2fbb8d0.png";
+
+/***/ }),
+
+/***/ 68:
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "img/bg-star.57cd018.jpeg";
+
+/***/ }),
+
+/***/ 69:
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "img/test-btn-decoration.bb13794.png";
+
+/***/ }),
+
+/***/ 70:
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "img/banner.df3bca8.jpg";
+
+/***/ }),
+
+/***/ 71:
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "img/tag-title.c30faac.png";
+
+/***/ }),
+
+/***/ 72:
+/***/ (function(module, exports, __webpack_require__) {
+
+var map = {
+	"./404.jpeg": 28,
+	"./account-bg.jpg": 29,
+	"./banner.jpg": 70,
+	"./bg-star.jpeg": 68,
+	"./sampleBook.jpg": 73,
+	"./tag-title.png": 71,
+	"./test-btn-decoration.png": 69,
+	"./tkb.png": 66,
+	"./user.png": 67
+};
+
+
+function webpackContext(req) {
+	var id = webpackContextResolve(req);
+	return __webpack_require__(id);
+}
+function webpackContextResolve(req) {
+	if(!__webpack_require__.o(map, req)) {
+		var e = new Error("Cannot find module '" + req + "'");
+		e.code = 'MODULE_NOT_FOUND';
+		throw e;
+	}
+	return map[req];
+}
+webpackContext.keys = function webpackContextKeys() {
+	return Object.keys(map);
+};
+webpackContext.resolve = webpackContextResolve;
+module.exports = webpackContext;
+webpackContext.id = 72;
+
+/***/ }),
+
+/***/ 73:
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "img/sampleBook.47efd69.jpg";
+
+/***/ }),
+
+/***/ 85:
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(91);
+var content = __webpack_require__(93);
 if(content.__esModule) content = content.default;
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
@@ -341,26 +514,26 @@ module.exports.__inject__ = function (context) {
 
 /***/ }),
 
-/***/ 89:
+/***/ 91:
 /***/ (function(module, exports) {
 
 module.exports = "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTYiIGhlaWdodD0iMTQiIHZpZXdCb3g9IjAgMCAxNiAxNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTQuODUzNTUgMS4zOTY0NUM0LjY1ODI5IDEuMjAxMTggNC4zNDE3MSAxLjIwMTE4IDQuMTQ2NDUgMS4zOTY0NUwwLjk2NDQ2NiA0LjU3ODQzQzAuNzY5MjA0IDQuNzczNjkgMC43NjkyMDQgNS4wOTAyNyAwLjk2NDQ2NiA1LjI4NTUzQzEuMTU5NzMgNS40ODA4IDEuNDc2MzEgNS40ODA4IDEuNjcxNTcgNS4yODU1M0w0LjUgMi40NTcxMUw3LjMyODQzIDUuMjg1NTNDNy41MjM2OSA1LjQ4MDggNy44NDAyNyA1LjQ4MDggOC4wMzU1MyA1LjI4NTUzQzguMjMwOCA1LjA5MDI3IDguMjMwOCA0Ljc3MzY5IDguMDM1NTMgNC41Nzg0M0w0Ljg1MzU1IDEuMzk2NDVaTTQgMTIuMjVDNCAxMi41MjYxIDQuMjIzODYgMTIuNzUgNC41IDEyLjc1QzQuNzc2MTQgMTIuNzUgNSAxMi41MjYxIDUgMTIuMjVINFpNNCAxLjc1VjEyLjI1SDVWMS43NUg0WiIgZmlsbD0iIzM2MzYzNiIvPgo8cGF0aCBkPSJNMTIgMS43NUMxMiAxLjQ3Mzg2IDExLjc3NjEgMS4yNSAxMS41IDEuMjVDMTEuMjIzOSAxLjI1IDExIDEuNDczODYgMTEgMS43NUgxMlpNMTEuMTQ2NCAxMi42MDM2QzExLjM0MTcgMTIuNzk4OCAxMS42NTgzIDEyLjc5ODggMTEuODUzNiAxMi42MDM2TDE1LjAzNTUgOS40MjE1N0MxNS4yMzA4IDkuMjI2MzEgMTUuMjMwOCA4LjkwOTczIDE1LjAzNTUgOC43MTQ0N0MxNC44NDAzIDguNTE5MiAxNC41MjM3IDguNTE5MiAxNC4zMjg0IDguNzE0NDdMMTEuNSAxMS41NDI5TDguNjcxNTcgOC43MTQ0N0M4LjQ3NjMxIDguNTE5MiA4LjE1OTczIDguNTE5MiA3Ljk2NDQ3IDguNzE0NDdDNy43NjkyIDguOTA5NzMgNy43NjkyIDkuMjI2MzEgNy45NjQ0NyA5LjQyMTU3TDExLjE0NjQgMTIuNjAzNlpNMTEgMS43NVYxMi4yNUgxMlYxLjc1SDExWiIgZmlsbD0iIzM2MzYzNiIvPgo8L3N2Zz4K"
 
 /***/ }),
 
-/***/ 90:
+/***/ 92:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_vue_style_loader_index_js_ref_3_oneOf_1_0_node_modules_nuxt_postcss8_node_modules_css_loader_dist_cjs_js_ref_3_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_nuxt_postcss8_node_modules_postcss_loader_dist_cjs_js_ref_3_oneOf_1_2_node_modules_nuxt_components_dist_loader_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_BookSubEntry_vue_vue_type_style_index_0_id_e0ad56dc_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(83);
+/* harmony import */ var _node_modules_vue_style_loader_index_js_ref_3_oneOf_1_0_node_modules_nuxt_postcss8_node_modules_css_loader_dist_cjs_js_ref_3_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_nuxt_postcss8_node_modules_postcss_loader_dist_cjs_js_ref_3_oneOf_1_2_node_modules_nuxt_components_dist_loader_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_BookSubEntry_vue_vue_type_style_index_0_id_e0ad56dc_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(85);
 /* harmony import */ var _node_modules_vue_style_loader_index_js_ref_3_oneOf_1_0_node_modules_nuxt_postcss8_node_modules_css_loader_dist_cjs_js_ref_3_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_nuxt_postcss8_node_modules_postcss_loader_dist_cjs_js_ref_3_oneOf_1_2_node_modules_nuxt_components_dist_loader_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_BookSubEntry_vue_vue_type_style_index_0_id_e0ad56dc_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_vue_style_loader_index_js_ref_3_oneOf_1_0_node_modules_nuxt_postcss8_node_modules_css_loader_dist_cjs_js_ref_3_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_nuxt_postcss8_node_modules_postcss_loader_dist_cjs_js_ref_3_oneOf_1_2_node_modules_nuxt_components_dist_loader_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_BookSubEntry_vue_vue_type_style_index_0_id_e0ad56dc_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0__);
 /* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _node_modules_vue_style_loader_index_js_ref_3_oneOf_1_0_node_modules_nuxt_postcss8_node_modules_css_loader_dist_cjs_js_ref_3_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_nuxt_postcss8_node_modules_postcss_loader_dist_cjs_js_ref_3_oneOf_1_2_node_modules_nuxt_components_dist_loader_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_BookSubEntry_vue_vue_type_style_index_0_id_e0ad56dc_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0__) if(["default"].indexOf(__WEBPACK_IMPORT_KEY__) < 0) (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _node_modules_vue_style_loader_index_js_ref_3_oneOf_1_0_node_modules_nuxt_postcss8_node_modules_css_loader_dist_cjs_js_ref_3_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_nuxt_postcss8_node_modules_postcss_loader_dist_cjs_js_ref_3_oneOf_1_2_node_modules_nuxt_components_dist_loader_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_BookSubEntry_vue_vue_type_style_index_0_id_e0ad56dc_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0__[key]; }) }(__WEBPACK_IMPORT_KEY__));
 
 
 /***/ }),
 
-/***/ 91:
+/***/ 93:
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports

@@ -17,6 +17,9 @@
   "CommonStore": {
     "description": "Auto imported from components/common/Store.vue"
   },
+  "ContentBookListItem": {
+    "description": "Auto imported from components/content/BookListItem.vue"
+  },
   "ContentEbookArrowButton": {
     "description": "Auto imported from components/content/EbookArrowButton.vue"
   },

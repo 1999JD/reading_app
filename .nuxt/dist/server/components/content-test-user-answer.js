@@ -1,7 +1,7 @@
-exports.ids = [19];
+exports.ids = [20];
 exports.modules = {
 
-/***/ 108:
+/***/ 110:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -9,7 +9,7 @@ exports.modules = {
 __webpack_require__.r(__webpack_exports__);
 
 // CONCATENATED MODULE: ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/@nuxt/components/dist/loader.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./components/content/TestUserAnswer.vue?vue&type=template&id=18246928&
-var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"flex flex-row-reverse gap-2.5 mb-8"},[_vm._ssrNode("<div class=\"w-12 hy-12 rounded-full\"><img"+(_vm._ssrAttr("src",__webpack_require__(65)))+" alt></div> <p class=\"py-3.5 px-6 bg-third shadow-md rounded-xl\">"+_vm._ssrEscape("\n    我的答案: "+_vm._s(_vm.answer)+"\n  ")+"</p>")])}
+var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"flex flex-row-reverse gap-2.5 mb-8"},[_vm._ssrNode("<div class=\"w-12 hy-12 rounded-full\"><img"+(_vm._ssrAttr("src",__webpack_require__(67)))+" alt></div> <p class=\"py-3.5 px-6 bg-third shadow-md rounded-xl\">"+_vm._ssrEscape("\n    我的答案: "+_vm._s(_vm.answer)+"\n  ")+"</p>")])}
 var staticRenderFns = []
 
 
@@ -68,7 +68,7 @@ var component = Object(componentNormalizer["a" /* default */])(
 
 /***/ }),
 
-/***/ 65:
+/***/ 67:
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__.p + "img/user.2fbb8d0.png";

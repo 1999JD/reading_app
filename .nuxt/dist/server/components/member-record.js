@@ -1,19 +1,19 @@
-exports.ids = [27];
+exports.ids = [28];
 exports.modules = {
 
-/***/ 128:
+/***/ 131:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_vue_style_loader_index_js_ref_3_oneOf_1_0_node_modules_nuxt_postcss8_node_modules_css_loader_dist_cjs_js_ref_3_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_nuxt_postcss8_node_modules_postcss_loader_dist_cjs_js_ref_3_oneOf_1_2_node_modules_nuxt_components_dist_loader_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_Record_vue_vue_type_style_index_0_id_ff60867e_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(94);
+/* harmony import */ var _node_modules_vue_style_loader_index_js_ref_3_oneOf_1_0_node_modules_nuxt_postcss8_node_modules_css_loader_dist_cjs_js_ref_3_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_nuxt_postcss8_node_modules_postcss_loader_dist_cjs_js_ref_3_oneOf_1_2_node_modules_nuxt_components_dist_loader_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_Record_vue_vue_type_style_index_0_id_ff60867e_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(96);
 /* harmony import */ var _node_modules_vue_style_loader_index_js_ref_3_oneOf_1_0_node_modules_nuxt_postcss8_node_modules_css_loader_dist_cjs_js_ref_3_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_nuxt_postcss8_node_modules_postcss_loader_dist_cjs_js_ref_3_oneOf_1_2_node_modules_nuxt_components_dist_loader_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_Record_vue_vue_type_style_index_0_id_ff60867e_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_vue_style_loader_index_js_ref_3_oneOf_1_0_node_modules_nuxt_postcss8_node_modules_css_loader_dist_cjs_js_ref_3_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_nuxt_postcss8_node_modules_postcss_loader_dist_cjs_js_ref_3_oneOf_1_2_node_modules_nuxt_components_dist_loader_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_Record_vue_vue_type_style_index_0_id_ff60867e_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0__);
 /* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _node_modules_vue_style_loader_index_js_ref_3_oneOf_1_0_node_modules_nuxt_postcss8_node_modules_css_loader_dist_cjs_js_ref_3_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_nuxt_postcss8_node_modules_postcss_loader_dist_cjs_js_ref_3_oneOf_1_2_node_modules_nuxt_components_dist_loader_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_Record_vue_vue_type_style_index_0_id_ff60867e_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0__) if(["default"].indexOf(__WEBPACK_IMPORT_KEY__) < 0) (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _node_modules_vue_style_loader_index_js_ref_3_oneOf_1_0_node_modules_nuxt_postcss8_node_modules_css_loader_dist_cjs_js_ref_3_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_nuxt_postcss8_node_modules_postcss_loader_dist_cjs_js_ref_3_oneOf_1_2_node_modules_nuxt_components_dist_loader_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_Record_vue_vue_type_style_index_0_id_ff60867e_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0__[key]; }) }(__WEBPACK_IMPORT_KEY__));
 
 
 /***/ }),
 
-/***/ 129:
+/***/ 132:
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
@@ -28,7 +28,7 @@ module.exports = ___CSS_LOADER_EXPORT___;
 
 /***/ }),
 
-/***/ 164:
+/***/ 168:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -36,7 +36,7 @@ module.exports = ___CSS_LOADER_EXPORT___;
 __webpack_require__.r(__webpack_exports__);
 
 // CONCATENATED MODULE: ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/@nuxt/components/dist/loader.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./components/member/Record.vue?vue&type=template&id=ff60867e&scoped=true&
-var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('li',{staticClass:"record mt-6 mb-6 p-4 bg-primary rounded"},[_vm._ssrNode("<div class=\"flex mb-1.5 py-1.5 px-3 bg-white rounded\" data-v-ff60867e><div class=\"flex-shrink-0 w-20 h-24 mr-6 bg-gray-300\" data-v-ff60867e><img"+(_vm._ssrAttr("src",__webpack_require__(70)("./" + (_vm.orderData.imgSrc))))+(_vm._ssrAttr("alt",_vm.orderData.name))+" data-v-ff60867e></div> <ul data-v-ff60867e><li class=\"flex mb-4\" data-v-ff60867e><h3 class=\"mr-10\" data-v-ff60867e>商品名稱</h3> <p class=\"text-center flex-grow\" data-v-ff60867e>"+_vm._ssrEscape(_vm._s(_vm.orderData.name))+"</p></li> <li class=\"flex mb-4\" data-v-ff60867e><h3 class=\"mr-10\" data-v-ff60867e>訂單編號</h3> <p class=\"text-center flex-grow text-gray-order\" data-v-ff60867e>"+_vm._ssrEscape("\n          "+_vm._s(_vm.orderData.orderNumber)+"\n        ")+"</p></li> <li class=\"flex mb-4\" data-v-ff60867e><h3 class=\"mr-10\" data-v-ff60867e>訂購時間</h3> <p class=\"text-center flex-grow text-gray-order\" data-v-ff60867e>"+_vm._ssrEscape("\n          "+_vm._s(_vm.orderData.time)+"\n        ")+"</p></li></ul></div> <div class=\"bg-white pt-2 pb-3 px-1.5 text-center\" data-v-ff60867e><ul class=\"grid grid-cols-3\" data-v-ff60867e><li data-v-ff60867e><h3 class=\"mb-3\" data-v-ff60867e>訂單金額</h3> <p class=\"text-tangerine\" data-v-ff60867e>"+_vm._ssrEscape("$"+_vm._s(_vm.orderData.price))+"</p></li> <li class=\"decoration relative\" data-v-ff60867e><h3 class=\"mb-3\" data-v-ff60867e>付款方式</h3> <p class=\"text-tangerine\" data-v-ff60867e>"+_vm._ssrEscape(_vm._s(_vm.orderData.pay))+"</p></li> <li class=\"decoration relative\" data-v-ff60867e><h3 class=\"mb-3\" data-v-ff60867e>訂單狀態</h3> <p class=\"text-tangerine\" data-v-ff60867e>"+_vm._ssrEscape(_vm._s(_vm.orderData.status))+"</p></li></ul></div>")])}
+var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('li',{staticClass:"record mt-6 mb-6 p-4 bg-primary rounded"},[_vm._ssrNode("<div class=\"flex mb-1.5 py-1.5 px-3 bg-white rounded\" data-v-ff60867e><div class=\"flex-shrink-0 w-20 h-24 mr-6 bg-gray-300\" data-v-ff60867e><img"+(_vm._ssrAttr("src",__webpack_require__(72)("./" + (_vm.orderData.imgSrc))))+(_vm._ssrAttr("alt",_vm.orderData.name))+" data-v-ff60867e></div> <ul data-v-ff60867e><li class=\"flex mb-4\" data-v-ff60867e><h3 class=\"mr-10\" data-v-ff60867e>商品名稱</h3> <p class=\"text-center flex-grow\" data-v-ff60867e>"+_vm._ssrEscape(_vm._s(_vm.orderData.name))+"</p></li> <li class=\"flex mb-4\" data-v-ff60867e><h3 class=\"mr-10\" data-v-ff60867e>訂單編號</h3> <p class=\"text-center flex-grow text-gray-order\" data-v-ff60867e>"+_vm._ssrEscape("\n          "+_vm._s(_vm.orderData.orderNumber)+"\n        ")+"</p></li> <li class=\"flex mb-4\" data-v-ff60867e><h3 class=\"mr-10\" data-v-ff60867e>訂購時間</h3> <p class=\"text-center flex-grow text-gray-order\" data-v-ff60867e>"+_vm._ssrEscape("\n          "+_vm._s(_vm.orderData.time)+"\n        ")+"</p></li></ul></div> <div class=\"bg-white pt-2 pb-3 px-1.5 text-center\" data-v-ff60867e><ul class=\"grid grid-cols-3\" data-v-ff60867e><li data-v-ff60867e><h3 class=\"mb-3\" data-v-ff60867e>訂單金額</h3> <p class=\"text-tangerine\" data-v-ff60867e>"+_vm._ssrEscape("$"+_vm._s(_vm.orderData.price))+"</p></li> <li class=\"decoration relative\" data-v-ff60867e><h3 class=\"mb-3\" data-v-ff60867e>付款方式</h3> <p class=\"text-tangerine\" data-v-ff60867e>"+_vm._ssrEscape(_vm._s(_vm.orderData.pay))+"</p></li> <li class=\"decoration relative\" data-v-ff60867e><h3 class=\"mb-3\" data-v-ff60867e>訂單狀態</h3> <p class=\"text-tangerine\" data-v-ff60867e>"+_vm._ssrEscape(_vm._s(_vm.orderData.status))+"</p></li></ul></div>")])}
 var staticRenderFns = []
 
 
@@ -113,7 +113,7 @@ var componentNormalizer = __webpack_require__(1);
 
 function injectStyles (context) {
   
-  var style0 = __webpack_require__(128)
+  var style0 = __webpack_require__(131)
 if (style0.__inject__) style0.__inject__(context)
 
 }
@@ -135,61 +135,61 @@ var component = Object(componentNormalizer["a" /* default */])(
 
 /***/ }),
 
-/***/ 64:
+/***/ 66:
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__.p + "img/tkb.0c425cc.png";
 
 /***/ }),
 
-/***/ 65:
+/***/ 67:
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__.p + "img/user.2fbb8d0.png";
 
 /***/ }),
 
-/***/ 66:
+/***/ 68:
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__.p + "img/bg-star.57cd018.jpeg";
 
 /***/ }),
 
-/***/ 67:
+/***/ 69:
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__.p + "img/test-btn-decoration.bb13794.png";
 
 /***/ }),
 
-/***/ 68:
+/***/ 70:
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__.p + "img/banner.df3bca8.jpg";
 
 /***/ }),
 
-/***/ 69:
+/***/ 71:
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__.p + "img/tag-title.c30faac.png";
 
 /***/ }),
 
-/***/ 70:
+/***/ 72:
 /***/ (function(module, exports, __webpack_require__) {
 
 var map = {
 	"./404.jpeg": 28,
 	"./account-bg.jpg": 29,
-	"./banner.jpg": 68,
-	"./bg-star.jpeg": 66,
-	"./sampleBook.jpg": 71,
-	"./tag-title.png": 69,
-	"./test-btn-decoration.png": 67,
-	"./tkb.png": 64,
-	"./user.png": 65
+	"./banner.jpg": 70,
+	"./bg-star.jpeg": 68,
+	"./sampleBook.jpg": 73,
+	"./tag-title.png": 71,
+	"./test-btn-decoration.png": 69,
+	"./tkb.png": 66,
+	"./user.png": 67
 };
 
 
@@ -210,24 +210,24 @@ webpackContext.keys = function webpackContextKeys() {
 };
 webpackContext.resolve = webpackContextResolve;
 module.exports = webpackContext;
-webpackContext.id = 70;
+webpackContext.id = 72;
 
 /***/ }),
 
-/***/ 71:
+/***/ 73:
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__.p + "img/sampleBook.47efd69.jpg";
 
 /***/ }),
 
-/***/ 94:
+/***/ 96:
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(129);
+var content = __webpack_require__(132);
 if(content.__esModule) content = content.default;
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;

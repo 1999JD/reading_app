@@ -12,6 +12,7 @@ You can directly use them in pages and other components without the need to impo
 - `<AccountPwdInput>` | `<account-pwd-input>` (components/account/PwdInput.vue)
 - `<CommonBookSubEntry>` | `<common-book-sub-entry>` (components/common/BookSubEntry.vue)
 - `<CommonStore>` | `<common-store>` (components/common/Store.vue)
+- `<ContentBookListItem>` | `<content-book-list-item>` (components/content/BookListItem.vue)
 - `<ContentEbookArrowButton>` | `<content-ebook-arrow-button>` (components/content/EbookArrowButton.vue)
 - `<ContentEbookRange>` | `<content-ebook-range>` (components/content/EbookRange.vue)
 - `<ContentEbookSettings>` | `<content-ebook-settings>` (components/content/EbookSettings.vue)

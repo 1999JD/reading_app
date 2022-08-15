@@ -4,6 +4,7 @@ export const AccountModal = () => import('../../components/account/Modal.vue' /*
 export const AccountPwdInput = () => import('../../components/account/PwdInput.vue' /* webpackChunkName: "components/account-pwd-input" */).then(c => wrapFunctional(c.default || c))
 export const CommonBookSubEntry = () => import('../../components/common/BookSubEntry.vue' /* webpackChunkName: "components/common-book-sub-entry" */).then(c => wrapFunctional(c.default || c))
 export const CommonStore = () => import('../../components/common/Store.vue' /* webpackChunkName: "components/common-store" */).then(c => wrapFunctional(c.default || c))
+export const ContentBookListItem = () => import('../../components/content/BookListItem.vue' /* webpackChunkName: "components/content-book-list-item" */).then(c => wrapFunctional(c.default || c))
 export const ContentEbookArrowButton = () => import('../../components/content/EbookArrowButton.vue' /* webpackChunkName: "components/content-ebook-arrow-button" */).then(c => wrapFunctional(c.default || c))
 export const ContentEbookRange = () => import('../../components/content/EbookRange.vue' /* webpackChunkName: "components/content-ebook-range" */).then(c => wrapFunctional(c.default || c))
 export const ContentEbookSettings = () => import('../../components/content/EbookSettings.vue' /* webpackChunkName: "components/content-ebook-settings" */).then(c => wrapFunctional(c.default || c))

@@ -1,7 +1,7 @@
-exports.ids = [26];
+exports.ids = [27];
 exports.modules = {
 
-/***/ 106:
+/***/ 108:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -9,7 +9,7 @@ exports.modules = {
 __webpack_require__.r(__webpack_exports__);
 
 // CONCATENATED MODULE: ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/@nuxt/components/dist/loader.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./components/member/ReceiptTitle.vue?vue&type=template&id=58b5ca22&
-var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('legend',{staticClass:"flex items-center mb-4"},[_vm._ssrNode("<div class=\"w-6 mr-1\"><img"+(_vm._ssrAttr("src",__webpack_require__(82)))+" alt></div> "),_vm._ssrNode("<h3 class=\"text-base font-medium\">","</h3>",[_vm._t("default")],2)],2)}
+var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('legend',{staticClass:"flex items-center mb-4"},[_vm._ssrNode("<div class=\"w-6 mr-1\"><img"+(_vm._ssrAttr("src",__webpack_require__(84)))+" alt></div> "),_vm._ssrNode("<h3 class=\"text-base font-medium\">","</h3>",[_vm._t("default")],2)],2)}
 var staticRenderFns = []
 
 
@@ -58,7 +58,7 @@ var component = Object(componentNormalizer["a" /* default */])(
 
 /***/ }),
 
-/***/ 82:
+/***/ 84:
 /***/ (function(module, exports) {
 
 module.exports = "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTE3IDNIN0M1LjkgMyA1LjAxIDMuOSA1LjAxIDVMNSAyMUwxMiAxOEwxOSAyMVY1QzE5IDMuOSAxOC4xIDMgMTcgM1oiIGZpbGw9IiNFODc0NkUiLz4KPC9zdmc+Cg=="
