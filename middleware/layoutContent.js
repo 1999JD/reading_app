@@ -61,7 +61,6 @@ export default function ({ app, store, route, redirect }) {
 
   store.commit('setHeading', heading)
 
-  console.log(heading, routeName)
   let backRoute = '/member'
   app.router.beforeEach((to, from, next) => {
     if (to.path === '/member/cart' && from.path !== '/member/checkout') {
