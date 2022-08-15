@@ -1,0 +1,47 @@
+# Discovered Components
+
+This is an auto-generated list of components discovered by [nuxt/components](https://github.com/nuxt/components).
+
+You can directly use them in pages and other components without the need to import them.
+
+**Tip:** If a component is conditionally rendered with `v-if` and is big, it is better to use `Lazy` or `lazy-` prefix to lazy load.
+
+- `<AccountAcctInput>` | `<account-acct-input>` (components/account/AcctInput.vue)
+- `<AccountCfmPwdInput>` | `<account-cfm-pwd-input>` (components/account/CfmPwdInput.vue)
+- `<AccountModal>` | `<account-modal>` (components/account/Modal.vue)
+- `<AccountPwdInput>` | `<account-pwd-input>` (components/account/PwdInput.vue)
+- `<CommonBookSubEntry>` | `<common-book-sub-entry>` (components/common/BookSubEntry.vue)
+- `<CommonStore>` | `<common-store>` (components/common/Store.vue)
+- `<ContentEbookArrowButton>` | `<content-ebook-arrow-button>` (components/content/EbookArrowButton.vue)
+- `<ContentEbookRange>` | `<content-ebook-range>` (components/content/EbookRange.vue)
+- `<ContentEbookSettings>` | `<content-ebook-settings>` (components/content/EbookSettings.vue)
+- `<ContentMediaAudio>` | `<content-media-audio>` (components/content/MediaAudio.vue)
+- `<ContentMediaNav>` | `<content-media-nav>` (components/content/MediaNav.vue)
+- `<ContentMediaRemark>` | `<content-media-remark>` (components/content/MediaRemark.vue)
+- `<ContentMediaVideo>` | `<content-media-video>` (components/content/MediaVideo.vue)
+- `<ContentSelectBox>` | `<content-select-box>` (components/content/SelectBox.vue)
+- `<ContentStore>` | `<content-store>` (components/content/Store.vue)
+- `<ContentTestEndBubble>` | `<content-test-end-bubble>` (components/content/TestEndBubble.vue)
+- `<ContentTestQuestion>` | `<content-test-question>` (components/content/TestQuestion.vue)
+- `<ContentTestResult>` | `<content-test-result>` (components/content/TestResult.vue)
+- `<ContentTestUserAnswer>` | `<content-test-user-answer>` (components/content/TestUserAnswer.vue)
+- `<IndexCateFeatured>` | `<index-cate-featured>` (components/index/CateFeatured.vue)
+- `<IndexCateHit>` | `<index-cate-hit>` (components/index/CateHit.vue)
+- `<IndexCateLatest>` | `<index-cate-latest>` (components/index/CateLatest.vue)
+- `<IndexCateRecommend>` | `<index-cate-recommend>` (components/index/CateRecommend.vue)
+- `<LayoutBackHeader>` | `<layout-back-header>` (components/layout/BackHeader.vue)
+- `<LayoutEbookFooterNav>` | `<layout-ebook-footer-nav>` (components/layout/EbookFooterNav.vue)
+- `<LayoutSearchHeader>` | `<layout-search-header>` (components/layout/SearchHeader.vue)
+- `<LayoutSideBar>` | `<layout-side-bar>` (components/layout/SideBar.vue)
+- `<MemberCollection>` | `<member-collection>` (components/member/Collection.vue)
+- `<MemberIcon>` | `<member-icon>` (components/member/Icon.vue)
+- `<MemberReceiptTitle>` | `<member-receipt-title>` (components/member/ReceiptTitle.vue)
+- `<MemberRecord>` | `<member-record>` (components/member/Record.vue)
+- `<SvgEbookCart>` | `<svg-ebook-cart>` (components/svg/ebook/Cart.vue)
+- `<SvgEbookReading>` | `<svg-ebook-reading>` (components/svg/ebook/Reading.vue)
+- `<SvgFooterBook>` | `<svg-footer-book>` (components/svg/footer/Book.vue)
+- `<SvgFooterHome>` | `<svg-footer-home>` (components/svg/footer/Home.vue)
+- `<SvgFooterMember>` | `<svg-footer-member>` (components/svg/footer/Member.vue)
+- `<SvgHeaderCart>` | `<svg-header-cart>` (components/svg/header/Cart.vue)
+- `<SvgHeaderHam>` | `<svg-header-ham>` (components/svg/header/Ham.vue)
+- `<SvgHeaderSearch>` | `<svg-header-search>` (components/svg/header/Search.vue)

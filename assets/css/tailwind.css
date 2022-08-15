@@ -1,0 +1,100 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100;300;400;500;700;900&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .account__btn {
+    @apply block w-full py-2 bg-yellow text-base border text-center rounded-3xl;
+  }
+  .account__input__wrap {
+    @apply block relative mb-6;
+  }
+  .account__label {
+    @apply block mb-2 text-base;
+  }
+  .account__input {
+    @apply w-full py-3 pl-3 pr-10 border text-xs rounded-3xl focus:border-yellow focus:outline-none;
+  }
+  .account__input__help {
+    @apply absolute -bottom-4 right-2 text-xs text-red-600 whitespace-nowrap;
+  }
+  .account__eye {
+    @apply absolute top-0 bottom-0 right-5 w-5 h-5 m-auto;
+  }
+  .account__input::placeholder {
+    /* Chrome, Firefox, Opera, Safari 10.1+ */
+    @apply text-gray-300;
+    opacity: 1; /* Firefox */
+  }
+
+  .account__input::-ms-input-placeholder {
+    /* Internet Explorer 10-11 */
+    @apply text-gray-300;
+  }
+
+  .account__input::-ms-input-placeholder {
+    /* Microsoft Edge */
+    @apply text-gray-300;
+  }
+  .checkout__input {
+    @apply w-full py-2 px-4 text-sm border border-gray-300 rounded focus:outline-none appearance-none;
+  }
+
+  .checkout__wrap {
+    @apply block mb-4;
+  }
+  .checkout__label {
+    @apply block mb-1;
+  }
+
+  .checkout__radio {
+    @apply appearance-none;
+  }
+  .checkout__radio::before {
+    content: '';
+    @apply inline-block w-4 h-4 bg-no-repeat bg-cover;
+
+    background-image: url('~/assets/icon/common/unchecked.svg');
+  }
+  .checkout__radio:checked::before {
+    background-image: url('~/assets/icon/common/checked.svg');
+  }
+
+  .test__question__wrap {
+    @apply flex gap-2.5;
+  }
+  .test__question__avatar {
+    @apply w-12 h-12 rounded-full;
+  }
+  .test__question__bubble {
+    @apply box-border w-60 mb-8 bg-primary shadow-md rounded-xl;
+  }
+  body::-webkit-scrollbar,
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}
+
+body {
+  color: #363636;
+  font-family: 'Noto Sans TC', sans-serif;
+  @apply text-sm leading-4;
+}
+
+img {
+  @apply block w-full h-auto;
+}
+
+input {
+  @apply focus:outline-none
+}
+
+a {
+  @apply block
+}

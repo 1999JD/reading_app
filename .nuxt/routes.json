@@ -1,0 +1,128 @@
+[
+  {
+    "name": "content",
+    "path": "/content",
+    "component": "/workspaces/l_reading_app/pages/content/index.vue",
+    "chunkName": "pages/content/index",
+    "_name": "_721c7d06"
+  },
+  {
+    "name": "member",
+    "path": "/member",
+    "component": "/workspaces/l_reading_app/pages/member/index.vue",
+    "chunkName": "pages/member/index",
+    "_name": "_242206ec"
+  },
+  {
+    "name": "account-forgetPassword",
+    "path": "/account/forgetPassword",
+    "component": "/workspaces/l_reading_app/pages/account/forgetPassword.vue",
+    "chunkName": "pages/account/forgetPassword",
+    "_name": "_864f634e"
+  },
+  {
+    "name": "account-login",
+    "path": "/account/login",
+    "component": "/workspaces/l_reading_app/pages/account/login.vue",
+    "chunkName": "pages/account/login",
+    "_name": "_0245ad70"
+  },
+  {
+    "name": "account-register",
+    "path": "/account/register",
+    "component": "/workspaces/l_reading_app/pages/account/register.vue",
+    "chunkName": "pages/account/register",
+    "_name": "_edcfead8"
+  },
+  {
+    "name": "account-resetPassword",
+    "path": "/account/resetPassword",
+    "component": "/workspaces/l_reading_app/pages/account/resetPassword.vue",
+    "chunkName": "pages/account/resetPassword",
+    "_name": "_4e9f712e"
+  },
+  {
+    "name": "member-cart",
+    "path": "/member/cart",
+    "component": "/workspaces/l_reading_app/pages/member/cart.vue",
+    "chunkName": "pages/member/cart",
+    "_name": "_e123be14"
+  },
+  {
+    "name": "member-checkout",
+    "path": "/member/checkout",
+    "component": "/workspaces/l_reading_app/pages/member/checkout.vue",
+    "chunkName": "pages/member/checkout",
+    "_name": "_1a29a11c"
+  },
+  {
+    "name": "member-collections",
+    "path": "/member/collections",
+    "component": "/workspaces/l_reading_app/pages/member/collections.vue",
+    "chunkName": "pages/member/collections",
+    "_name": "_2197fea2"
+  },
+  {
+    "name": "member-orderPlan",
+    "path": "/member/orderPlan",
+    "component": "/workspaces/l_reading_app/pages/member/orderPlan.vue",
+    "chunkName": "pages/member/orderPlan",
+    "_name": "_7a491231"
+  },
+  {
+    "name": "member-orderReceipt",
+    "path": "/member/orderReceipt",
+    "component": "/workspaces/l_reading_app/pages/member/orderReceipt.vue",
+    "chunkName": "pages/member/orderReceipt",
+    "_name": "_bd225c40"
+  },
+  {
+    "name": "member-records",
+    "path": "/member/records",
+    "component": "/workspaces/l_reading_app/pages/member/records.vue",
+    "chunkName": "pages/member/records",
+    "_name": "_3ba2a848"
+  },
+  {
+    "name": "content-ebook-reading-id",
+    "path": "/content/ebook/reading/:id?",
+    "component": "/workspaces/l_reading_app/pages/content/ebook/reading/_id.vue",
+    "chunkName": "pages/content/ebook/reading/_id",
+    "_name": "_41cdf221"
+  },
+  {
+    "name": "content-ebook-id",
+    "path": "/content/ebook/:id?",
+    "component": "/workspaces/l_reading_app/pages/content/ebook/_id.vue",
+    "chunkName": "pages/content/ebook/_id",
+    "_name": "_72a3a4a4"
+  },
+  {
+    "name": "content-media-id",
+    "path": "/content/media/:id?",
+    "component": "/workspaces/l_reading_app/pages/content/media/_id.vue",
+    "chunkName": "pages/content/media/_id",
+    "_name": "_13981dba"
+  },
+  {
+    "name": "content-paperbook-id",
+    "path": "/content/paperbook/:id?",
+    "component": "/workspaces/l_reading_app/pages/content/paperbook/_id.vue",
+    "chunkName": "pages/content/paperbook/_id",
+    "_name": "_4cc131cb"
+  },
+  {
+    "name": "content-test-id",
+    "path": "/content/test/:id?",
+    "component": "/workspaces/l_reading_app/pages/content/test/_id.vue",
+    "chunkName": "pages/content/test/_id",
+    "_name": "_3c1daa3c"
+  },
+  {
+    "name": "index",
+    "path": "/",
+    "component": "/workspaces/l_reading_app/pages/index.vue",
+    "chunkName": "pages/index",
+    "_name": "_5da38493"
+  }
+]
