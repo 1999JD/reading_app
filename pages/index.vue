@@ -1,13 +1,13 @@
 <template>
   <main>
     <div class="px-6 pt-3 bg-primary">
-      <div class="banner">
+      <div class="rounded-md overflow-hidden shadow-md">
         <img src="~/assets/img/banner.jpg" />
       </div>
     </div>
     <nav class="box-border flex justify-evenly py-6 bg-primary">
       <NuxtLink v-for="link in links" :key="link.title" :to="link.to">
-        <div class="w-fist p-1 mx-auto mb-2 rounded-lg shadow-md bg-white">
+        <div class="w-fit p-1 mx-auto mb-2 rounded-lg shadow-md bg-white">
           <div class="w-10">
             <img
               :src="require(`~/assets/icon/index/${link.src}`)"

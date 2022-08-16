@@ -13,13 +13,14 @@
     >
       熱門排行
     </h2>
-    <div class="w-full py-4 overflow-hidden">
+    <div class="w-full py-4">
       <!-- <client-only> -->
       <ul
         ref="slide"
         v-drag:x
         class="slide flex left-1/5"
         @mousedown="handleMouseDown"
+        @touchstart="handleMouseDown"
       >
         <li
           v-for="(book, index) in books"
@@ -69,9 +70,11 @@ export default {
   },
   mounted() {
     window.addEventListener('mouseup', this.handleDragEnd)
+    window.addEventListener('touchend', this.handleDragEnd)
   },
   beforeDestroy() {
     window.removeEventListener('mouseup', this.handleDragEnd)
+    window.removeEventListener('touchend', this.handleDragEnd)
   },
   methods: {
     getPositionX(event) {
