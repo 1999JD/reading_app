@@ -32,9 +32,9 @@ export default {
       default() {
         return {
           id: 0,
-          title: '素養人才',
-          author: '吳清基',
-          publisher: '台灣知識庫股份有限公司',
+          title: '園子習慣',
+          author: '詹姆斯‧克利爾',
+          publisher: '範例股份有限公司',
           publicationDate: '2020-10-11',
           download: 352,
           src: '~/assets/img/sampleBook.jpg',

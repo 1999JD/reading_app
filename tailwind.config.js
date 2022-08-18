@@ -46,6 +46,7 @@ module.exports = {
       },
       minHeight: {
         12: '3rem',
+        'screen-no-footer': 'calc(100vh - 72px)',
         'account-main': '28.875rem',
       },
       colors: {

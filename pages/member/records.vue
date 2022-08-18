@@ -19,7 +19,7 @@ export default {
         {
           bookId: 1,
           imgSrc: 'sampleBook.jpg',
-          name: '素養閱讀',
+          name: '園子習慣',
           orderNumber: 103856820,
           time: '2021-08-01',
           price: 350,
@@ -29,7 +29,7 @@ export default {
         {
           bookId: 2,
           imgSrc: 'sampleBook.jpg',
-          name: '素養閱讀',
+          name: '園子習慣',
           orderNumber: 103822220,
           time: '2021-08-01',
           price: 350,
@@ -39,7 +39,7 @@ export default {
         {
           bookId: 3,
           imgSrc: 'sampleBook.jpg',
-          name: '素養閱讀',
+          name: '園子習慣',
           orderNumber: 103856821,
           time: '2021-08-01',
           price: 350,
@@ -49,7 +49,7 @@ export default {
         {
           bookId: 4,
           imgSrc: 'sampleBook.jpg',
-          name: '素養閱讀',
+          name: '園子習慣',
           orderNumber: 144456822,
           time: '2021-08-01',
           price: 350,
@@ -59,7 +59,7 @@ export default {
         {
           bookId: 5,
           imgSrc: 'sampleBook.jpg',
-          name: '素養閱讀',
+          name: '園子習慣',
           orderNumber: 703856823,
           time: '2021-08-01',
           price: 350,
@@ -69,7 +69,7 @@ export default {
         {
           bookId: 6,
           imgSrc: 'sampleBook.jpg',
-          name: '素養閱讀',
+          name: '園子習慣',
           orderNumber: 663856824,
           time: '2021-08-01',
           price: 350,
@@ -79,7 +79,7 @@ export default {
         {
           bookId: 7,
           imgSrc: 'sampleBook.jpg',
-          name: '素養閱讀',
+          name: '園子習慣',
           orderNumber: 103856925,
           time: '2021-08-01',
           price: 350,

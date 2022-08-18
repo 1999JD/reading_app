@@ -27,9 +27,9 @@ export default {
       fileName: 'exampleVideo',
       book: {
         bookId: 1,
-        name: '素養人才',
+        name: '園子習慣',
         desc: '書本小標內容書本小標內容書本小標內容書本小標內容書本小標內容書本小容',
-        author: '一路',
+        author: '詹姆斯',
         publishTime: '2021-06-30',
         imgSrc: 'sampleBook.jpg',
         imgAlt: '',

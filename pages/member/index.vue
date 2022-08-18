@@ -1,5 +1,5 @@
 <template>
-  <main class="py-2 bg-primary">
+  <main class="py-2 bg-primary min-h-screen-no-footer">
     <nav class="flex justify-end px-6">
       <a class="w-7 mr-3">
         <img src="~/assets/icon/layout/mailbox.svg" alt="訊息" class="" />
@@ -40,7 +40,7 @@
     </section>
 
     <nav
-      class="flex justify-between mx-6 mb-6 pt-6 pb-4 px-4 bg-white rounded-lg"
+      class="flex justify-between mx-6 mb-6 pt-6 pb-5 px-6 bg-white rounded-lg"
     >
       <MemberIcon
         v-for="link in contentPageLinks"

@@ -1,5 +1,5 @@
 <template>
-  <NuxtLink :to="to" class="flex flex-col items-center">
+  <NuxtLink :to="to" class="flex flex-col items-center w-16 whitespace-nowrap">
     <div class="w-9 h-9 mb-4">
       <img :src="require(`~/assets/icon/member/${src}`)" />
     </div>

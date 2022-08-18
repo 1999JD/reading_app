@@ -13,12 +13,13 @@
     >
       熱門排行
     </h2>
-    <div class="w-full py-4">
-      <!-- <client-only> -->
+
+    <div class="relative z-0 w-full py-5 overflow-hidden">
       <ul
         ref="slide"
         v-drag:x
         class="slide flex left-1/5"
+        @v-drag-end="handleDrag($event)"
         @mousedown="handleMouseDown"
         @touchstart="handleMouseDown"
       >
@@ -44,7 +45,6 @@
           </span>
         </li>
       </ul>
-      <!-- </client-only> -->
     </div>
   </div>
 </template>
@@ -77,6 +77,9 @@ export default {
     window.removeEventListener('touchend', this.handleDragEnd)
   },
   methods: {
+    handleDrag(event) {
+      console.log(event.pageX)
+    },
     getPositionX(event) {
       return event.type.includes('mouse')
         ? event.pageX

@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <div class="container mt-10">
     <LayoutSearchHeader />
     <p class="my-13 text-center text-xl">Sorry，您所訪問的頁面不存在 !</p>
     <div class="w-67 mx-auto">
