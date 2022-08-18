@@ -91,6 +91,12 @@ img {
   @apply block w-auto max-w-full h-full mx-auto ;
 }
 
+@supports (-webkit-touch-callout: none) {
+  img{
+    @apply w-full h-auto
+  }
+}
+
 input {
   @apply focus:outline-none
 }

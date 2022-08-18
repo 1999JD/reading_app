@@ -14,7 +14,7 @@ export default {
       }
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
+      { rel: 'icon', type: 'image/x-icon', href: './favicon.ico' }
     ],
   },
   // Global CSS: https://go.nuxtjs.dev/config-css
@@ -55,11 +55,12 @@ export default {
     meta: {
       title: 'readingApp',
       author: 'Me',
+      theme_color: '#FFF1CF'
     },
     manifest: {
       name: 'readingApp',
       short_name: 'reading',
-      descripotion: 'fantasitc literacy reading app',
+      descripotion: 'fantasitc reading app',
       lang: 'en',
     },
     workbox: {
