@@ -54,23 +54,14 @@ export default {
   pwa: {
     meta: {
       title: 'readingApp',
-      author: 'Me',
-      theme_color: '#FFF1CF'
+      author: '1999JD',
+      theme_color: '#FFF1CF',
+      nativeUI: true
     },
     manifest: {
-      name: 'readingApp',
-      short_name: 'reading',
-      descripotion: 'fantasitc reading app',
-      lang: 'en',
+      name: '線上說書',
+      descripotion: '專屬你聆聽的好地方',
     },
-    workbox: {
-      dev: process.env.NODE_ENV !== 'production'
-    },
-    icon: {
-      fileName: 'icon.png',
-      size: [64, 120, 144, 152, 384, 512],
-
-    }
   },
   serverMiddleware: [
     { path: '/api', handler: '~/server/app.js' }

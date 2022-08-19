@@ -35,5 +35,16 @@ export default {
       default: () => {},
     },
   },
+  mounted() {
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.getRegistrations().then(function (registrations) {
+        for (const registration of registrations) {
+          // if (process.env.NODE_ENV !== 'production') registration.unregister()
+          // else registration.update()
+          registration.update()
+        }
+      })
+    }
+  },
 }
 </script>
