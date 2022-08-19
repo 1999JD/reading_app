@@ -37,9 +37,11 @@
         <span class="sr-only"> 倒退十秒 </span>
         <img :src="require(`~/assets/icon/content/backTen.svg`)" />
       </button>
-      <button class="mx-5" @click.prevent="handleAudioPlay">
+      <button class="w-14 mx-5" @click.prevent="handleAudioPlay">
         <span class="sr-only"> 播放 </span>
-        <img :src="require(`~/assets/icon/content/play.svg`)" />
+        <img
+          :src="require(`~/assets/icon/content/${play ? 'stop' : 'play'}.svg`)"
+        />
       </button>
       <button @click.prevent="handleAudioTime('forward')">
         <span class="sr-only"> 前進十秒 </span>
@@ -55,7 +57,6 @@
 </template>
 
 <script>
-
 export default {
   name: 'Audio',
   data() {

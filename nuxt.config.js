@@ -92,4 +92,6 @@ export default {
       },
     },
   },
+  loading: '~/components/common/LoadingBar.vue',
+
 }

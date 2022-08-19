@@ -5,7 +5,7 @@
 
 @layer components {
   .account__btn {
-    @apply block w-full py-2 bg-yellow text-base border text-center rounded-3xl;
+    @apply block w-full py-2 bg-yellow text-base border border-yellow text-center rounded-3xl font-normal;
   }
   .account__input__wrap {
     @apply block relative mb-6;
@@ -88,19 +88,19 @@ body {
 }
 
 img {
-  @apply block w-auto max-w-full h-full mx-auto ;
+  @apply block w-auto max-w-full h-full mx-auto;
 }
 
 @supports (-webkit-touch-callout: none) {
-  img{
-    @apply w-full h-auto
+  img {
+    @apply w-full h-auto;
   }
 }
 
 input {
-  @apply focus:outline-none
+  @apply focus:outline-none;
 }
 
 a {
-  @apply block
+  @apply block;
 }

@@ -1,5 +1,5 @@
 <template>
-  <div class="py-10">
+  <div :class="[isDragging && 'pan-x', 'py-10']">
     <h2
       class="
         w-fit
@@ -14,12 +14,7 @@
       熱門排行
     </h2>
 
-    <div
-      :class="[
-        isDragging && 'pan-x',
-        'relative z-0 w-full py-5 overflow-hidden',
-      ]"
-    >
+    <div class="relative z-0 w-full py-5 overflow-hidden">
       <ul
         ref="slide"
         style="transform: translateX(0)"
