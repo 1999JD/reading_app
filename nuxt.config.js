@@ -17,6 +17,9 @@ export default {
       { rel: 'icon', type: 'image/x-icon', href: './favicon.ico' }
     ],
   },
+  env: {
+    DOMAIN: process.env.DOMAIN
+  },
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [
     '~/assets/css/animation.css'
@@ -46,14 +49,14 @@ export default {
   ],
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
   axios: {
-    endpoints: 'http:172.16.131.46:7690',
+    endpoints: process.env.DOMAIN,
     prefix: '/api',
   },
 
   // PWA module configuration: https://go.nuxtjs.dev/pwa
   pwa: {
     meta: {
-      title: 'readingApp',
+      title: '線上說書',
       author: '1999JD',
       theme_color: '#FFF1CF',
       nativeUI: true
@@ -84,5 +87,7 @@ export default {
     },
   },
   loading: '~/components/common/LoadingBar.vue',
-
+  server: {
+    host: '0'
+  }
 }
