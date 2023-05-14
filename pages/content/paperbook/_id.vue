@@ -110,7 +110,7 @@ export default {
         pubDate: '2020-10-11',
         price: 225,
         intro:
-          '東西出等等，是一直在，第天說很之後，昨天為，的世界就真天以的其實是，如果是了有點太。好好聽意說出，我的的圖是有看以直接的聲，的這麼好喜歡的風格⋯我都是一個再來卡到這。管是怎一個出現盼，我只能好像有中間不都有歉我。是我完了有興趣從期⋯太久沒你的什麼就是這也看媽的，我超因知道自自己是兩直覺什麼，要一以做感多現在還⋯面那個完全歡家哪個婚相關的，小孩的結束？調整還是不會有親卡想說，這不太底的看是還是，因為感覺真好可以感覺也很，身體到小為這最棒有興趣，憶抽發現還老闆被：朋友說會覺自己以後我還是很。',
+          'asdf',
         contents: [
           {
             chapter: '序',
@@ -118,27 +118,27 @@ export default {
           },
           {
             chapter: '前言',
-            subtitle: '',
+            subtitle: 'asdf',
           },
           {
             chapter: '第一章 ',
-            subtitle: '東西出等等',
+            subtitle: 'asdf',
           },
           {
             chapter: '第二章',
-            subtitle: '管是怎一個出現盼',
+            subtitle: 'asdf',
           },
           {
             chapter: '第三章',
-            subtitle: '這是什麼鬼東西',
+            subtitle: 'asdf',
           },
           {
             chapter: '第四章',
-            subtitle: '誰這麼無聊？',
+            subtitle: 'asdf',
           },
           {
             chapter: '第五章',
-            subtitle: '給做版面設計的人',
+            subtitle: 'asdf',
           },
           {
             chapter: '第六章',

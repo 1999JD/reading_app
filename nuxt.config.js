@@ -1,7 +1,18 @@
+const routerBase =
+  process.env.DEPLOY_ENV === 'GH_PAGES'
+    ? {
+      router: {
+        base: '/reading_app/'
+      }
+    }
+    : {}
+
+
+
 export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    title: 'literacy_reading_apps',
+    title: 'reading_app',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
@@ -17,17 +28,15 @@ export default {
       { rel: 'icon', type: 'image/x-icon', href: './favicon.ico' }
     ],
   },
-  env: {
-    DOMAIN: process.env.DOMAIN
-  },
+  ssr: false,
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [
     '~/assets/css/animation.css'
   ],
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
-    { src: '~/plugins/axios.js', ssr: true },
-    { src: '~/plugins/yup.js', ssr: true },
+    { src: '~/plugins/axios.js', ssr: false },
+    { src: '~/plugins/yup.js', ssr: false },
     { src: '~/plugins/drag.js', ssr: false },
   ],
   // Auto import components: https://go.nuxtjs.dev/config-components
@@ -49,7 +58,6 @@ export default {
   ],
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
   axios: {
-    endpoints: process.env.DOMAIN,
     prefix: '/api',
   },
 
@@ -66,9 +74,6 @@ export default {
       descripotion: '專屬你聆聽的好地方',
     },
   },
-  serverMiddleware: [
-    { path: '/api', handler: '~/server/app.js' }
-  ],
   build: {
     extend(config) {
       config.module.rules.push({
@@ -87,7 +92,6 @@ export default {
     },
   },
   loading: '~/components/common/LoadingBar.vue',
-  server: {
-    host: '0'
-  }
+  target: 'static',
+  ...routerBase
 }
